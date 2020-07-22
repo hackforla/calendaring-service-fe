@@ -1,12 +1,19 @@
 import React from "react";
-import MyComponent from "views/MyComponent/MyComponent";
+import Rectangle from "views/Rectangle/Rectangle";
 
 function Testing() {
   return (
-    <div>
-      <MyComponent>
-        <p>Hello from inside myComponent within Testing App</p>
-      </MyComponent>
+    <div
+      style={{
+        border: "5px solid rgb(111,41,97)",
+        padding: "10px",
+        display: "inline-flex",
+      }}
+    >
+      <Rectangle>
+        <h3>Heading</h3>
+      </Rectangle>
+      <div>Here i am</div>
     </div>
   );
 }
