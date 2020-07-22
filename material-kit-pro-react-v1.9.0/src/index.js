@@ -30,7 +30,7 @@ import ContactUsPage from "views/ContactUsPage/ContactUsPage.js";
 import EcommercePage from "views/EcommercePage/EcommercePage.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
-import PresentationPage from "views/PresentationPage/PresentationPage.js";
+// import PresentationPage from "views/PresentationPage/PresentationPage.js";
 import PricingPage from "views/PricingPage/PricingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import ProductPage from "views/ProductPage/ProductPage.js";
@@ -38,6 +38,7 @@ import SectionsPage from "views/SectionsPage/SectionsPage.js";
 import ShoppingCartPage from "views/ShoppingCartPage/ShoppingCartPage.js";
 import SignupPage from "views/SignupPage/SignupPage.js";
 import ErrorPage from "views/ErrorPage/ErrorPage.js";
+import MyComponent from "views/MyComponent/MyComponent.js";
 
 var hist = createBrowserHistory();
 
@@ -59,7 +60,8 @@ ReactDOM.render(
       <Route path="/shopping-cart-page" component={ShoppingCartPage} />
       <Route path="/signup-page" component={SignupPage} />
       <Route path="/error-page" component={ErrorPage} />
-      <Route path="/" component={PresentationPage} />
+      {/* <Route path="/" component={PresentationPage} /> */}
+      <Route path="/" component={MyComponent} />
     </Switch>
   </Router>,
   document.getElementById("root")
