@@ -20,9 +20,11 @@ const cardStyle = {
     top: "42px",
     background: "#F39844",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    whiteSpace: "pre-line",
     // filter: blur("4px"),
   },
   ellipse: {
+    //this is for another component
     position: "absolute",
     width: "119px",
     height: "115px",

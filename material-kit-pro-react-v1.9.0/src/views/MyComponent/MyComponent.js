@@ -5,16 +5,14 @@ import MyComponentStyle from "assets/jss/material-kit-pro-react/views/MyComponen
 import CardBody from "components/Card/CardBody";
 const useStyles = makeStyles(MyComponentStyle);
 
-function MyComponent() {
+function MyComponent(props) {
+  const { children, ...rest } = props;
   const classes = useStyles();
 
   return (
-    <div>
-      <Card className={classes.customCard}>
-        <CardBody>Training</CardBody>
-      </Card>
-      <div className={classes.ellipse}></div>
-    </div>
+    <Card className={classes.customCard} {...rest}>
+      <CardBody>{children}</CardBody>
+    </Card>
   );
 }
 
