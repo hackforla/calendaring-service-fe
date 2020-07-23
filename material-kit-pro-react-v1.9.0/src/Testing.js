@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Rectangle from "views/Rectangle/Rectangle";
+import Ellipse from "views/Ellipse/Ellipse";
 
 function Testing() {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div
-      style={{
-        border: "5px solid rgb(111,41,97)",
-        padding: "10px",
-        display: "inline-flex",
-      }}
-    >
+    <div>
       <Rectangle>
         <h3>Heading</h3>
       </Rectangle>
-      <div>Here i am</div>
+      <Ellipse
+        image="https://www.knacktraining.com/wp-content/uploads/2019/01/Illustration.png"
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+      />
     </div>
   );
 }
