@@ -16,14 +16,24 @@ function Testing() {
     setIsFlipped(!isFlipped);
   };
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
         <Rectangle>
-          <div onClick={handleFlip}>This is the front of the card.</div>
+          <div onClick={handleFlip} className={classes.customCard}>
+            whats up dawg
+          </div>
         </Rectangle>
 
         <Rectangle>
-          <div onClick={handleFlip}>This is the back of the card.</div>
+          <div onClick={handleFlip} className={classes.customCard2}>
+            This is the back of the card.
+          </div>
         </Rectangle>
       </ReactCardFlip>
 

@@ -1,24 +1,23 @@
 const RectangleStyle = {
   customCard: {
-    position: "absolute",
+    // position: "absolute",
     width: "200px",
     height: "75px",
-    left: "21px",
-    top: "42px",
     background: "#F39844",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     whiteSpace: "pre-line",
+    textAlign: "center",
     // filter: blur("4px"),
   },
   customCard2: {
-    position: "absolute",
+    // position: "absolute",
     width: "200px",
     height: "75px",
-    left: "21px",
-    top: "42px",
     background: "red",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     whiteSpace: "pre-line",
+    textAlign: "center",
+
     // filter: blur("4px"),
   },
   cardBody: {

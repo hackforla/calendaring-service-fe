@@ -3,7 +3,7 @@ import { whiteColor, grayColor } from "assets/jss/material-kit-pro-react.js";
 const EllipseStyle = {
   ellipse: {
     //this is for another component
-    position: "absolute",
+    // position: "absolute",
     width: "119px",
     height: "115px",
     left: "237px",
