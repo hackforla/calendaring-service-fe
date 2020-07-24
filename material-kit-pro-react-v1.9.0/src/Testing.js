@@ -21,6 +21,7 @@ function Testing() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        alignContent: "center",
       }}
     >
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">

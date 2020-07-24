@@ -10,6 +10,7 @@ const EllipseStyle = {
     top: "21px",
     backgroundColor: "whitesmoke",
     borderRadius: "50%",
+    marginLeft: "1.4rem",
     // background: url(Training1.png),
   },
   modalRoot: {
