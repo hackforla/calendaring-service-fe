@@ -14,6 +14,7 @@
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-animate-on-scroll": "2.1.5",
+    "react-card-flip": "^1.0.11",
     "react-datetime": "2.16.3",
     "react-dom": "16.13.1",
     "react-google-maps": "9.4.5",
