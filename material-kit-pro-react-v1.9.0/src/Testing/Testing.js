@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Rectangle from "views/Rectangle/Rectangle";
-import Ellipse from "views/Ellipse/Ellipse";
+import Rectangle from "./Rectangle/Rectangle";
+import Ellipse from "./Ellipse/Ellipse";
 import ReactCardFlip from "react-card-flip";
 import { makeStyles } from "@material-ui/core/styles";
-import RectangleStyle from "./views/Rectangle/RectangleStyle";
+import RectangleStyle from "./Rectangle/RectangleStyle";
 
 const useStyles = makeStyles(RectangleStyle);
 
