@@ -1,0 +1,22 @@
+{
+  "grades": [
+    {
+      "name": "tim",
+      "course": "How To Be a Cat",
+      "grade": 100,
+      "id": 1
+    },
+    {
+      "name": "Tiggy",
+      "course": "How Not to be a Cat",
+      "grade": 50,
+      "id": 2
+    },
+    {
+      "name": "Himmy",
+      "course": "I'm an okay cat",
+      "grade": 75,
+      "id": 3
+    }
+  ]
+}

@@ -1,23 +1,21 @@
-require('dotenv/config');
-
-const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
-const clientPath = path.join(__dirname, 'client/');
-const publicPath = path.join(__dirname, 'server/public/');
+const srcPath = path.resolve(__dirname, 'client');
+const publicPath = path.resolve(__dirname, 'server/public');
 
 module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  entry: clientPath,
+  entry: './client',
   output: {
     path: publicPath
   },
   module: {
     rules: [
       {
-        test: /\.jsx/,
+        test: /\.jsx?$/,
+        include: srcPath,
         use: {
           loader: 'babel-loader',
           options: {
@@ -29,19 +27,15 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new Dotenv()
-  ],
   devtool: 'source-map',
   devServer: {
-    contentBase: publicPath,
-    historyApiFallback: true,
     host: '0.0.0.0',
-    port: process.env.DEV_SERVER_PORT,
-    proxy: {
-      '/api': `http://localhost:${process.env.PORT}`
-    },
+    port: 3000,
+    contentBase: publicPath,
+    watchContentBase: true,
     stats: 'minimal',
-    watchContentBase: true
+    proxy: {
+      '/api': 'http://localhost:3001'
+    }
   }
 };

@@ -1,34 +1,14 @@
-require('dotenv/config');
-const express = require('express');
-const db = require('./database');
-const ClientError = require('./client-error');
-const staticMiddleware = require('./static-middleware');
-const sessionMiddleware = require('./session-middleware');
+const path = require('path');
+const jsonServer = require('json-server');
 
-const app = express();
+const dbPath = path.resolve(__dirname, '../database/db.json');
+const server = jsonServer.create();
+const middleware = jsonServer.defaults();
+const endpoints = jsonServer.router(dbPath);
 
-app.use(staticMiddleware);
-app.use(sessionMiddleware);
-
-app.use(express.json());
-
-
-app.use('/api', (req, res, next) => {
-  next(new ClientError(`cannot ${req.method} ${req.originalUrl} `, 404));
-});
-
-app.use((err, req, res, next) => {
-  if (err instanceof ClientError) {
-    res.status(err.status).json({ error: err.message });
-  } else {
-    console.error(err);
-    res.status(500).json({
-      error: 'an unexpected error occurred'
-    });
-  }
-});
-
-app.listen(process.env.PORT, () => {
+server.use(middleware);
+server.use('/api', endpoints);
+server.listen(3001, () => {
   // eslint-disable-next-line no-console
-  console.log('Listening on port', process.env.PORT);
+  console.log('JSON Server listening on port 3001\n');
 });

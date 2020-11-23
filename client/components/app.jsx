@@ -1,6 +1,5 @@
 import React from 'react';
-
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,8 +8,8 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (
-      <h1>Hello there</h1>
-    );
+    <h1>Hello there</h1>
   }
 }
+
+export default App;
