@@ -1,26 +1,19 @@
 import React, { useState } from 'react';
-import Stepper from 'react-stepper-horizontal';
+import Stepper from './Stepper';
+import classes from './Success.module.scss';
 import { FaCheckCircle } from '../store/index';
 
 export default function Success() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <div>
-      <FaCheckCircle style={{ color: '#249BE5' }} />
+    <div className={classes.main}>
+      <FaCheckCircle
+        style={{ color: '#249BE5', height: '5rem', width: '5rem' }}
+      />
       <h1>Success!</h1>
       <h3>Your progress</h3>
-      <Stepper
-        steps={[
-          { title: 'Step One' },
-          { title: 'Step Two' },
-          { title: 'Step Three' },
-          { title: 'Step Four' },
-        ]}
-        activeStep={activeStep}
-      />
-      <button onClick={() => setActiveStep(activeStep - 1)}>Step--</button>
-      <button onClick={() => setActiveStep(activeStep + 1)}>Step++</button>
+      <Stepper />
       <p>
         Thanks for setting up your availability! We will use this information
         when you customize yoru meeting types. Visit your Dashboard and
