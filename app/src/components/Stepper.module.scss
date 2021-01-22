@@ -1,4 +1,11 @@
 .main {
+    width: 99%;
+    h3, p {
+        margin-left: 1rem;
+    }
+}
+
+.stepBar {
     background-color: #D9D9D9;
     height: 20px;
     width: 90%;
@@ -6,6 +13,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin: 0 auto;
 }
 
 .step,
@@ -17,6 +25,12 @@
     justify-content: center;
 
 
+}
+
+.dot {
+    color: white;
+    height: 3rem;
+    width: 3rem;
 }
 
 .step {

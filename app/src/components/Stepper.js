@@ -4,23 +4,39 @@ import classes from './Stepper.module.scss';
 
 export default function Stepper() {
   const [step, setStep] = useState(0);
-  const dots = [1, 2, 3, 4, 5, 6];
+  const dots = [0, 1, 2, 3, 4, 5];
+
+  function stepChanger(str) {
+    if (str === 'increment' && step < 5) {
+      setStep(step + 1);
+    }
+    if (str === 'decrement' && step > 0) {
+      setStep(step - 1);
+    }
+  }
   return (
-    <>
-      <div className={classes.main}>
+    <div className={classes.main}>
+      <h3>Your progress</h3>
+      <div className={classes.stepBar}>
         {dots.map((dot, i) => {
           return (
             <div
               className={i === step ? classes.stepSelected : classes.step}
               key={i}
             >
-              <BsDot style={{ color: 'white', height: '80%', width: '80%' }} />
+              <BsDot className={classes.dot} />
             </div>
           );
         })}
       </div>
-      <button onClick={() => setStep(step - 1)}>-</button>
-      <button onClick={() => setStep(step + 1)}>+</button>
-    </>
+      <p>
+        Step {step + 1} of {dots.length} complete.
+      </p>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <button onClick={() => stepChanger('decrement')}>-</button>
+        <button onClick={() => stepChanger('increment')}>+</button>
+        <small> ⬅ buttons for devs to play with progress bar</small>
+      </div>
+    </div>
   );
 }
