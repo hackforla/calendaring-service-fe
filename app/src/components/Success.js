@@ -6,9 +6,7 @@ import { FaCheckCircle } from '../store/index';
 export default function Success() {
   return (
     <div className={classes.main}>
-      <FaCheckCircle
-        className={classes.checkCircle}
-      />
+      <FaCheckCircle className={classes.checkCircle} />
       <h1>Success!</h1>
       <Stepper />
       <p>
