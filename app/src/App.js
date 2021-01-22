@@ -1,8 +1,8 @@
-
+import Success from './components/Success'
 
 function App() {
   return (
-    <h1>Calendaring service</h1>
+    <Success />
   );
 }
 
