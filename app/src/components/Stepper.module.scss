@@ -6,7 +6,7 @@
 }
 
 .stepBar {
-    background-color: #D9D9D9;
+    background-color: var(--background);
     height: 20px;
     width: 90%;
     border-radius: .8rem;
@@ -32,7 +32,7 @@
 }
 
 .step {
-    background: #D9D9D9;
+    background: var(--background);
 
     &:last-child {
         border-radius: 0 .8rem .8rem 0;
@@ -44,6 +44,6 @@
 }
 
 .stepSelected {
-    background: #249BE5;
+    background: var(--primary-accent);
     border-radius: .8rem;
 }
