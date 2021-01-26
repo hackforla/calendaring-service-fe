@@ -5,7 +5,7 @@ import Success from './components/Success/Success';
 function App() {
   return (
     <>
-      <Route path='/dashboard' component={Dashboard} />
+      <Route path='/' component={Dashboard} />
       <Route path='/success' component={Success} />
     </>
   );
