@@ -1,12 +1,12 @@
-import Dashboard from './components/Welcome/Dashboard'
-import Success from './components/Success/Success'
-
+import { Route } from 'react-router-dom';
+import Dashboard from './components/Welcome/Dashboard';
+import Success from './components/Success/Success';
 
 function App() {
   return (
     <>
-    <Dashboard />
-    {/* <Success /> */}
+      <Route path='/dashboard' component={Dashboard} />
+      <Route path='/success' component={Success} />
     </>
   );
 }
