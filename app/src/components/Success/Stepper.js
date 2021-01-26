@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsDot } from '../store/index';
+import { BsDot } from '../../store/index';
 import classes from './Stepper.module.scss';
 
 export default function Stepper() {

@@ -19,6 +19,29 @@ button {
   font-family: Roboto, sans-serif;
 }
 
+h1 {
+  font-size: 96px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 34px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;

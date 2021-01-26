@@ -1,5 +1,5 @@
-import Dashboard from './components/Dashboard'
-import Success from './components/Success'
+import Dashboard from './components/Welcome/Dashboard'
+import Success from './components/Success/Success'
 
 function App() {
   return (

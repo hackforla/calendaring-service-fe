@@ -1,7 +1,7 @@
 import React from 'react';
 import Stepper from './Stepper';
 import classes from './Success.module.scss';
-import { FaCheckCircle } from '../store/index';
+import { FaCheckCircle } from '../../store/index';
 
 export default function Success() {
   return (
