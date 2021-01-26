@@ -70,6 +70,7 @@ button {
   margin: 0.5rem;
   text-transform: uppercase;
   font-size: 18px;
+  width: 15rem;
 }
 
 button:hover {
