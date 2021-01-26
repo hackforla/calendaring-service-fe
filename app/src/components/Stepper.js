@@ -35,7 +35,7 @@ export default function Stepper() {
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <button onClick={() => stepChanger('decrement')}>-</button>
         <button onClick={() => stepChanger('increment')}>+</button>
-        <small> ⬅ buttons for devs to play with progress bar</small>
+        <p> ⬅ buttons for devs to play with progress bar</p>
       </div>
     </div>
   );

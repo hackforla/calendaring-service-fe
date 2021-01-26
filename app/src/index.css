@@ -1,7 +1,19 @@
+:root {
+  --primary-accent: #249BE5;
+  --disabled-accent:#ACD9F5;
+  --dark-grey: #595959;
+  --success: #287D3C;
+  --background: #e5e5e5;
+  --transition: all 0.5s ease-in-out;
+}
+
+h1,h2,h3,h4,h5,p {
+  font-family: Roboto, serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Roboto',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
