@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import logo from '../../store/images/Logo.png';
+import { images } from '../../store/index'
 import classes from './Header.module.scss';
 
 export default function Header() {
   const [selected, setSelected] = useState('Meeting Types');
+  
   return (
     <div className={classes.main}>
       <div className={classes.header}>
         <div className={classes.top}>
-          <img src={logo} alt='' />
+          <img src={images.logo.default} alt='logo' />
           <h4>My Dashboard</h4>
         </div>
         <div className={classes.bottom}>

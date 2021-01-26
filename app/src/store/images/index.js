@@ -1,3 +1,5 @@
-const logo = './Logo.png';
+const images = {
+  logo: require('./Logo.png'),
+};
 
-export { logo };
+export { images };
