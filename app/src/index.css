@@ -15,12 +15,10 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p,
 button {
   font-family: Roboto, sans-serif;
-}
-h5 {
-  font-family: Josefin Sans, serif;
 }
 h1 {
   font-size: 96px;
@@ -43,6 +41,17 @@ h4 {
 h5 {
   font-size: 24px;
   font-weight: 400;
+}
+h6 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+caption {
+  font-size: 12px;
 }
 
 body {
@@ -75,4 +84,8 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+.body-text {
+  text-align: center;
 }

@@ -7,9 +7,9 @@ export default function Success() {
   return (
     <div className={classes.main}>
       <FaCheckCircle className={classes.checkCircle} />
-      <h1>Success!</h1>
+      <h5>Success!</h5>
       <Stepper />
-      <p>
+      <p className="body-text">
         Thanks for setting up your availability! We will use this information
         when you customize your meeting types. Visit your Dashboard and
         personalize your meeting types to complete calendar set up.

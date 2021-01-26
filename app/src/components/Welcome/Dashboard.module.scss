@@ -2,14 +2,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h5 {
         text-align: center;
+        font-family: Josefin Sans, serif;
+
     }
 }
 
 .buttonContainer {
     margin: auto;
 }
+
 .placeholder {
     height: 200px;
     border: 1px solid gainsboro;

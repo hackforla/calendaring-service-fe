@@ -14,9 +14,10 @@ export default function Stepper() {
       setStep(step - 1);
     }
   }
+
   return (
     <div className={classes.main}>
-      <h3>Your progress</h3>
+      <h6>Your progress</h6>
       <div className={classes.stepBar}>
         {dots.map((dot, i) => {
           return (
@@ -29,7 +30,7 @@ export default function Stepper() {
           );
         })}
       </div>
-      <p>
+      <p className={classes.caption}>
         Step {step + 1} of {dots.length} complete.
       </p>
       <div style={{ display: 'flex', alignItems: 'center' }}>

@@ -1,8 +1,20 @@
 .main {
     width: 99%;
-    h3, p {
+
+    h3,
+    p {
         margin-left: 1rem;
     }
+
+    h6 {
+        margin: 1rem;
+    }
+}
+
+.caption {
+    margin: 1rem;
+    font-size: 12px;
+    width: 100%;
 }
 
 .stepBar {
