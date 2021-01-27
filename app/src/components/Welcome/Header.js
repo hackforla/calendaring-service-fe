@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { logo } from '../../store/images/index';
+import { logo } from '../../store/index';
 import classes from './Header.module.scss';
 
 export default function Header() {
