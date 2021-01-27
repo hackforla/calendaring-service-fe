@@ -20,6 +20,9 @@
     .noBorder {
         padding-bottom: 1rem;
         margin-bottom: 0;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .border {

@@ -8,7 +8,6 @@ export default function Dashboard() {
     <div className={classes.main}>
       <Header />
       <DashboardBody />
-      
     </div>
   );
 }
