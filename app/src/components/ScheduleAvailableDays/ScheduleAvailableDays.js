@@ -9,7 +9,7 @@ export default function ScheduleAvailableDays() {
       <div className={classes.main}>
         <div className={classes.top}>
           <img src={logo.default} className='logo' alt='logo' />
-          <h4>My Dashboard</h4>
+          <h4>Schedule Availability</h4>
         </div>
         <div className='body-text'>
           <p>What days are you typically available?</p>
@@ -18,6 +18,8 @@ export default function ScheduleAvailableDays() {
         </div>
       </div>
       <WeekDays />
+      <button>Cancel</button>
+      <button>Save & Next</button>
     </>
   );
 }

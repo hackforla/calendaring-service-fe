@@ -6,8 +6,7 @@ export default function WeekDays() {
   return (
     <>
       {weekDays.map((day, idx) => (
-          <Day day={day} key={idx} />
-        
+        <Day day={day} key={idx} />
       ))}
     </>
   );
