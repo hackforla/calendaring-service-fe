@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './ScheduleAvailableDays.module.scss';
-import { logo, weekDays } from '../../store/index';
+import WeekDays from './WeekDays';
+import { logo } from '../../store/index';
 
 export default function ScheduleAvailableDays() {
-  console.log(weekDays);
   return (
     <>
       <div className={classes.main}>
@@ -14,13 +14,10 @@ export default function ScheduleAvailableDays() {
         <div className='body-text'>
           <p>What days are you typically available?</p>
           <p>Select from below.</p>
+          <p>Select / Unselect All</p>
         </div>
       </div>
-      {weekDays.map((day, idx) => (
-        <div className={classes.day} key={idx}>
-          {day}
-        </div>
-      ))}
+      <WeekDays />
     </>
   );
 }
