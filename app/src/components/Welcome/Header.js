@@ -9,7 +9,7 @@ export default function Header() {
     <div className={classes.main}>
       <div className={classes.header}>
         <div className={classes.top}>
-          <img src={logo.default} alt='logo' />
+          <img src={logo.default} className='logo' alt='logo' />
           <h4>My Dashboard</h4>
         </div>
         <div className={classes.bottom}>
