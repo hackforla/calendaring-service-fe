@@ -11,11 +11,6 @@ export default function ScheduleAvailableDays() {
           <img src={logo.default} className='logo' alt='logo' />
           <h4>Schedule Availability</h4>
         </div>
-        <div className='body-text'>
-          <p>What days are you typically available?</p>
-          <p>Select from below.</p>
-          <p>Select / Unselect All</p>
-        </div>
       </div>
       <WeekDays />
       <button>Cancel</button>
