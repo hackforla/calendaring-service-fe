@@ -1,4 +1,4 @@
-const weekDays = [
+const daysOfTheWeek = [
   {day: 'Monday', selected: false},
   {day: 'Tuesday', selected: false},
   {day: 'Wednesday', selected: false},
@@ -8,4 +8,4 @@ const weekDays = [
   {day: 'Sunday', selected: false},
 ];
 
-export { weekDays };
+export { daysOfTheWeek };

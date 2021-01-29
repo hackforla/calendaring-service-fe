@@ -8,7 +8,7 @@ export default function Day({ day, selected, dispatch, idx }) {
       onClick={(e) => dispatch({ type: 'TOGGLE_SELECTED', payload: idx })}
     >
       <input type='checkbox' checked={selected} readOnly />
-      {day}
+      <p>{day}</p>
     </div>
   );
 }

@@ -3,14 +3,14 @@ function reducer(state, action) {
     case 'TOGGLE_SELECTED':
       return {
         ...state,
-        weekDays: state.weekDays.map((day, idx) =>
+        daysOfTheWeek: state.daysOfTheWeek.map((day, idx) =>
           action.payload === idx ? { ...day, selected: !day.selected } : day
         ),
       };
     case 'TOGGLE_ALL':
       return {
         ...state,
-        weekDays: state.weekDays.map((day) => ({
+        daysOfTheWeek: state.daysOfTheWeek.map((day) => ({
           ...day,
           selected: !day.selected,
         })),

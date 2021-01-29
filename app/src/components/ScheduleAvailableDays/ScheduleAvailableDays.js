@@ -1,18 +1,17 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import classes from './ScheduleAvailableDays.module.scss';
 import WeekDays from './WeekDays';
-import { logo } from '../../store/index';
-import { weekDays } from '../../store/index';
-import { reducer } from './reducer';
-const initialState = { weekDays };
+import { logo, daysOfTheWeek } from '../../store/index';
+import { reducer } from './helpers/reducer';
+const initialState = { daysOfTheWeek };
 
 export default function ScheduleAvailableDays() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   useEffect(() => {
-    setButtonDisabled(!state.weekDays.some((day) => day.selected));
-  }, [state.weekDays]);
+    setButtonDisabled(!state.daysOfTheWeek.some((day) => day.selected));
+  }, [state.daysOfTheWeek]);
 
   return (
     <>

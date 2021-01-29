@@ -3,4 +3,9 @@
     border-radius: .5rem;
     padding: 1rem;
     margin: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    p {
+        margin: 0 1rem;
+    }
 }
