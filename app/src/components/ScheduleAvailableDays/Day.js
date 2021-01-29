@@ -7,11 +7,7 @@ export default function Day({ day, selected, dispatch, idx }) {
       className={classes.day}
       onClick={(e) => dispatch({ type: 'TOGGLE_SELECTED', payload: idx })}
     >
-      <input
-        type='checkbox'
-        checked={selected}
-        onChange={(e) => dispatch({ type: 'TOGGLE_SELECTED', payload: idx })}
-      />
+      <input type='checkbox' checked={selected} readOnly />
       {day}
     </div>
   );
