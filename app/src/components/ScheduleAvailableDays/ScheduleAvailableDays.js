@@ -3,6 +3,7 @@ import classes from './ScheduleAvailableDays.module.scss';
 import WeekDays from './WeekDays';
 import { logo, daysOfTheWeek } from '../../store/index';
 import { reducer } from './helpers/reducer';
+import Button from '@material-ui/core/Button';
 const initialState = { daysOfTheWeek };
 
 export default function ScheduleAvailableDays() {
@@ -23,19 +24,17 @@ export default function ScheduleAvailableDays() {
         <div className='body-text'>
           <p>What days are you typically available?</p>
           <p>Select from below.</p>
-          <p onClick={() => dispatch({ type: 'TOGGLE_ALL' })}>
+          <Button onClick={() => dispatch({ type: 'TOGGLE_ALL' })}>
+            {' '}
             Select / Unselect All
-          </p>
+          </Button>
         </div>
       </div>
       <WeekDays state={state} dispatch={dispatch} />
-      <button>Cancel</button>
-      <button
-        disabled={buttonDisabled}
-        className={buttonDisabled ? classes.disabled : classes.enabled}
-      >
-        Save & Next
-      </button>
+      <div className={classes.buttonContainer}>
+        <Button disabled={buttonDisabled}>cancel</Button>
+        <Button color='primary'>save & next</Button>
+      </div>
     </>
   );
 }
