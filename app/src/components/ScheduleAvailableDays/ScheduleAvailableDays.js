@@ -4,10 +4,8 @@ import WeekDays from './WeekDays';
 import { logo, daysOfTheWeek } from '../../store/index';
 import { reducer } from './helpers/reducer';
 
-
 import Button from '@material-ui/core/Button';
 const initialState = { daysOfTheWeek };
-
 
 export default function ScheduleAvailableDays() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -27,7 +25,11 @@ export default function ScheduleAvailableDays() {
         <div className='body-text'>
           <p>What days are you typically available?</p>
           <p>Select from below.</p>
-          <Button onClick={() => dispatch({ type: 'TOGGLE_ALL' })}>
+          <Button
+            onClick={() =>
+              dispatch({ type: 'TOGGLE_ALL', payload: !buttonDisabled })
+            }
+          >
             {' '}
             Select / Unselect All
           </Button>
