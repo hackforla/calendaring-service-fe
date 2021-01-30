@@ -3,8 +3,11 @@ import classes from './ScheduleAvailableDays.module.scss';
 import WeekDays from './WeekDays';
 import { logo, daysOfTheWeek } from '../../store/index';
 import { reducer } from './helpers/reducer';
+
+
 import Button from '@material-ui/core/Button';
 const initialState = { daysOfTheWeek };
+
 
 export default function ScheduleAvailableDays() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -32,8 +35,12 @@ export default function ScheduleAvailableDays() {
       </div>
       <WeekDays state={state} dispatch={dispatch} />
       <div className={classes.buttonContainer}>
-        <Button disabled={buttonDisabled}>cancel</Button>
-        <Button color='primary'>save & next</Button>
+        <Button size='large' disabled={buttonDisabled}>
+          cancel
+        </Button>
+        <Button size='large' color='primary'>
+          save & next
+        </Button>
       </div>
     </>
   );

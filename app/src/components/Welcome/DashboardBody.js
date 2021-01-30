@@ -1,5 +1,7 @@
 import React from 'react';
-import classes from './DashboardBody.module.scss'
+import classes from './DashboardBody.module.scss';
+import Button from '@material-ui/core/Button';
+
 export default function DashboardBody() {
   return (
     <>
@@ -10,7 +12,9 @@ export default function DashboardBody() {
         customize your meeting types.
       </p>
       <div className={classes.buttonContainer}>
-        <button>let's get started</button>
+        <Button variant='outlined' color='primary'>
+          let's get started
+        </Button>
       </div>
     </>
   );

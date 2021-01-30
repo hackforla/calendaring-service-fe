@@ -12,7 +12,7 @@ function reducer(state, action) {
         ...state,
         daysOfTheWeek: state.daysOfTheWeek.map((day) => ({
           ...day,
-          selected: !day.selected,
+          selected: true,
         })),
       };
     default:
