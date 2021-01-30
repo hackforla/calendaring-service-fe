@@ -1,12 +1,12 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { logo, daysOfTheWeek } from '../../store/index';
 import { reducer } from './helpers/reducer';
-import classes from './ScheduleAvailableDays.module.scss';
-import WeekDays from './WeekDays';
+import classes from './ScheduleAvailability.module.scss';
+import ScheduleAvailableDays from './ScheduleAvailableDays';
 import Button from '@material-ui/core/Button';
 const initialState = { daysOfTheWeek };
 
-export default function ScheduleAvailableDays() {
+export default function ScheduleAvailability() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [isEverySlected, setIsEverySelected] = useState(false);
@@ -23,20 +23,14 @@ export default function ScheduleAvailableDays() {
           <img src={logo.default} className='logo' alt='logo' />
           <h4>Schedule Availability</h4>
         </div>
-        
-          <p>What days are you typically available?</p>
-          <p>Select from below.</p>
-          <Button
-            onClick={() =>
-              dispatch({ type: 'TOGGLE_ALL', payload: isEverySlected })
-            }
-          >
-            {' '}
-            Select / Unselect All
-          </Button>
-        
+        <p>What days are you typically available?</p>
+        <p>Select from below.</p>
       </div>
-      <WeekDays state={state} dispatch={dispatch} />
+      <ScheduleAvailableDays
+        state={state}
+        dispatch={dispatch}
+        isEverySlected={isEverySlected}
+      />
       <div className={classes.buttonContainer}>
         <Button size='large'>cancel</Button>
         <Button size='large' color='primary' disabled={buttonDisabled}>

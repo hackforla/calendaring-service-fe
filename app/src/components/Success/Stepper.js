@@ -33,10 +33,24 @@ export default function Stepper() {
       <p className={classes.caption}>
         Step {step + 1} of {dots.length} complete.
       </p>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <button onClick={() => stepChanger('decrement')}>-</button>
-        <button onClick={() => stepChanger('increment')}>+</button>
-        <p> ⬅ buttons for devs to play with progress bar</p>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          border: '1px dashed blue',
+        }}
+      >
+        <button disabled={step === 0} onClick={() => stepChanger('decrement')}>
+          -
+        </button>
+        <button disabled={step === 5} onClick={() => stepChanger('increment')}>
+          +
+        </button>
+        <p style={{ fontSize: '14px' }}>
+          {' '}
+          ⬅ buttons for devs to play with progress bar
+        </p>
       </div>
     </div>
   );
