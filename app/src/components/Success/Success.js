@@ -15,8 +15,8 @@ export default function Success() {
         when you customize your meeting types. Visit your Dashboard and
         personalize your meeting types to complete calendar set up.
       </p>
-      <Button variant='outlined' color='primary'>
-        Complete setup
+      <Button variant='contained' color='primary'>
+        complete setup
       </Button>
     </div>
   );

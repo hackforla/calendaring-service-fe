@@ -12,7 +12,7 @@ export default function DashboardBody() {
         customize your meeting types.
       </p>
       <div className={classes.buttonContainer}>
-        <Button variant='outlined' color='primary'>
+        <Button variant='contained' color='primary'>
           let's get started
         </Button>
       </div>

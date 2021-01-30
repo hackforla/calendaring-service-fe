@@ -1,9 +1,15 @@
 .main {
     display: flex;
     flex-direction: column;
+
     img {
         padding-right: 0;
     }
+
+    h4 {
+        margin: 2rem 0;
+    }
+
     p {
         margin: 0 auto;
         padding-left: 3rem;
