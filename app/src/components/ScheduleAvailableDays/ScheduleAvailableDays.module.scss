@@ -1,7 +1,17 @@
 .main {
     display: flex;
     flex-direction: column;
+    img {
+        padding-right: 0;
+    }
+    p {
+        margin: 0 auto;
+        padding-left: 3rem;
+        width: 100%;
+        text-align: left;
+    }
 }
+
 .top {
     display: flex;
     align-items: center;
@@ -18,4 +28,3 @@
     float: right;
     padding: 1rem 3rem;
 }
-

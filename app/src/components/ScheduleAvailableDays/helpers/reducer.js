@@ -8,7 +8,7 @@ function reducer(state, action) {
         ),
       };
     case 'TOGGLE_ALL':
-      console.log(action.payload)
+      // console.log(action.payload)
       return {
         ...state,
         daysOfTheWeek: state.daysOfTheWeek.map((day) => ({
