@@ -1,0 +1,36 @@
+.main {
+    display: flex;
+    flex-direction: column;
+
+    img {
+        padding-right: 0;
+    }
+
+    h4 {
+        margin: 2rem 0;
+    }
+
+    p {
+        margin: 0 auto;
+        padding-left: 3rem;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.disabled {
+    background: gray;
+    cursor: wait;
+}
+
+.buttonContainer {
+    float: right;
+    padding: 1rem 3rem;
+}

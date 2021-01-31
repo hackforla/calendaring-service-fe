@@ -1,12 +1,24 @@
 .main {
     width: 99%;
-    h3, p {
+
+    h3,
+    p {
         margin-left: 1rem;
+    }
+
+    h6 {
+        margin: 1rem;
     }
 }
 
+.caption {
+    margin: 1rem;
+    font-size: 12px;
+    width: 100%;
+}
+
 .stepBar {
-    background-color: #D9D9D9;
+    background-color: var(--background);
     height: 20px;
     width: 90%;
     border-radius: .8rem;
@@ -16,6 +28,12 @@
     margin: 0 auto;
 }
 
+.dot {
+    color: white;
+    height: 3rem;
+    width: 3rem;
+}
+
 .step,
 .stepSelected {
     width: 100%;
@@ -23,18 +41,10 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-
-
-}
-
-.dot {
-    color: white;
-    height: 3rem;
-    width: 3rem;
 }
 
 .step {
-    background: #D9D9D9;
+    background: var(--background);
 
     &:last-child {
         border-radius: 0 .8rem .8rem 0;
@@ -46,6 +56,6 @@
 }
 
 .stepSelected {
-    background: #249BE5;
+    background: var(--primary-accent);
     border-radius: .8rem;
 }

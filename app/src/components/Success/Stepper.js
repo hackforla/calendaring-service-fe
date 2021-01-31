@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsDot } from '../store/index';
+import { BsDot } from '../../store/index';
 import classes from './Stepper.module.scss';
 
 export default function Stepper() {
@@ -14,9 +14,10 @@ export default function Stepper() {
       setStep(step - 1);
     }
   }
+
   return (
     <div className={classes.main}>
-      <h3>Your progress</h3>
+      <h6>Your progress</h6>
       <div className={classes.stepBar}>
         {dots.map((dot, i) => {
           return (
@@ -29,13 +30,27 @@ export default function Stepper() {
           );
         })}
       </div>
-      <p>
+      <p className={classes.caption}>
         Step {step + 1} of {dots.length} complete.
       </p>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <button onClick={() => stepChanger('decrement')}>-</button>
-        <button onClick={() => stepChanger('increment')}>+</button>
-        <small> ⬅ buttons for devs to play with progress bar</small>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          border: '1px dashed blue',
+        }}
+      >
+        <button disabled={step === 0} onClick={() => stepChanger('decrement')}>
+          -
+        </button>
+        <button disabled={step === 5} onClick={() => stepChanger('increment')}>
+          +
+        </button>
+        <p style={{ fontSize: '14px' }}>
+          {' '}
+          ⬅ buttons for devs to play with progress bar
+        </p>
       </div>
     </div>
   );
