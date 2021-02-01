@@ -9,11 +9,11 @@ const daysOfTheWeek = [
 ];
 
 const meetingTypes = [
-  'Training',
-  'Interview',
-  'Home Inspection',
-  'Home Selection',
-  'Home Visit',
+  {type: 'Training', updateNeeded: false},
+  {type: 'Interview', updateNeeded: true},
+  {type: 'Home Inspection', updateNeeded: true},
+  {type: 'Home Selection', updateNeeded: false},
+  {type: 'Home Visit', updateNeeded: true},
 ];
 
 export { daysOfTheWeek, meetingTypes };

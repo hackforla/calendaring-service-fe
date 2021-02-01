@@ -10,7 +10,7 @@ export default function MeetingTypes() {
       <Header />
       <Stepper />
       {meetingTypes.map((type, i) => (
-        <MeetingType type={type} key={i} />
+        <MeetingType type={type.type} updateNeeded={type.updateNeeded} key={i} />
       ))}
     </div>
   );

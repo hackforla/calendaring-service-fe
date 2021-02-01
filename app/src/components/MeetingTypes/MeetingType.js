@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MeetingType({ type }) {
+export default function MeetingType({ type, updateNeeded }) {
   const classes = useStyles();
   return (
     <Card className={classes.root} variant='outlined'>
@@ -46,10 +46,12 @@ export default function MeetingType({ type }) {
               className={classes.icon}
               style={{ height: '48px', width: '48px' }}
             />
-            <RadioButtonCheckedIcon
-              className={classes.icon}
-              style={{ position: 'absolute', right: '-16px' }}
-            />
+            {updateNeeded && (
+              <RadioButtonCheckedIcon
+                className={classes.icon}
+                style={{ position: 'absolute', right: '-16px' }}
+              />
+            )}
           </div>
         </div>
       </CardContent>
