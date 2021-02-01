@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 export default function MeetingType({ type, updateNeeded }) {
   const classes = useStyles();
   return (
-    <Card className={classes.root} variant='outlined'>
+    <Card className={classes.root}>
       <CardContent>
         <h4 className={classes.title} color='textSecondary' gutterBottom>
           {type}
