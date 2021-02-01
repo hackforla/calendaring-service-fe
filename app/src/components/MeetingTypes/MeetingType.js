@@ -30,7 +30,7 @@ export default function MeetingType({ type, updateNeeded }) {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <h4 className={classes.title} color='textSecondary' gutterBottom>
+        <h4 className={classes.title} color='textSecondary'>
           {type}
         </h4>
         <div

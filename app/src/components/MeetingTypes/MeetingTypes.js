@@ -9,6 +9,10 @@ export default function MeetingTypes() {
     <div>
       <Header />
       <Stepper />
+      <p className="caption">
+      To complete your setup, you must update your preferences for all the below meetings.
+
+      </p>
       {meetingTypes.map((type, i) => (
         <MeetingType type={type.type} updateNeeded={type.updateNeeded} key={i} />
       ))}

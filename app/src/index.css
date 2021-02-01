@@ -54,6 +54,12 @@ caption {
   font-size: 12px;
 }
 
+.caption {
+  margin: 1rem;
+  font-size: 12px;
+  width: 90%;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
