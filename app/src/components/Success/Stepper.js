@@ -34,7 +34,8 @@ export default function Stepper() {
       <p className={classes.caption}>
         Step {step + 1} of {dots.length} complete.
       </p>
-      {/* <ForDevsEyesOnly step={step} stepChanger={stepChanger} /> */}
+      {/* Uncomment the component below to test the progress bar */}
+        
     </div>
   );
 }
