@@ -60,6 +60,26 @@ caption {
   width: 90%;
 }
 
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.body2 {
+  font-size: 14px;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
