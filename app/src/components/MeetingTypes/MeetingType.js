@@ -10,10 +10,11 @@ const useStyles = makeStyles({
     minWidth: 275,
     borderTop: '15px solid #3D8EFF',
     margin: '1rem',
+    padding: '1rem'
   },
   title: {
     fontSize: 24,
-    margin: '1rem 0 .5rem',
+    margin: '0',
     fontWeight: '700',
   },
   body: {
@@ -21,7 +22,8 @@ const useStyles = makeStyles({
     color: '#249BE5',
   },
   icon: {
-    color: '#249be5',
+    height: '48px',
+    width: '48px',
   },
 });
 
@@ -42,14 +44,11 @@ export default function MeetingType({ type, updateNeeded }) {
         >
           <h6 className={classes.body}>Set your preferences</h6>
           <div style={{ position: 'relative' }}>
-            <AddCircleIcon
-              className={classes.icon}
-              style={{ height: '48px', width: '48px' }}
-            />
+            <AddCircleIcon className={classes.icon} color='primary' />
             {updateNeeded && (
               <RadioButtonCheckedIcon
-                className={classes.icon}
-                style={{ position: 'absolute', right: '-16px' }}
+                color='primary'
+                style={{ position: 'absolute', right: '-15px', top: '-5px' }}
               />
             )}
           </div>

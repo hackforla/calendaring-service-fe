@@ -21,7 +21,7 @@ export default function MeetingTypes() {
           key={i}
         />
       ))}
-      <HelpIcon />
+      <HelpIcon color='primary' style={{ height: '4rem', width: '4rem', margin: '0 1rem' }} />
     </div>
   );
 }
