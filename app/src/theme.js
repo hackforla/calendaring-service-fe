@@ -27,6 +27,12 @@ export const theme = createMuiTheme({
         backgroundColor: 'yellow',
       },
     },
+    MuiIcon: {
+      root: {
+        height: '3rem',
+        width: '3rem',
+      }
+    }
   },
   props: {
     MuiButton: {

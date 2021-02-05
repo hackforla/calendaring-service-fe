@@ -1,13 +1,16 @@
 import React from 'react';
 import Stepper from './Stepper';
 import classes from './Success.module.scss';
-import { FaCheckCircle } from '../../store/index';
+import { CheckCircleIcon } from '../../store/index';
 import Button from '@material-ui/core/Button';
 
 export default function Success() {
   return (
     <div className={classes.main}>
-      <FaCheckCircle className={classes.checkCircle} />
+      <CheckCircleIcon
+        className={classes.checkCircle}
+        style={{ height: '5rem', width: '5rem' }}
+      />
       <h5>Success!</h5>
       <Stepper />
       <p className='body-text'>

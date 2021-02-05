@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsDot } from '../../store/index';
+import { FiberManualRecordIcon } from '../../store/index';
 import ForDevsEyesOnly from './ForDevsEyesOnly';
 import classes from './Stepper.module.scss';
 
@@ -26,7 +26,10 @@ export default function Stepper() {
               className={i === step ? classes.stepSelected : classes.step}
               key={i}
             >
-              <BsDot className={classes.dot} />
+              <FiberManualRecordIcon
+                style={{ height: '1rem' }}
+                className={classes.dot}
+              />
             </div>
           );
         })}
@@ -35,7 +38,6 @@ export default function Stepper() {
         Step {step + 1} of {dots.length} complete.
       </p>
       {/* Uncomment the component below to test the progress bar */}
-        
     </div>
   );
 }
