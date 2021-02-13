@@ -35,11 +35,14 @@ const formFields = [
   },
   {
     name: 'Meeting Color',
-    inputs: ['Red', 'Pink', 'Purple', 'Blue', 'Green'],
-  },
-  {
-    name: 'Description',
+    inputs: [
+      { name: 'Red', hex: 'red' },
+      { name: 'Pink', hex: 'pink' },
+      { name: 'Purple', hex: 'purple' },
+      { name: 'Blue', hex: 'blue' },
+      { name: 'Green', hex: 'green' },
+    ],
   },
 ];
 
-export { daysOfTheWeek, meetingTypes };
+export { daysOfTheWeek, meetingTypes, formFields };

@@ -5,11 +5,15 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import InputBase from '@material-ui/core/InputBase';
+import { formFields } from '../../store/index';
+import { Input } from '@material-ui/core';
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -38,7 +42,7 @@ export default function Form() {
     setMyState(myNewState);
   };
 
-  console.log(myState);
+  console.log(formFields);
 
   return (
     <div style={{ padding: '1rem' }}>
@@ -48,9 +52,8 @@ export default function Form() {
           labelId=''
           id='demo-simple-select'
           onChange={handleChange}
-          value={myState.meetingName || ''}
+          value={myState.meetingName}
           input={<BootstrapInput />}
-          
           name='meetingName'
         >
           <MenuItem value={10}>Ten</MenuItem>
@@ -64,9 +67,9 @@ export default function Form() {
           labelId=''
           id='demo-simple-select'
           onChange={handleChange}
-          value={myState.location || ''}
+          value={myState.location}
           input={<BootstrapInput />}
-          required={true}
+          // required={true}
           name='location'
         >
           <MenuItem value='in person meeting'>In person meeting</MenuItem>
@@ -80,7 +83,7 @@ export default function Form() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={myState.checkedA || false}
+              checked={myState.checkedA}
               onChange={handleChange}
               name='checkedA'
               color='primary'
@@ -112,11 +115,11 @@ export default function Form() {
             required={true}
             name='duration'
           >
-            <MenuItem value={15}>15 min</MenuItem>
-            <MenuItem value={30}>30 min</MenuItem>
-            <MenuItem value={45}>45 min</MenuItem>
-            <MenuItem value={60}>60 min</MenuItem>
-            <MenuItem value={90}>90 min</MenuItem>
+            {formFields[3].inputs.map((input) => (
+              <MenuItem key={input} value={input}>
+                {input} min
+              </MenuItem>
+            ))}
           </Select>
 
           <FormHelperText>Meeting Color</FormHelperText>
@@ -129,12 +132,17 @@ export default function Form() {
             required={true}
             name='color'
           >
-            <MenuItem value=''>please select a value</MenuItem>
-            <MenuItem value='red'>Red</MenuItem>
-            <MenuItem value='pink'>Pink</MenuItem>
-            <MenuItem value='purple'>Purple</MenuItem>
-            <MenuItem value='blue'>Blue</MenuItem>
-            <MenuItem value='green'>Green</MenuItem>
+            {formFields[4].inputs.map(({ name, hex }) => (
+              <MenuItem key={name} value={name}>
+                <ListItemIcon>
+                  <FiberManualRecordIcon
+                    fontSize='large'
+                    style={{ color: `${hex}` }}
+                  />
+                </ListItemIcon>
+                {name}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
       </FormGroup>
