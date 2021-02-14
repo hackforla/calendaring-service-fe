@@ -18,30 +18,29 @@ import {
 } from '../../store/index';
 import { useStyles, BootstrapInput } from './FormStyles';
 
+let initialValues = {
+  meetingName: '',
+  location: '',
+  onSite: '',
+  duration: '',
+  color: '',
+  description: '',
+};
+
 export default function Form() {
-  const [meetingName, setMeetingName] = useState('');
-  const [location, setLocation] = useState('');
-  const [onSite, setonSite] = useState(false);
-  const [duration, setDuration] = useState('');
-  const [color, setColor] = useState('');
-  const [place, setPlace] = useState('');
-  const [description, setDescription] = useState('');
+  const [state, setState] = useState(initialValues);
   const classes = useStyles();
-  let values = {
-    meetingName,
-    location,
-    onSite,
-    duration,
-    color,
-    description,
-  };
-  let isFormComplete = Object.values(values).every((item) => item !== '');
-  
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(values);
+  let isFormComplete = Object.values(state).every((item) => item !== '');
+
+  function handleChange(e) {
+    setState({ ...state, [e.target.name]: e.target.value });
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(state);
+  }
+  
   return (
     <form action='submit' style={{ padding: '1rem' }} onSubmit={handleSubmit}>
       {/* MEETING NAME BEGIN */}
@@ -50,12 +49,13 @@ export default function Form() {
         <Select
           labelId=''
           id='demo-simple-select'
-          onChange={(e) => setMeetingName(e.target.value)}
+          onChange={(e) => handleChange(e)}
           defaultValue=''
-          value={meetingName}
+          value={state.meetingName}
           input={<BootstrapInput />}
           name='meetingName'
           IconComponent={KeyboardArrowDownIcon}
+          required
         >
           {formFields[0].inputs.map(({ type }) => (
             <MenuItem key={type} value={type}>
@@ -73,11 +73,12 @@ export default function Form() {
           labelId=''
           id='demo-simple-select'
           defaultValue=''
-          onChange={(e) => setLocation(e.target.value)}
-          value={location}
+          onChange={(e) => handleChange(e)}
+          value={state.location}
           input={<BootstrapInput />}
           name='location'
           IconComponent={KeyboardArrowDownIcon}
+          required
         >
           {formFields[1].inputs.map(({ name, icon }) => (
             <MenuItem key={name} value={name}>
@@ -101,8 +102,9 @@ export default function Form() {
           <RadioGroup
             aria-label='on-site'
             name='onSite'
-            onChange={(e) => setonSite(e.target.value)}
+            onChange={(e) => handleChange(e)}
             row
+            required
           >
             <FormControlLabel
               value={true}
@@ -110,14 +112,19 @@ export default function Form() {
                 <Radio
                   color='primary'
                   value={true}
-                  checked={onSite === 'true'}
+                  checked={state.onSite === 'true'}
                 />
               }
               label='Yes'
             />
             <FormControlLabel
               value={false}
-              control={<Radio color='primary' checked={onSite === 'false'} />}
+              control={
+                <Radio
+                  color='primary'
+                  checked={state.onSite === 'false'}
+                />
+              }
               label='No'
             />
           </RadioGroup>
@@ -126,15 +133,15 @@ export default function Form() {
       {/* ONSITE RADIO END */}
 
       {/* ONSITE LOCATION BEGIN */}
-      {onSite === 'true' && (
+      {state.onSite === 'true' && (
         <FormControl fullWidth={true}>
           <FormHelperText margin='dense'>On-site Location</FormHelperText>
           <Select
             labelId=''
             id='demo-simple-select'
-            onChange={(e) => setPlace(e.target.value)}
+            onChange={(e) => handleChange(e)}
             defaultValue=''
-            value={place}
+            value={state.place}
             input={<BootstrapInput />}
             name='place'
             IconComponent={KeyboardArrowDownIcon}
@@ -152,12 +159,12 @@ export default function Form() {
           <Select
             labelId=''
             id='demo-simple-select'
-            onChange={(e) => setDuration(e.target.value)}
-            value={duration}
+            onChange={(e) => handleChange(e)}
+            value={state.duration}
             className={classes.dropdown}
             defaultValue=''
             input={<BootstrapInput />}
-            required={true}
+            required
             name='duration'
             IconComponent={KeyboardArrowDownIcon}
           >
@@ -173,12 +180,12 @@ export default function Form() {
           <Select
             labelId=''
             id='demo-simple-select'
-            onChange={(e) => setColor(e.target.value)}
+            onChange={(e) => handleChange(e)}
             defaultValue=''
-            value={color}
+            value={state.color}
             className={classes.dropdown}
             input={<BootstrapInput />}
-            required={true}
+            required
             name='color'
             IconComponent={KeyboardArrowDownIcon}
           >
@@ -206,9 +213,10 @@ export default function Form() {
           defaultValue=''
           variant='outlined'
           name='description'
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={(e) => handleChange(e)}
           className={classes.root}
           style={{ border: '1px solid black', padding: '10px' }}
+          required
         />
       </FormControl>
       {/* DESCRIPTION END */}
