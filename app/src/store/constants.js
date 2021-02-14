@@ -1,3 +1,5 @@
+import { LocationOnIcon, VideocamIcon, PhoneIcon } from './index';
+
 const daysOfTheWeek = [
   { day: 'Monday', selected: false },
   { day: 'Tuesday', selected: false },
@@ -23,7 +25,17 @@ const formFields = [
   },
   {
     name: 'Location',
-    inputs: ['In person meeting', 'Web conference', 'Phone call'],
+    inputs: [
+      {
+        name: 'In person meeting',
+        icon: <LocationOnIcon size='large' color='primary' />,
+      },
+      {
+        name: 'Web conference',
+        icon: <VideocamIcon size='large' color='primary' />,
+      },
+      { name: 'Phone call', icon: <PhoneIcon size='large' color='primary' /> },
+    ],
   },
   {
     name: 'Is this meeting location on-site?',
@@ -36,11 +48,11 @@ const formFields = [
   {
     name: 'Meeting Color',
     inputs: [
-      { name: 'Red', hex: 'red' },
-      { name: 'Pink', hex: 'pink' },
-      { name: 'Purple', hex: 'purple' },
-      { name: 'Blue', hex: 'blue' },
-      { name: 'Green', hex: 'green' },
+      { name: 'Red', hex: '#FF3559' },
+      { name: 'Pink', hex: '#FF4F9E' },
+      { name: 'Purple', hex: '#8673FF' },
+      { name: 'Blue', hex: '#3D8EFF' },
+      { name: 'Green', hex: '#4FCB03' },
     ],
   },
 ];

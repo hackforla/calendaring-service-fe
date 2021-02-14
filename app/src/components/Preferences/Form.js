@@ -4,16 +4,15 @@ import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
+import { FiberManualRecordIcon } from '../../store/index'
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import InputBase from '@material-ui/core/InputBase';
 import { formFields } from '../../store/index';
-import { Input } from '@material-ui/core';
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -72,9 +71,32 @@ export default function Form() {
           // required={true}
           name='location'
         >
-          <MenuItem value='in person meeting'>In person meeting</MenuItem>
-          <MenuItem value='web conference'>Web conference</MenuItem>
-          <MenuItem value='phone call'>Phone call</MenuItem>
+          {formFields[1].inputs.map(({ name, icon }) => (
+            <MenuItem value='web conference'>
+              <ListItemIcon>
+                {icon}
+              </ListItemIcon>
+              {name}
+            </MenuItem>
+          ))}
+          {/* <MenuItem value='in person meeting'>
+            <ListItemIcon>
+              <LocationOnIcon size='large' color='primary' />
+            </ListItemIcon>
+            In person meeting
+          </MenuItem>
+          <MenuItem value='web conference'>
+            <ListItemIcon>
+              <VideocamIcon size='large' color='primary' />
+            </ListItemIcon>
+            Web conference
+          </MenuItem>
+          <MenuItem value='phone call'>
+            <ListItemIcon>
+              <PhoneIcon size='large' color='primary' />
+            </ListItemIcon>
+            Phone call
+          </MenuItem> */}
         </Select>
       </FormControl>
 
@@ -94,7 +116,7 @@ export default function Form() {
         <FormControlLabel
           control={
             <Checkbox
-              checked={myState.checkedB || false}
+              checked={myState.checkedB}
               onChange={handleChange}
               name='checkedB'
               color='primary'
