@@ -13,32 +13,34 @@ import {
   FormHelperText,
   Select,
   TextareaAutosize,
+  HelpIcon,
 } from '../../store/index';
 import { useStyles, BootstrapInput } from './FormStyles';
 
-const initialValues = {
-  meetingName: '',
-  location: '',
-  onSite: false,
-  duration: '',
-  color: '',
-  description: '',
-};
-
 export default function Form() {
-  const [myState, setMyState] = useState(initialValues);
+  const [meetingName, setMeetingName] = useState('');
+  const [location, setLocation] = useState('');
+  const [onSite, setonSite] = useState(false);
+  const [duration, setDuration] = useState('');
+  const [color, setColor] = useState('');
+  const [place, setPlace] = useState('');
+  const [description, setDescription] = useState('');
   const classes = useStyles();
-
-  function handleChange(event) {
-    initialValues[event.target.name] = event.target.value;
-  }
-
+  let values = {
+    meetingName,
+    location,
+    onSite,
+    duration,
+    color,
+    description,
+  };
+  let isFormComplete = Object.values(values).every((item) => item !== '');
+  
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(myState);
+    console.log(values);
   }
 
-  console.log(myState);
   return (
     <form action='submit' style={{ padding: '1rem' }} onSubmit={handleSubmit}>
       {/* MEETING NAME BEGIN */}
@@ -48,9 +50,9 @@ export default function Form() {
         <Select
           labelId=''
           id='demo-simple-select'
-          onChange={handleChange}
+          onChange={(e) => setMeetingName(e.target.value)}
           defaultValue=''
-          value={myState.meetingName}
+          value={meetingName}
           input={<BootstrapInput />}
           name='meetingName'
         >
@@ -70,8 +72,8 @@ export default function Form() {
           labelId=''
           id='demo-simple-select'
           defaultValue=''
-          onChange={handleChange}
-          value={myState.location}
+          onChange={(e) => setLocation(e.target.value)}
+          value={location}
           input={<BootstrapInput />}
           name='location'
         >
@@ -86,26 +88,35 @@ export default function Form() {
       {/* LOCATION END */}
 
       {/* ONSITE RADIO BEGIN */}
+      <div className='row space-between mt1'>
       <FormHelperText margin='dense'>
         Is this meeting location on-site?
       </FormHelperText>
+      <HelpIcon color='primary' />
+
+      </div>
       <FormGroup row>
         <FormControl component='fieldset'>
           <RadioGroup
             aria-label='on-site'
             name='onSite'
-            onChange={handleChange}
-            value={myState.onSite}
+            onChange={(e) => setonSite(e.target.value)}
             row
           >
             <FormControlLabel
               value={true}
-              control={<Radio color='primary' />}
+              control={
+                <Radio
+                  color='primary'
+                  value={true}
+                  checked={onSite === 'true'}
+                />
+              }
               label='Yes'
             />
             <FormControlLabel
               value={false}
-              control={<Radio color='primary' />}
+              control={<Radio color='primary' checked={onSite === 'false'} />}
               label='No'
             />
           </RadioGroup>
@@ -114,23 +125,19 @@ export default function Form() {
       {/* ONSITE RADIO END */}
 
       {/* ONSITE LOCATION BEGIN */}
-      {myState.onSite && (
+      {onSite === 'true' && (
         <FormControl fullWidth={true}>
-          <FormHelperText margin='dense'>Meeting name</FormHelperText>
+          <FormHelperText margin='dense'>On-site Location</FormHelperText>
           <Select
             labelId=''
             id='demo-simple-select'
-            onChange={handleChange}
+            onChange={(e) => setPlace(e.target.value)}
             defaultValue=''
-            value={myState.meetingName}
+            value={place}
             input={<BootstrapInput />}
-            name='meetingName'
+            name='place'
           >
-            {formFields[0].inputs.map(({ type }) => (
-              <MenuItem key={type} value={type}>
-                {type}
-              </MenuItem>
-            ))}
+            <MenuItem value='PSY Main Office'>PSY Main Office</MenuItem>
           </Select>
         </FormControl>
       )}
@@ -143,8 +150,8 @@ export default function Form() {
           <Select
             labelId=''
             id='demo-simple-select'
-            onChange={handleChange}
-            value={myState.duration}
+            onChange={(e) => setDuration(e.target.value)}
+            value={duration}
             className={classes.dropdown}
             defaultValue=''
             input={<BootstrapInput />}
@@ -163,9 +170,9 @@ export default function Form() {
           <Select
             labelId=''
             id='demo-simple-select'
-            onChange={handleChange}
+            onChange={(e) => setColor(e.target.value)}
             defaultValue=''
-            value={myState.color}
+            value={color}
             className={classes.dropdown}
             input={<BootstrapInput />}
             required={true}
@@ -195,7 +202,7 @@ export default function Form() {
           defaultValue=''
           variant='outlined'
           name='description'
-          onChange={handleChange}
+          onChange={(e) => setDescription(e.target.value)}
           className={classes.root}
           style={{ border: '1px solid black', padding: '10px' }}
         />
@@ -205,7 +212,7 @@ export default function Form() {
       {/* SUBMIT BEGIN */}
       <div>
         <Button size='large'>cancel</Button>
-        <Button size='large' type='submit' color='primary' disabled={false}>
+        <Button size='large' type='submit' color='primary' disabled={!isFormComplete}>
           save & next
         </Button>
       </div>
