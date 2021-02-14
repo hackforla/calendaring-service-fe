@@ -14,6 +14,7 @@ import {
   Select,
   TextareaAutosize,
   HelpIcon,
+  KeyboardArrowDownIcon,
 } from '../../store/index';
 import { useStyles, BootstrapInput } from './FormStyles';
 
@@ -46,7 +47,6 @@ export default function Form() {
       {/* MEETING NAME BEGIN */}
       <FormControl fullWidth={true}>
         <FormHelperText margin='dense'>Meeting name</FormHelperText>
-
         <Select
           labelId=''
           id='demo-simple-select'
@@ -55,6 +55,7 @@ export default function Form() {
           value={meetingName}
           input={<BootstrapInput />}
           name='meetingName'
+          IconComponent={KeyboardArrowDownIcon}
         >
           {formFields[0].inputs.map(({ type }) => (
             <MenuItem key={type} value={type}>
@@ -76,6 +77,7 @@ export default function Form() {
           value={location}
           input={<BootstrapInput />}
           name='location'
+          IconComponent={KeyboardArrowDownIcon}
         >
           {formFields[1].inputs.map(({ name, icon }) => (
             <MenuItem key={name} value={name}>
@@ -89,11 +91,10 @@ export default function Form() {
 
       {/* ONSITE RADIO BEGIN */}
       <div className='row space-between mt1'>
-      <FormHelperText margin='dense'>
-        Is this meeting location on-site?
-      </FormHelperText>
-      <HelpIcon color='primary' />
-
+        <FormHelperText margin='dense'>
+          Is this meeting location on-site?
+        </FormHelperText>
+        <HelpIcon color='primary' />
       </div>
       <FormGroup row>
         <FormControl component='fieldset'>
@@ -136,6 +137,7 @@ export default function Form() {
             value={place}
             input={<BootstrapInput />}
             name='place'
+            IconComponent={KeyboardArrowDownIcon}
           >
             <MenuItem value='PSY Main Office'>PSY Main Office</MenuItem>
           </Select>
@@ -157,6 +159,7 @@ export default function Form() {
             input={<BootstrapInput />}
             required={true}
             name='duration'
+            IconComponent={KeyboardArrowDownIcon}
           >
             {formFields[3].inputs.map((input) => (
               <MenuItem key={input} value={input}>
@@ -177,6 +180,7 @@ export default function Form() {
             input={<BootstrapInput />}
             required={true}
             name='color'
+            IconComponent={KeyboardArrowDownIcon}
           >
             {formFields[4].inputs.map(({ name, hex }) => (
               <MenuItem key={name} value={name}>
@@ -212,7 +216,12 @@ export default function Form() {
       {/* SUBMIT BEGIN */}
       <div>
         <Button size='large'>cancel</Button>
-        <Button size='large' type='submit' color='primary' disabled={!isFormComplete}>
+        <Button
+          size='large'
+          type='submit'
+          color='primary'
+          disabled={!isFormComplete}
+        >
           save & next
         </Button>
       </div>
