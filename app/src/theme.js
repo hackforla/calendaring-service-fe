@@ -37,21 +37,5 @@ export const theme = createMuiTheme({
         color: '#249be5',
       },
     },
-    icon: {},
   },
-  // props: {
-  //   MuiButton: {
-  //     disableRipple: true,
-  //     color: 'primary',
-  //   },
-  //   MuiCheckbox: {
-  //     disableRipple: true,
-  //   },
-  //   MuiTextField: {
-  //     variant: 'filled',
-  //     InputLabelProps: {
-  //       shrink: true,
-  //     },
-  //   },
-  // },
 });

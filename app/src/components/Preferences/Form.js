@@ -8,7 +8,10 @@ import { FiberManualRecordIcon } from '../../store/index';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Checkbox from '@material-ui/core/Checkbox';
-
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormLabel from '@material-ui/core/FormLabel';
+import OK from './OK';
 import { makeStyles } from '@material-ui/core/styles';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
@@ -43,7 +46,7 @@ const useStyles = makeStyles({
     fontSize: '14px',
   },
   icon: {
-    minWidth: 0,
+    minWidth: 10,
     paddingRight: 10,
   },
   selectRow: {
@@ -52,8 +55,8 @@ const useStyles = makeStyles({
     marginBottom: 20,
   },
   select: {
-    display: 'flex',
-    flex: 1,
+    padding: 1,
+    width: '48%',
     minWidth: 150,
   },
 });
@@ -64,13 +67,17 @@ export default function Form() {
   const handleChange = (event) => {
     let myNewState = myState;
     myNewState[event.target.name] = event.target.value;
-    console.log(myNewState);
     setMyState(myNewState);
   };
+
+  function handleSubmit(e) {
+    console.log('yeah');
+  }
   return (
-    <div style={{ padding: '1rem' }}>
+    <form action='' style={{ padding: '1rem' }} onSubmit={handleSubmit}>
       <FormControl fullWidth={true}>
-        <FormHelperText>Meeting name</FormHelperText>
+        <FormHelperText margin='dense'>Meeting name</FormHelperText>
+        {/* <FormLabel component='legend'>Meeting name</FormLabel> */}
         <Select
           labelId=''
           id='demo-simple-select'
@@ -88,7 +95,8 @@ export default function Form() {
         </Select>
       </FormControl>
       <FormControl fullWidth={true}>
-        <FormHelperText>Location</FormHelperText>
+        <FormHelperText margin='dense'>Location</FormHelperText>
+        {/* <FormLabel component='legend'>Location</FormLabel> */}
         <Select
           labelId=''
           id='demo-simple-select'
@@ -106,20 +114,12 @@ export default function Form() {
           ))}
         </Select>
       </FormControl>
-      <FormHelperText>Is this meeting location on-site?</FormHelperText>
+      <FormHelperText margin='dense'>
+        Is this meeting location on-site?
+      </FormHelperText>
+
       <FormGroup row>
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={myState.checkedA}
-              onChange={handleChange}
-              name='checkedA'
-              color='primary'
-            />
-          }
-          label='Yes'
-        />
-        <FormControlLabel
+        {/* <FormControlLabel
           control={
             <Checkbox
               checked={myState.checkedB}
@@ -129,10 +129,31 @@ export default function Form() {
             />
           }
           label='No'
-        />
+        /> */}
+        <FormControl component='fieldset'>
+          {/* <FormLabel component='legend'>Is this meeting on-site?</FormLabel> */}
+          <RadioGroup
+            aria-label='on-site'
+            name='onSite'
+            onChange={handleChange}
+            value={myState.onSite}
+            row
+          >
+            <FormControlLabel
+              value='true'
+              control={<Radio color='primary' />}
+              label='Yes'
+            />
+            <FormControlLabel
+              value='false'
+              control={<Radio color='primary' />}
+              label='No'
+            />
+          </RadioGroup>
+        </FormControl>
       </FormGroup>
       <FormGroup row className={classes.selectRow}>
-        <FormControl>
+        <FormControl className={classes.select}>
           <FormHelperText>Duration</FormHelperText>
           <Select
             labelId=''
@@ -143,7 +164,6 @@ export default function Form() {
             input={<BootstrapInput />}
             required={true}
             name='duration'
-            className={classes.select}
           >
             {formFields[3].inputs.map((input) => (
               <MenuItem key={input} value={input}>
@@ -152,7 +172,7 @@ export default function Form() {
             ))}
           </Select>
         </FormControl>
-        <FormControl>
+        <FormControl className={classes.select}>
           <FormHelperText>Meeting Color</FormHelperText>
           <Select
             labelId=''
@@ -163,7 +183,6 @@ export default function Form() {
             input={<BootstrapInput />}
             required={true}
             name='color'
-            className={classes.select}
           >
             {formFields[4].inputs.map(({ name, hex }) => (
               <MenuItem key={name} value={name}>
@@ -199,6 +218,6 @@ export default function Form() {
           save & next
         </Button>
       </div>
-    </div>
+    </form>
   );
 }
