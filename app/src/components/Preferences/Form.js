@@ -46,6 +46,16 @@ const useStyles = makeStyles({
     minWidth: 0,
     paddingRight: 10,
   },
+  selectRow: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  select: {
+    display: 'flex',
+    flex: 1,
+    minWidth: 150,
+  },
 });
 
 export default function Form() {
@@ -121,7 +131,7 @@ export default function Form() {
           label='No'
         />
       </FormGroup>
-      <FormGroup row >
+      <FormGroup row className={classes.selectRow}>
         <FormControl>
           <FormHelperText>Duration</FormHelperText>
           <Select
@@ -133,6 +143,7 @@ export default function Form() {
             input={<BootstrapInput />}
             required={true}
             name='duration'
+            className={classes.select}
           >
             {formFields[3].inputs.map((input) => (
               <MenuItem key={input} value={input}>
@@ -152,6 +163,7 @@ export default function Form() {
             input={<BootstrapInput />}
             required={true}
             name='color'
+            className={classes.select}
           >
             {formFields[4].inputs.map(({ name, hex }) => (
               <MenuItem key={name} value={name}>
@@ -164,7 +176,7 @@ export default function Form() {
           </Select>
         </FormControl>
       </FormGroup>
-      
+
       <FormControl fullWidth={true}>
         <FormHelperText>Description</FormHelperText>
         <TextareaAutosize
