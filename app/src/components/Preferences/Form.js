@@ -1,83 +1,50 @@
 import React, { useState } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import { FiberManualRecordIcon } from '../../store/index';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Checkbox from '@material-ui/core/Checkbox';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormLabel from '@material-ui/core/FormLabel';
-import OK from './OK';
-import { makeStyles } from '@material-ui/core/styles';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Select from '@material-ui/core/Select';
-import InputBase from '@material-ui/core/InputBase';
-import { formFields } from '../../store/index';
-import { TextareaAutosize } from '@material-ui/core';
+import {
+  FiberManualRecordIcon,
+  formFields,
+  Button,
+  MenuItem,
+  FormControl,
+  FormGroup,
+  FormControlLabel,
+  ListItemIcon,
+  Radio,
+  RadioGroup,
+  FormHelperText,
+  Select,
+  TextareaAutosize,
+} from '../../store/index';
+import { useStyles, BootstrapInput } from './FormStyles';
 
-const BootstrapInput = withStyles((theme) => ({
-  root: {
-    'label + &': {
-      marginTop: theme.spacing(3),
-      border: '1px solid #595959',
-    },
-  },
-  input: {
-    borderRadius: 4,
-    position: 'relative',
-    backgroundColor: theme.palette.background.paper,
-    border: '1px solid #595959',
-    fontSize: 16,
-    padding: '10px 26px 10px 12px',
-    display: 'flex',
-    alignItems: 'center',
-    // transition: theme.transitions.create(['border-color', 'box-shadow']),
-  },
-}))(InputBase);
-
-const useStyles = makeStyles({
-  root: {
-    border: '1px solid #595959',
-    borderRadius: '4px',
-    fontSize: '14px',
-  },
-  icon: {
-    minWidth: 10,
-    paddingRight: 10,
-  },
-  selectRow: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: 20,
-  },
-  select: {
-    padding: 1,
-    width: '48%',
-    minWidth: 150,
-  },
-});
+const initialValues = {
+  meetingName: '',
+  location: '',
+  onSite: false,
+  duration: '',
+  color: '',
+  description: '',
+};
 
 export default function Form() {
-  const [myState, setMyState] = useState({});
+  const [myState, setMyState] = useState(initialValues);
   const classes = useStyles();
-  const handleChange = (event) => {
-    let myNewState = myState;
-    myNewState[event.target.name] = event.target.value;
-    setMyState(myNewState);
-  };
+
+  function handleChange(event) {
+    initialValues[event.target.name] = event.target.value;
+  }
 
   function handleSubmit(e) {
-    console.log('yeah');
+    e.preventDefault();
+    console.log(myState);
   }
+
+  console.log(myState);
   return (
-    <form action='' style={{ padding: '1rem' }} onSubmit={handleSubmit}>
+    <form action='submit' style={{ padding: '1rem' }} onSubmit={handleSubmit}>
+      {/* <button onClick={console.log(myState)}>log</button> */}
       <FormControl fullWidth={true}>
         <FormHelperText margin='dense'>Meeting name</FormHelperText>
-        {/* <FormLabel component='legend'>Meeting name</FormLabel> */}
+
         <Select
           labelId=''
           id='demo-simple-select'
@@ -96,7 +63,6 @@ export default function Form() {
       </FormControl>
       <FormControl fullWidth={true}>
         <FormHelperText margin='dense'>Location</FormHelperText>
-        {/* <FormLabel component='legend'>Location</FormLabel> */}
         <Select
           labelId=''
           id='demo-simple-select'
@@ -119,19 +85,7 @@ export default function Form() {
       </FormHelperText>
 
       <FormGroup row>
-        {/* <FormControlLabel
-          control={
-            <Checkbox
-              checked={myState.checkedB}
-              onChange={handleChange}
-              name='checkedB'
-              color='primary'
-            />
-          }
-          label='No'
-        /> */}
         <FormControl component='fieldset'>
-          {/* <FormLabel component='legend'>Is this meeting on-site?</FormLabel> */}
           <RadioGroup
             aria-label='on-site'
             name='onSite'
@@ -140,18 +94,39 @@ export default function Form() {
             row
           >
             <FormControlLabel
-              value='true'
+              value={true}
               control={<Radio color='primary' />}
               label='Yes'
             />
             <FormControlLabel
-              value='false'
+              value={false}
               control={<Radio color='primary' />}
               label='No'
             />
           </RadioGroup>
         </FormControl>
       </FormGroup>
+      {myState.onSite && (
+        <FormControl fullWidth={true}>
+          <FormHelperText margin='dense'>Meeting name</FormHelperText>
+
+          <Select
+            labelId=''
+            id='demo-simple-select'
+            onChange={handleChange}
+            defaultValue=''
+            value={myState.meetingName}
+            input={<BootstrapInput />}
+            name='meetingName'
+          >
+            {formFields[0].inputs.map(({ type }) => (
+              <MenuItem key={type} value={type}>
+                {type}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      )}
       <FormGroup row className={classes.selectRow}>
         <FormControl className={classes.select}>
           <FormHelperText>Duration</FormHelperText>
@@ -160,6 +135,7 @@ export default function Form() {
             id='demo-simple-select'
             onChange={handleChange}
             value={myState.duration}
+            className={classes.dropdown}
             defaultValue=''
             input={<BootstrapInput />}
             required={true}
@@ -180,6 +156,7 @@ export default function Form() {
             onChange={handleChange}
             defaultValue=''
             value={myState.color}
+            className={classes.dropdown}
             input={<BootstrapInput />}
             required={true}
             name='color'
@@ -214,7 +191,7 @@ export default function Form() {
 
       <div>
         <Button size='large'>cancel</Button>
-        <Button size='large' color='primary' disabled={true}>
+        <Button size='large' type='submit' color='primary' disabled={false}>
           save & next
         </Button>
       </div>
