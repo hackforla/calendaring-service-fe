@@ -30,7 +30,10 @@ const BootstrapInput = withStyles((theme) => ({
     border: '1px solid #595959',
     fontSize: 16,
     padding: '10px 26px 10px 12px',
-    transition: theme.transitions.create(['border-color', 'box-shadow']),
+    display: 'flex',
+    alignItems: 'center',
+    // transition: theme.transitions.create(['border-color', 'box-shadow']),
+    
   },
 }))(InputBase);
 
@@ -38,6 +41,11 @@ const useStyles = makeStyles({
   root: {
     border: '1px solid #595959',
     borderRadius: '4px',
+    fontSize: '14px',
+  },
+  icon: {
+    minWidth: 0,
+    paddingRight: 10,
   },
 });
 
@@ -47,11 +55,9 @@ export default function Form() {
   const handleChange = (event) => {
     let myNewState = myState;
     myNewState[event.target.name] = event.target.value;
+    console.log(myNewState);
     setMyState(myNewState);
   };
-
-  console.log(formFields);
-
   return (
     <div style={{ padding: '1rem' }}>
       <FormControl fullWidth={true}>
@@ -65,7 +71,9 @@ export default function Form() {
           name='meetingName'
         >
           {formFields[0].inputs.map(({ type }) => (
-            <MenuItem value={type}>{type}</MenuItem>
+            <MenuItem key={type} value={type}>
+              {type}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
@@ -80,8 +88,8 @@ export default function Form() {
           name='location'
         >
           {formFields[1].inputs.map(({ name, icon }) => (
-            <MenuItem value={name}>
-              <ListItemIcon>{icon}</ListItemIcon>
+            <MenuItem key={name} value={name}>
+              <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
               {name}
             </MenuItem>
           ))}
@@ -119,7 +127,7 @@ export default function Form() {
             labelId=''
             id='demo-simple-select'
             onChange={handleChange}
-            value={myState.duration || ''}
+            value={myState.duration}
             input={<BootstrapInput />}
             required={true}
             name='duration'
@@ -136,14 +144,14 @@ export default function Form() {
             labelId=''
             id='demo-simple-select'
             onChange={handleChange}
-            value={myState.color || ''}
+            value={myState.color}
             input={<BootstrapInput />}
             required={true}
             name='color'
           >
             {formFields[4].inputs.map(({ name, hex }) => (
               <MenuItem key={name} value={name}>
-                <ListItemIcon>
+                <ListItemIcon className={classes.icon}>
                   <FiberManualRecordIcon style={{ color: hex }} />
                 </ListItemIcon>
                 {name}
@@ -163,7 +171,7 @@ export default function Form() {
           name='description'
           onChange={handleChange}
           className={classes.root}
-          style={{border: '1px solid black'}}
+          style={{ border: '1px solid black', padding: '10px' }}
         />
       </FormControl>
 

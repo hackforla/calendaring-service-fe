@@ -16,6 +16,9 @@ export const theme = createMuiTheme({
       fontSize: '1.1rem',
     },
   },
+  textarea: {
+    border: '1px solid red'
+  },
   overrides: {
     MuiFilledInput: {
       root: {

@@ -17,7 +17,8 @@ h3,
 h4,
 h5,
 p,
-button {
+button,
+textarea {
   font-family: Roboto, sans-serif;
 }
 h1 {
