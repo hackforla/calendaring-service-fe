@@ -21,7 +21,7 @@ const meetingTypes = [
 const formFields = [
   {
     name: 'MeetingName',
-    inputs: ['ten', 'twenty', 'thirty'],
+    inputs: meetingTypes,
   },
   {
     name: 'Location',

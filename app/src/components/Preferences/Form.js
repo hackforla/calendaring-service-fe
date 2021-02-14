@@ -4,15 +4,17 @@ import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
-import { FiberManualRecordIcon } from '../../store/index'
+import { FiberManualRecordIcon } from '../../store/index';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Checkbox from '@material-ui/core/Checkbox';
-import TextField from '@material-ui/core/TextField';
+
+import { makeStyles } from '@material-ui/core/styles';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import InputBase from '@material-ui/core/InputBase';
 import { formFields } from '../../store/index';
+import { TextareaAutosize } from '@material-ui/core';
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -32,12 +34,19 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
+const useStyles = makeStyles({
+  root: {
+    border: '1px solid #595959',
+    borderRadius: '4px',
+  },
+});
+
 export default function Form() {
   const [myState, setMyState] = useState({});
+  const classes = useStyles();
   const handleChange = (event) => {
     let myNewState = myState;
     myNewState[event.target.name] = event.target.value;
-    console.log(myNewState);
     setMyState(myNewState);
   };
 
@@ -55,9 +64,9 @@ export default function Form() {
           input={<BootstrapInput />}
           name='meetingName'
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {formFields[0].inputs.map(({ type }) => (
+            <MenuItem value={type}>{type}</MenuItem>
+          ))}
         </Select>
       </FormControl>
       <FormControl fullWidth={true}>
@@ -68,38 +77,16 @@ export default function Form() {
           onChange={handleChange}
           value={myState.location}
           input={<BootstrapInput />}
-          // required={true}
           name='location'
         >
           {formFields[1].inputs.map(({ name, icon }) => (
-            <MenuItem value='web conference'>
-              <ListItemIcon>
-                {icon}
-              </ListItemIcon>
+            <MenuItem value={name}>
+              <ListItemIcon>{icon}</ListItemIcon>
               {name}
             </MenuItem>
           ))}
-          {/* <MenuItem value='in person meeting'>
-            <ListItemIcon>
-              <LocationOnIcon size='large' color='primary' />
-            </ListItemIcon>
-            In person meeting
-          </MenuItem>
-          <MenuItem value='web conference'>
-            <ListItemIcon>
-              <VideocamIcon size='large' color='primary' />
-            </ListItemIcon>
-            Web conference
-          </MenuItem>
-          <MenuItem value='phone call'>
-            <ListItemIcon>
-              <PhoneIcon size='large' color='primary' />
-            </ListItemIcon>
-            Phone call
-          </MenuItem> */}
         </Select>
       </FormControl>
-
       <FormHelperText>Is this meeting location on-site?</FormHelperText>
       <FormGroup row>
         <FormControlLabel
@@ -157,10 +144,7 @@ export default function Form() {
             {formFields[4].inputs.map(({ name, hex }) => (
               <MenuItem key={name} value={name}>
                 <ListItemIcon>
-                  <FiberManualRecordIcon
-                    fontSize='large'
-                    style={{ color: `${hex}` }}
-                  />
+                  <FiberManualRecordIcon style={{ color: hex }} />
                 </ListItemIcon>
                 {name}
               </MenuItem>
@@ -170,11 +154,16 @@ export default function Form() {
       </FormGroup>
       <FormControl fullWidth={true}>
         <FormHelperText>Description</FormHelperText>
-        <TextField
+        <TextareaAutosize
+          input={<BootstrapInput />}
+          autoComplete='off'
           id='outlined-basic'
+          rows={7}
           variant='outlined'
           name='description'
           onChange={handleChange}
+          className={classes.root}
+          style={{border: '1px solid black'}}
         />
       </FormControl>
 
