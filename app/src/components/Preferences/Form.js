@@ -33,7 +33,6 @@ const BootstrapInput = withStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     // transition: theme.transitions.create(['border-color', 'box-shadow']),
-    
   },
 }))(InputBase);
 
@@ -66,6 +65,7 @@ export default function Form() {
           labelId=''
           id='demo-simple-select'
           onChange={handleChange}
+          defaultValue=''
           value={myState.meetingName}
           input={<BootstrapInput />}
           name='meetingName'
@@ -82,6 +82,7 @@ export default function Form() {
         <Select
           labelId=''
           id='demo-simple-select'
+          defaultValue=''
           onChange={handleChange}
           value={myState.location}
           input={<BootstrapInput />}
@@ -120,14 +121,15 @@ export default function Form() {
           label='No'
         />
       </FormGroup>
-      <FormGroup row>
-        <FormControl fullWidth={true}>
+      <FormGroup row >
+        <FormControl>
           <FormHelperText>Duration</FormHelperText>
           <Select
             labelId=''
             id='demo-simple-select'
             onChange={handleChange}
             value={myState.duration}
+            defaultValue=''
             input={<BootstrapInput />}
             required={true}
             name='duration'
@@ -138,12 +140,14 @@ export default function Form() {
               </MenuItem>
             ))}
           </Select>
-
+        </FormControl>
+        <FormControl>
           <FormHelperText>Meeting Color</FormHelperText>
           <Select
             labelId=''
             id='demo-simple-select'
             onChange={handleChange}
+            defaultValue=''
             value={myState.color}
             input={<BootstrapInput />}
             required={true}
@@ -160,6 +164,7 @@ export default function Form() {
           </Select>
         </FormControl>
       </FormGroup>
+      
       <FormControl fullWidth={true}>
         <FormHelperText>Description</FormHelperText>
         <TextareaAutosize
@@ -167,6 +172,7 @@ export default function Form() {
           autoComplete='off'
           id='outlined-basic'
           rows={7}
+          defaultValue=''
           variant='outlined'
           name='description'
           onChange={handleChange}
