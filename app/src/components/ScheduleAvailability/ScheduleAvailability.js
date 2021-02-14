@@ -1,9 +1,8 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import { logo, daysOfTheWeek } from '../../store/index';
+import { logo, daysOfTheWeek, Button } from '../../store/index';
 import { reducer } from './helpers/reducer';
 import classes from './ScheduleAvailability.module.scss';
 import ScheduleAvailableDays from './ScheduleAvailableDays';
-import Button from '@material-ui/core/Button';
 const initialState = { daysOfTheWeek };
 
 export default function ScheduleAvailability() {

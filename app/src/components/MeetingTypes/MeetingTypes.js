@@ -1,9 +1,8 @@
 import React from 'react';
 import Stepper from '../Success/Stepper';
-import { meetingTypes } from '../../store/index';
+import { meetingTypes, HelpIcon } from '../../store/index';
 import Header from '../Welcome/Header';
 import MeetingType from './MeetingType';
-import { HelpIcon } from '../../store/index';
 
 export default function MeetingTypes() {
   return (

@@ -1,31 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import { RadioButtonCheckedIcon } from '../../store/index';
-
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    borderTop: '15px solid #3D8EFF',
-    margin: '1rem',
-    padding: '1rem'
-  },
-  title: {
-    fontSize: 24,
-    margin: '0',
-    fontWeight: '700',
-  },
-  body: {
-    margin: '0',
-    color: '#249BE5',
-  },
-  icon: {
-    height: '48px',
-    width: '48px',
-  },
-});
+import { RadioButtonCheckedIcon, Card, CardContent, AddCircleIcon } from '../../store/index';
+import { useStyles } from './MeetingTypeStyles'
 
 export default function MeetingType({ type, updateNeeded }) {
   const classes = useStyles();

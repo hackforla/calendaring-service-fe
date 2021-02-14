@@ -12,6 +12,9 @@ import { TextareaAutosize } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Checkbox from '@material-ui/core/Checkbox';
 
 export {
   Button,
@@ -28,4 +31,7 @@ export {
   makeStyles,
   InputBase,
   withStyles,
+  Card,
+  CardContent,
+  Checkbox,
 };

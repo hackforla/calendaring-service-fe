@@ -1,8 +1,7 @@
 import React from 'react';
 import Stepper from './Stepper';
 import classes from './Success.module.scss';
-import { CheckCircleIcon } from '../../store/index';
-import Button from '@material-ui/core/Button';
+import { CheckCircleIcon, Button } from '../../store/index';
 
 export default function Success() {
   return (
