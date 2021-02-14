@@ -41,7 +41,7 @@ export default function Form() {
   console.log(myState);
   return (
     <form action='submit' style={{ padding: '1rem' }} onSubmit={handleSubmit}>
-      {/* <button onClick={console.log(myState)}>log</button> */}
+      {/* MEETING NAME BEGIN */}
       <FormControl fullWidth={true}>
         <FormHelperText margin='dense'>Meeting name</FormHelperText>
 
@@ -61,6 +61,9 @@ export default function Form() {
           ))}
         </Select>
       </FormControl>
+      {/* MEETING NAME END */}
+
+      {/* LOCATION BEGIN */}
       <FormControl fullWidth={true}>
         <FormHelperText margin='dense'>Location</FormHelperText>
         <Select
@@ -80,10 +83,12 @@ export default function Form() {
           ))}
         </Select>
       </FormControl>
+      {/* LOCATION END */}
+
+      {/* ONSITE RADIO BEGIN */}
       <FormHelperText margin='dense'>
         Is this meeting location on-site?
       </FormHelperText>
-
       <FormGroup row>
         <FormControl component='fieldset'>
           <RadioGroup
@@ -106,10 +111,12 @@ export default function Form() {
           </RadioGroup>
         </FormControl>
       </FormGroup>
+      {/* ONSITE RADIO END */}
+
+      {/* ONSITE LOCATION BEGIN */}
       {myState.onSite && (
         <FormControl fullWidth={true}>
           <FormHelperText margin='dense'>Meeting name</FormHelperText>
-
           <Select
             labelId=''
             id='demo-simple-select'
@@ -127,6 +134,9 @@ export default function Form() {
           </Select>
         </FormControl>
       )}
+      {/* ONSITE LOCATION END */}
+
+      {/* DURATION AND COLORS BEGIN */}
       <FormGroup row className={classes.selectRow}>
         <FormControl className={classes.select}>
           <FormHelperText>Duration</FormHelperText>
@@ -172,7 +182,9 @@ export default function Form() {
           </Select>
         </FormControl>
       </FormGroup>
+      {/* DURATION AND COLORS END */}
 
+      {/* DESCRIPTION BEGIN */}
       <FormControl fullWidth={true}>
         <FormHelperText>Description</FormHelperText>
         <TextareaAutosize
@@ -188,13 +200,16 @@ export default function Form() {
           style={{ border: '1px solid black', padding: '10px' }}
         />
       </FormControl>
+      {/* DESCRIPTION END */}
 
+      {/* SUBMIT BEGIN */}
       <div>
         <Button size='large'>cancel</Button>
         <Button size='large' type='submit' color='primary' disabled={false}>
           save & next
         </Button>
       </div>
+      {/* SUBMIT END */}
     </form>
   );
 }

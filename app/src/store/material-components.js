@@ -9,6 +9,9 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import { TextareaAutosize } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import InputBase from '@material-ui/core/InputBase';
+import { withStyles } from '@material-ui/core/styles';
 
 export {
   Button,
@@ -21,5 +24,8 @@ export {
   RadioGroup,
   FormHelperText,
   Select,
-  TextareaAutosize
+  TextareaAutosize,
+  makeStyles,
+  InputBase,
+  withStyles,
 };

@@ -1,6 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles, InputBase, withStyles } from '../../store/index';
 
 const useStyles = makeStyles({
   root: {
@@ -46,6 +44,5 @@ const BootstrapInput = withStyles((theme) => ({
     // transition: theme.transitions.create(['border-color', 'box-shadow']),
   },
 }))(InputBase);
-
 
 export { useStyles, BootstrapInput };
