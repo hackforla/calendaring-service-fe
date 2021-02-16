@@ -16,6 +16,9 @@ export const theme = createMuiTheme({
       fontSize: '1.1rem',
     },
   },
+  textarea: {
+    border: '1px solid red'
+  },
   overrides: {
     MuiFilledInput: {
       root: {
@@ -27,19 +30,11 @@ export const theme = createMuiTheme({
         backgroundColor: 'yellow',
       },
     },
-  },
-  props: {
-    MuiButton: {
-      disableRipple: true,
-      color: 'primary',
-    },
-    MuiCheckbox: {
-      disableRipple: true,
-    },
-    MuiTextField: {
-      variant: 'filled',
-      InputLabelProps: {
-        shrink: true,
+    MuiIcon: {
+      root: {
+        height: '3rem',
+        width: '3rem',
+        color: '#249be5',
       },
     },
   },

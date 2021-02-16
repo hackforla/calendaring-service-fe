@@ -17,7 +17,8 @@ h3,
 h4,
 h5,
 p,
-button {
+button,
+textarea {
   font-family: Roboto, sans-serif;
 }
 h1 {
@@ -52,6 +53,40 @@ p {
 
 caption {
   font-size: 12px;
+}
+
+.caption {
+  margin: 1rem;
+  font-size: 12px;
+  width: 90%;
+}
+
+.row {
+  display: flex;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.body2 {
+  font-size: 14px;
 }
 
 body {

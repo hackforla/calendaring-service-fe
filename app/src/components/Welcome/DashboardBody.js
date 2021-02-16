@@ -1,12 +1,17 @@
 import React from 'react';
 import classes from './DashboardBody.module.scss';
+import { welcome } from '../../store/index';
 import Button from '@material-ui/core/Button';
 
 export default function DashboardBody() {
   return (
     <>
       <h5>Welcome</h5>
-      <div className={classes.placeholder}>image placeholder</div>
+      <img
+        src={welcome.default}
+        alt='welcome'
+        style={{ width: '90%', margin: '1rem auto' }}
+      />
       <p className='body-text'>
         This onbarding guide will show you how to add your avalibility, and
         customize your meeting types.
