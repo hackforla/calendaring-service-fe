@@ -2,10 +2,6 @@ import React from 'react';
 import classes from './SuccessScreenTwo.module.scss';
 import Button from '@material-ui/core/Button';
 
-// <CheckCircleIcon
-//     className={classes.checkCircle}
-//     style={{ height: '5rem', width: '5rem' }}
-// />
 export default function SuccessScreenTwo() {
     return (
         <div className={classes.main}>
