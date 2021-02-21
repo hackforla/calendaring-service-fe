@@ -15,7 +15,7 @@ export default function Stepper() {
       setStep(step - 1);
     }
   }
-
+console.log(step)
   return (
     <div className={classes.main}>
       <h6>Your progress</h6>
@@ -23,7 +23,7 @@ export default function Stepper() {
         {dots.map((_, i) => {
           return (
             <div
-              className={i === step ? classes.stepSelected : classes.step}
+              className={i <= step ? classes.stepSelected : classes.step}
               key={i}
             >
               <FiberManualRecordIcon
@@ -38,7 +38,7 @@ export default function Stepper() {
         Step {step + 1} of {dots.length} complete.
       </p>
       {/* Uncomment the component below to test the progress bar */}
-      {/* <ForDevsEyesOnly /> */}
+      <ForDevsEyesOnly stepChanger={stepChanger} />
     </div>
   );
 }

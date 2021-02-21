@@ -17,7 +17,7 @@ export const theme = createMuiTheme({
     },
   },
   textarea: {
-    border: '1px solid red'
+    border: '1px solid red',
   },
   overrides: {
     MuiFilledInput: {
