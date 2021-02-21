@@ -89,7 +89,7 @@ caption {
   font-size: 14px;
 }
 
-body {
+body, p, h5 {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -103,22 +103,6 @@ code {
 
 p {
   margin: 1rem;
-}
-
-.button {
-  border-radius: 0.2rem;
-  background: #249be5;
-  color: white;
-  border: 1px solid #249be5;
-  padding: 1rem;
-  margin: 0.5rem;
-  text-transform: uppercase;
-  font-size: 18px;
-  width: 15rem;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 .logo {
