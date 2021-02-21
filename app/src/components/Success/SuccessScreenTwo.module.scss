@@ -1,0 +1,51 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+    color: #000000;
+
+    h5 {
+        /* H2 Mobile old */
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        /* or 267% */
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    p {
+        height: 129px;
+        width: 246px;
+        left: 57px;
+        top: 304px;
+        border-radius: nullpx;
+        left: 15.83%;
+        right: 15.83%;
+        top: 42.5%;
+        bottom: 32.34%;
+        text-align: left;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        /* or 150% */
+        letter-spacing: 0.15px;
+    }
+    button {
+        margin-top: .8rem;
+        height: 48px;
+        width: 206px;
+        top: 469px;
+        border-radius: 4px;
+        top: 63.28%;
+        bottom: 19.22%;
+        background: #55B1EB;
+        border-radius: 4px;
+    }
+}
+
