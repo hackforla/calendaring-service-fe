@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import { logo, daysOfTheWeek, Button } from '../../store/index';
+import { logo, daysOfTheWeek, Button, Typography } from '../../store/index';
 import { reducer } from './helpers/reducer';
 import classes from './ScheduleAvailability.module.scss';
 import ScheduleAvailableDays from './ScheduleAvailableDays';
@@ -20,10 +20,12 @@ export default function ScheduleAvailability() {
       <div className={classes.main}>
         <div className={classes.top}>
           <img src={logo.default} className='logo' alt='logo' />
-          <h4>Schedule Availability</h4>
+          <Typography variant='h4'>Schedule Availability</Typography>
         </div>
-        <p>What days are you typically available?</p>
-        <p>Select from below.</p>
+        <Typography variant='body1'>
+          What days are you typically available?
+        </Typography>
+        <Typography variant='body1'>Select from below.</Typography>
       </div>
       <ScheduleAvailableDays
         state={state}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Stepper from '../Success/Stepper';
-import { meetingTypes, HelpIcon } from '../../store/index';
+import { meetingTypes, HelpIcon, Typography } from '../../store/index';
 import Header from '../Welcome/Header';
 import MeetingType from './MeetingType';
 
@@ -9,10 +9,10 @@ export default function MeetingTypes() {
     <div>
       <Header />
       <Stepper />
-      <p className='caption'>
+      <Typography variant='body2' className='p1'>
         To complete your setup, you must update your preferences for all the
         below meetings.
-      </p>
+      </Typography>
       {meetingTypes.map((type, i) => (
         <MeetingType
           type={type.type}
@@ -20,7 +20,10 @@ export default function MeetingTypes() {
           key={i}
         />
       ))}
-      <HelpIcon color='primary' style={{ height: '4rem', width: '4rem', margin: '0 1rem' }} />
+      <HelpIcon
+        color='primary'
+        style={{ height: '4rem', width: '4rem', margin: '0 1rem' }}
+      />
     </div>
   );
 }

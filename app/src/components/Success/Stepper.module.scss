@@ -1,8 +1,7 @@
 .main {
     width: 99%;
 
-    h3,
-    p {
+    h3 {
         margin-left: 1rem;
     }
 
@@ -11,11 +10,11 @@
     }
 }
 
-.caption {
-    margin: 1rem;
-    font-size: 12px;
-    width: 100%;
-}
+// .caption {
+//     width: 100%;
+//     border: 1px solid green;
+//     margin: 10rem;
+// }
 
 .stepBar {
     background-color: var(--background);

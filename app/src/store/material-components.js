@@ -13,9 +13,11 @@ import {
   InputBase,
   Card,
   CardContent,
-  Checkbox
+  Checkbox,
+  Typography,
 } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+
 
 export {
   Button,
@@ -35,4 +37,5 @@ export {
   Card,
   CardContent,
   Checkbox,
+  Typography,
 };

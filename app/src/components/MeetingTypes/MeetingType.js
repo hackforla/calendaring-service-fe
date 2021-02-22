@@ -1,15 +1,19 @@
 import React from 'react';
-import { RadioButtonCheckedIcon, Card, CardContent, AddCircleIcon } from '../../store/index';
-import { useStyles } from './MeetingTypeStyles'
+import {
+  RadioButtonCheckedIcon,
+  Card,
+  CardContent,
+  AddCircleIcon,
+  Typography,
+} from '../../store/index';
+import { useStyles } from './MeetingTypeStyles';
 
 export default function MeetingType({ type, updateNeeded }) {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
       <CardContent>
-        <h4 className={classes.title} color='textSecondary'>
-          {type}
-        </h4>
+        <Typography variant='h4'>{type}</Typography>
         <div
           style={{
             display: 'flex',
@@ -17,7 +21,9 @@ export default function MeetingType({ type, updateNeeded }) {
             justifyContent: 'space-between',
           }}
         >
-          <h6 className={classes.body}>Set your preferences</h6>
+          <Typography variant='h6' className={classes.body}>
+            Set your preferences
+          </Typography>
           <div style={{ position: 'relative' }}>
             <AddCircleIcon className={classes.icon} color='primary' />
             {updateNeeded && (

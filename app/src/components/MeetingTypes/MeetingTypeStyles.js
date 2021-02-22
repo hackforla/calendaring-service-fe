@@ -7,11 +7,6 @@ const useStyles = makeStyles({
     margin: '1rem',
     padding: '1rem',
   },
-  title: {
-    fontSize: 24,
-    margin: '0',
-    fontWeight: '700',
-  },
   body: {
     margin: '0',
     color: '#249BE5',
