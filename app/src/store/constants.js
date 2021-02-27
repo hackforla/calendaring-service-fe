@@ -1,4 +1,5 @@
 import { LocationOnIcon, VideocamIcon, PhoneIcon } from './index';
+import moment from 'moment';
 
 const daysOfTheWeek = [
   { day: 'Monday', selected: false },
@@ -57,4 +58,20 @@ const formFields = [
   },
 ];
 
-export { daysOfTheWeek, meetingTypes, formFields };
+
+const locale = 'en'; // or whatever you want...
+const hours = [];
+
+moment.locale(locale); // optional - can remove if you are only dealing with one locale
+
+for (let hour = 9; hour < 18; hour++) {
+  hours.push(moment({ hour }).format('h:mm A'));
+  hours.push(
+    moment({
+      hour,
+      minute: 30,
+    }).format('h:mm A')
+  );
+}
+
+export { daysOfTheWeek, meetingTypes, formFields, hours };
