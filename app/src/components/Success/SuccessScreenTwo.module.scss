@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+  color: #000000;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.SuccessScreenTwoHeading {
+  h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.SuccessScreenTwoText {
+  p {
+    text-align: left;
+    height: 129px;
+    width: 246px;
+    left: 57px;
+    top: 304px;
+    border-radius: nullpx;
+    left: 15.83%;
+    right: 15.83%;
+    top: 42.5%;
+    bottom: 32.34%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+    letter-spacing: 0.15px;
+  }
+}
+
+.SuccessScreenTwoButton {
+  button {
+    margin-top: 0.8rem;
+    height: 48px;
+    width: 206px;
+    top: 469px;
+    border-radius: 4px;
+    top: 63.28%;
+    bottom: 19.22%;
+    background: #55b1eb;
+    border-radius: 4px;
+  }
+}

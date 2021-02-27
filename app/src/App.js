@@ -1,6 +1,7 @@
 import { Route } from 'react-router-dom';
 import Dashboard from './components/Welcome/Dashboard';
 import Success from './components/Success/Success';
+import SuccessScreenTwo from './components/Success/SuccessScreenTwo';
 import ScheduleAvailableDays from './components/ScheduleAvailability/ScheduleAvailability';
 import MeetingTypes from './components/MeetingTypes/MeetingTypes';
 import Preferences from './components/Preferences/Preferences';
@@ -13,6 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Route exact path='/' component={Dashboard} />
         <Route path='/success' component={Success} />
+        <Route path='/success-screen-two' component={SuccessScreenTwo} />
         <Route path='/schedule' component={ScheduleAvailableDays} />
         <Route path='/meetingtypes' component={MeetingTypes} />
         <Route path='/preferences' component={Preferences} />
