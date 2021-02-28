@@ -12,7 +12,11 @@ const useStyles = makeStyles({
   h6: {
     paddingLeft: '1rem',
   },
-  card: { background: '#F4FBFF', margin: '1rem', padding: '1rem' },
+  card: {
+    background: '#F4FBFF',
+    margin: '1rem',
+    padding: '1rem',
+  },
   select: {
     padding: 1,
     width: '40%',
@@ -27,7 +31,9 @@ const useStyles = makeStyles({
     height: '46px',
   },
   buttonContainer: {
-    textAlign: 'right',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
   },
 });
 
