@@ -29,7 +29,7 @@ export default function ScheduleAvailableTimes() {
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
-  console.log(state.start);
+  
   return (
     <>
       <Header />
