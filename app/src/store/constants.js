@@ -59,10 +59,8 @@ const formFields = [
 ];
 
 
-const locale = 'en'; // or whatever you want...
-const hours = [];
 
-moment.locale(locale); // optional - can remove if you are only dealing with one locale
+const hours = [];
 
 for (let hour = 9; hour < 18; hour++) {
   hours.push(moment({ hour }).format('h:mm A'));

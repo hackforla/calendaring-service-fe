@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './ScheduleAvailability.module.scss';
+import classes from './Header.module.scss';
 import { logo, Typography } from '../../store/index';
 
 export default function Header() {
