@@ -13,11 +13,11 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <Route exact path='/' component={Dashboard} />
-        <Route path='/success' component={Success} />
-        <Route path='/scheduledays' component={ScheduleAvailableDays} />
-        <Route path='/scheduletimes' component={ScheduleAvailableTimes} />
-        <Route path='/meetingtypes' component={MeetingTypes} />
-        <Route path='/preferences' component={Preferences} />
+        <Route exact path='/success' component={Success} />
+        <Route exact path='/scheduledays' component={ScheduleAvailableDays} />
+        <Route exact path='/scheduletimes' component={ScheduleAvailableTimes} />
+        <Route exact path='/meetingtypes' component={MeetingTypes} />
+        <Route exact path='/preferences' component={Preferences} />
       </ThemeProvider>
     </>
   );

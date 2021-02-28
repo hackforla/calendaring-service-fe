@@ -8,7 +8,8 @@ import {
   Select,
   KeyboardArrowDownIcon,
   MenuItem,
-  hours,
+  getTimesArray,
+  get24HrTime,
   Typography,
   ArrowForwardIcon,
   Card,
@@ -28,7 +29,7 @@ export default function ScheduleAvailableTimes() {
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
-
+  console.log(state.start);
   return (
     <>
       <Header />
@@ -57,7 +58,7 @@ export default function ScheduleAvailableTimes() {
             name='start'
             IconComponent={KeyboardArrowDownIcon}
           >
-            {hours.map((input) => (
+            {getTimesArray().map((input) => (
               <MenuItem key={input} value={input}>
                 {input}
               </MenuItem>
@@ -79,11 +80,13 @@ export default function ScheduleAvailableTimes() {
             name='end'
             IconComponent={KeyboardArrowDownIcon}
           >
-            {hours.map((input) => (
-              <MenuItem key={input} value={input}>
-                {input}
-              </MenuItem>
-            ))}
+            {getTimesArray(get24HrTime(state.start || '9:00 AM')).map(
+              (input) => (
+                <MenuItem key={input} value={input}>
+                  {input}
+                </MenuItem>
+              )
+            )}
           </Select>
         </FormControl>
       </FormGroup>
