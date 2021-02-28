@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiberManualRecordIcon } from '../../store/index';
+import { FiberManualRecordIcon, Typography } from '../../store/index';
 import ForDevsEyesOnly from './ForDevsEyesOnly';
 import classes from './Stepper.module.scss';
 
@@ -18,12 +18,12 @@ export default function Stepper() {
 
   return (
     <div className={classes.main}>
-      <h6>Your progress</h6>
+      <Typography variant='h6'>Your progress</Typography>
       <div className={classes.stepBar}>
         {dots.map((_, i) => {
           return (
             <div
-              className={i === step ? classes.stepSelected : classes.step}
+              className={i <= step ? classes.stepSelected : classes.step}
               key={i}
             >
               <FiberManualRecordIcon
@@ -34,11 +34,11 @@ export default function Stepper() {
           );
         })}
       </div>
-      <p className={classes.caption}>
+      <Typography variant='body2' className='p1'>
         Step {step + 1} of {dots.length} complete.
-      </p>
+      </Typography>
       {/* Uncomment the component below to test the progress bar */}
-      {/* <ForDevsEyesOnly /> */}
+      {/* <ForDevsEyesOnly stepChanger={stepChanger} /> */}
     </div>
   );
 }

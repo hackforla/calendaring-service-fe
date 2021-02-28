@@ -1,8 +1,7 @@
 import React from 'react';
 import Stepper from './Stepper';
 import classes from './Success.module.scss';
-import { CheckCircleIcon } from '../../store/index';
-import Button from '@material-ui/core/Button';
+import { CheckCircleIcon, Button, Typography } from '../../store/index';
 
 export default function Success() {
   return (
@@ -11,13 +10,13 @@ export default function Success() {
         className={classes.checkCircle}
         style={{ height: '5rem', width: '5rem' }}
       />
-      <h5>Success!</h5>
+      <Typography variant='h5'>Success!</Typography>
       <Stepper />
-      <p className='body-text'>
+      <Typography variant='body1' className='body-text'>
         Thanks for setting up your availability! We will use this information
         when you customize your meeting types. Visit your Dashboard and
         personalize your meeting types to complete calendar set up.
-      </p>
+      </Typography>
       <Button variant='contained' color='primary'>
         complete setup
       </Button>

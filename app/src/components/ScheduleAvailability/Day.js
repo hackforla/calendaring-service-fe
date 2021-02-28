@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Day.module.scss';
-import Checkbox from '@material-ui/core/Checkbox';
+import { Checkbox } from '../../store/index'
 
 export default function Day({ day, selected, dispatch, idx }) {
 
