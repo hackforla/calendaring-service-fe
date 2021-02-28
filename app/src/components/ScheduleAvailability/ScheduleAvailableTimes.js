@@ -11,6 +11,7 @@ import {
   hours,
   Typography,
   ArrowForwardIcon,
+  Card,
 } from '../../store/index';
 import { useStyles, BootstrapInput } from './ScheduleAvailableTimesStyles';
 
@@ -31,6 +32,12 @@ export default function ScheduleAvailableTimes() {
   return (
     <>
       <Header />
+      <Card className={classes.card}>
+        <Typography variant='subtitle1' align='center'>
+          You can further customize your availability by day and time when
+          customizing your meeting types later.
+        </Typography>
+      </Card>
       <Typography variant='h6' className={classes.h6}>
         Daily Availability
       </Typography>

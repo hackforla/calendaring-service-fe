@@ -12,6 +12,7 @@ const useStyles = makeStyles({
   h6: {
     paddingLeft: '1rem',
   },
+  card: { background: '#F4FBFF', margin: '1rem', padding: '1rem' },
   select: {
     padding: 1,
     width: '40%',

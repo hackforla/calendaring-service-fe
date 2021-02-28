@@ -1,12 +1,14 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+const blue = '#249be5';
+const grey = '#fff';
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#249be5',
+      main: blue,
     },
     secondary: {
-      main: '#fff',
+      main: grey,
     },
   },
   typography: {
@@ -45,16 +47,21 @@ export const theme = createMuiTheme({
     },
   },
   overrides: {
-    MuiFilledInput: {
-      root: {
-        backgroundColor: '#FFC0CB',
-      },
-    },
+    // MuiFilledInput: {
+    //   root: {
+    //     backgroundColor: '#FFC0CB',
+    //   },
+    // },
     MuiIcon: {
       root: {
         height: '3rem',
         width: '3rem',
-        color: '#249be5',
+        color: blue,
+      },
+    },
+    MuiCard: {
+      root: {
+        background: 'acd9f5',
       },
     },
   },
