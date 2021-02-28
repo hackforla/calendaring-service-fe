@@ -10,6 +10,7 @@ import {
   MenuItem,
   hours,
   Typography,
+  ArrowForwardIcon,
 } from '../../store/index';
 import { useStyles, BootstrapInput } from './ScheduleAvailableTimesStyles';
 
@@ -30,8 +31,11 @@ export default function ScheduleAvailableTimes() {
   return (
     <>
       <Header />
-      <Typography variant='h6'>Daily Availability</Typography>
+      <Typography variant='h6' className={classes.h6}>
+        Daily Availability
+      </Typography>
       <FormGroup row className={classes.selectRow}>
+        <ArrowForwardIcon className={classes.svg} />
         <FormControl className={classes.select}>
           <FormHelperText>From</FormHelperText>
           <Select
@@ -53,6 +57,7 @@ export default function ScheduleAvailableTimes() {
             ))}
           </Select>
         </FormControl>
+
         <FormControl className={classes.select}>
           <FormHelperText>To</FormHelperText>
           <Select

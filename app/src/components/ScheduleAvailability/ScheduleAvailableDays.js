@@ -1,6 +1,6 @@
 import React from 'react';
 import WeekDays from './WeekDays';
-import { Button } from '../../store/index'
+import { Button } from '../../store/index';
 import classes from './ScheduleAvailableDays.module.scss';
 
 export default function ScheduleAvailableDays({

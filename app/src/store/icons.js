@@ -7,6 +7,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 export {
   CheckCircleIcon,
@@ -18,4 +19,5 @@ export {
   PhoneIcon,
   KeyboardArrowDownIcon,
   AddCircleIcon,
+  ArrowForwardIcon,
 };

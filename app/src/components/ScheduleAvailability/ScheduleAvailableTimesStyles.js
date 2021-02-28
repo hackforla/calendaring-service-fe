@@ -5,12 +5,22 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
     marginBottom: 20,
+    alignItems: 'center',
     padding: 15,
+    position: 'relative',
+  },
+  h6: {
+    paddingLeft: '1rem',
   },
   select: {
     padding: 1,
-    width: '48%',
-    minWidth: 150,
+    width: '40%',
+    minWidth: 125,
+  },
+  svg: {
+    position: 'absolute',
+    left: '47%',
+    top: '50%',
   },
   dropdown: {
     height: '46px',
