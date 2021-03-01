@@ -12,13 +12,8 @@
 
 .SuccessScreenTwoHeading {
   h5 {
-    font-family: Roboto;
-    font-style: normal;
     font-weight: bold;
-    font-size: 24px;
-    align-items: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -41,12 +36,12 @@
     line-height: 24px;
     /* or 150% */
     letter-spacing: 0.15px;
+    margin-bottom: 0.5rem;
   }
 }
 
 .SuccessScreenTwoButton {
   button {
-    margin-top: 0.8rem;
     height: 48px;
     width: 206px;
     top: 469px;

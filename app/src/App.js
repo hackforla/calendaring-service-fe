@@ -15,6 +15,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Route exact path='/' component={Dashboard} />
         <Route exact path='/success' component={Success} />
+        <Route exact path='/success-screen-two' component={SuccessScreenTwo} />
         <Route exact path='/scheduledays' component={ScheduleAvailableDays} />
         <Route exact path='/scheduletimes' component={ScheduleAvailableTimes} />
         <Route exact path='/meetingtypes' component={MeetingTypes} />

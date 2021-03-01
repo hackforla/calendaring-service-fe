@@ -1,14 +1,14 @@
 import React from 'react';
 import classes from './SuccessScreenTwo.module.scss';
 import { Button } from '../../store/index';
-import { WhiteCheckmarkIcon } from '../../store/index';
+import { WhiteCheckmarkIcon, Typography } from '../../store/index';
 
 export default function SuccessScreenTwo() {
     return (
         <div className={classes.main}>
             <img src={WhiteCheckmarkIcon.default} className='whiteCheckmarkIcon' alt='whiteCheckMarkIcon' />
             <div className={classes.SuccessScreenTwoHeading}>
-                <h5>Success!</h5>
+            <Typography variant='h5'>Success!</Typography>
             </div>
             <div className={classes.SuccessScreenTwoText}>
                 <p className='body-text'>
