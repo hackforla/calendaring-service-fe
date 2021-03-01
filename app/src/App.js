@@ -1,7 +1,6 @@
 import { Route } from 'react-router-dom';
 import Dashboard from './components/Welcome/Dashboard';
 import Success from './components/Success/Success';
-import SuccessScreenTwo from './components/Success/SuccessScreenTwo';
 import ScheduleAvailableDays from './components/ScheduleAvailability/ScheduleAvailability';
 import ScheduleAvailableTimes from './components/ScheduleAvailability/ScheduleAvailableTimes';
 import MeetingTypes from './components/MeetingTypes/MeetingTypes';
