@@ -3,10 +3,12 @@
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+
+    h5 {
+        margin: 1rem;
+    }
 }
 
 .checkCircle {
-    color: #249BE5;
-    height: 5rem;
-    width: 5rem;
+    color: var(--primary-accent);
 }

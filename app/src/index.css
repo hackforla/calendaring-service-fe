@@ -1,8 +1,101 @@
-body {
+:root {
+  --primary-accent: #249be5;
+  --disabled-accent: #acd9f5;
+  --dark-grey: #595959;
+  --success: #287d3c;
+  --background: #e5e5e5;
+  --transition: all 0.5s ease-in-out;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+textarea {
+  font-family: Roboto, sans-serif;
+}
+h1 {
+  font-size: 96px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 34px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 400;
+}
+h6 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+caption {
+  font-size: 12px;
+}
+
+.caption {
+  margin: 1rem;
+  font-size: 12px;
+  width: 90%;
+}
+
+.row {
+  display: flex;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.body2 {
+  font-size: 14px;
+}
+
+body, p, h5 {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,17 +109,18 @@ p {
   margin: 1rem;
 }
 
-button {
-  border-radius: .2rem;
-  background: #249BE5;
-  color: white;
-  border: 1px solid #249BE5;
-  padding: 1rem;
-  margin: .5rem;
-  text-transform: capitalize;
-  font-size: 18px;
-}
-
 button:hover {
   cursor: pointer;
+}
+
+.logo {
+  height: 3rem;
+  width: 3rem;
+  padding-right: 1rem;
+}
+
+.body-text {
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
 }

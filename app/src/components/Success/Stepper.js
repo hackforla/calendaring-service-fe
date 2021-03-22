@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { BsDot } from '../store/index';
+import { FiberManualRecordIcon, Typography } from '../../store/index';
+import ForDevsEyesOnly from './ForDevsEyesOnly';
 import classes from './Stepper.module.scss';
 
 export default function Stepper() {
@@ -14,29 +15,30 @@ export default function Stepper() {
       setStep(step - 1);
     }
   }
+
   return (
     <div className={classes.main}>
-      <h3>Your progress</h3>
+      <Typography variant='h6'>Your progress</Typography>
       <div className={classes.stepBar}>
-        {dots.map((dot, i) => {
+        {dots.map((_, i) => {
           return (
             <div
-              className={i === step ? classes.stepSelected : classes.step}
+              className={i <= step ? classes.stepSelected : classes.step}
               key={i}
             >
-              <BsDot className={classes.dot} />
+              <FiberManualRecordIcon
+                style={{ height: '1rem' }}
+                className={classes.dot}
+              />
             </div>
           );
         })}
       </div>
-      <p>
+      <Typography variant='body2' className='p1'>
         Step {step + 1} of {dots.length} complete.
-      </p>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <button onClick={() => stepChanger('decrement')}>-</button>
-        <button onClick={() => stepChanger('increment')}>+</button>
-        <small> ⬅ buttons for devs to play with progress bar</small>
-      </div>
+      </Typography>
+      {/* Uncomment the component below to test the progress bar */}
+      {/* <ForDevsEyesOnly stepChanger={stepChanger} /> */}
     </div>
   );
 }

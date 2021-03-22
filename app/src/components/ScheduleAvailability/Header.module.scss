@@ -1,0 +1,22 @@
+.main {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        margin: 2rem 0;
+    }
+
+    p {
+        margin: 0 auto;
+        padding-left: 3rem;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
