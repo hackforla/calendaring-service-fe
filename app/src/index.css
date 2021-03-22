@@ -69,6 +69,10 @@ caption {
   margin-top: 1rem;
 }
 
+.p1 {
+  padding: 1rem;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -105,6 +109,10 @@ p {
   margin: 1rem;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .logo {
   height: 3rem;
   width: 3rem;
@@ -113,4 +121,6 @@ p {
 
 .body-text {
   text-align: center;
+  padding: 1rem;
+  margin: 1rem;
 }
