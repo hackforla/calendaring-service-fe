@@ -1,9 +1,9 @@
 import { Route } from 'react-router-dom';
 import Dashboard from './components/Welcome/Dashboard';
 import Success from './components/Success/Success';
-import SuccessScreenTwo from './components/Success/SuccessScreenTwo';
 import ScheduleAvailableDays from './components/ScheduleAvailability/ScheduleAvailability';
 import ScheduleAvailableTimes from './components/ScheduleAvailability/ScheduleAvailableTimes';
+import SuccessScreenTwo from './components/Success/SuccessScreenTwo';
 import MeetingTypes from './components/MeetingTypes/MeetingTypes';
 import Preferences from './components/Preferences/Preferences';
 import { ThemeProvider } from '@material-ui/core/styles';
