@@ -6,11 +6,11 @@ import { WhiteCheckmarkIcon, Typography } from '../../store/index';
 export default function SuccessScreenTwo() {
   return (
     <div className={classes.main}>
-      <img
+      {/* <img
         src={WhiteCheckmarkIcon.default}
         className='whiteCheckmarkIcon'
         alt='whiteCheckMarkIcon'
-      />
+      /> */}
       <div className={classes.SuccessScreenTwoHeading}>
         <Typography variant='h5'>Success!</Typography>
       </div>
