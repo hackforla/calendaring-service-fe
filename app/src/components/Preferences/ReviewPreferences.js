@@ -4,7 +4,10 @@ import Header from '../shared/Header';
 export default function ReviewPreferences() {
   return (
     <>
-      <Header />
+      <Header
+        title='Review Preferences'
+        subtitle='Review the information is correct before creating'
+      />
     </>
   );
 }
