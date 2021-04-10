@@ -16,6 +16,7 @@ export default function ReviewPreferences() {
           position: 'absolute',
           bottom: 0,
           right: 0,
+          margin: '10px',
         }}>
         <Button size='large'>cancel</Button>
         <Button size='large' color='primary'>

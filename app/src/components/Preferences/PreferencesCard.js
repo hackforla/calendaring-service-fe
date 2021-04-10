@@ -19,7 +19,7 @@ export default function PreferencesCard() {
             justifyContent: 'space-between',
           }}>
           <Typography variant='h4'>Training</Typography>
-          <Typography variant='h6' className={classes.subBody}>
+          <Typography variant='h6' color='primary'>
             Edit
           </Typography>
         </div>

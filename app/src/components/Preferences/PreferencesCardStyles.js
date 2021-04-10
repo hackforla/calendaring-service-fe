@@ -5,7 +5,7 @@ const useStyles = makeStyles({
     minWidth: 275,
     borderTop: '15px solid #FF4F9E',
     margin: '1rem',
-    padding: '1rem',
+    padding: '0 1rem',
   },
   body: {
     margin: '0',
@@ -13,10 +13,6 @@ const useStyles = makeStyles({
   },
   subBody: {
     color: '#249BE5',
-  },
-  icon: {
-    height: '48px',
-    width: '48px',
   },
 });
 
