@@ -93,7 +93,9 @@ caption {
   font-size: 14px;
 }
 
-body, p, h5 {
+body,
+p,
+h5 {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
