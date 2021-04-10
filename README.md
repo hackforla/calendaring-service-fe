@@ -3,82 +3,58 @@
 Include a project description that explains **what** your project is and **why** it exists. Aim for no more than 3-5 concise sentences. For example, you might say:
 
 ## Introduction
+
 Welcome to Hack for LA's host homes project! Hack for LA is a brigade of Code for America, and we're working with our partners at Safe Place for Youth (SPY) to enhance their host homes program. Together, we're developing a workflow management tool, digitizing key moments within SPY’s host homes initiative to make the process scaleable, reduce institutional bias, and effectively capture data.
 
 ## Overview
+
 SPY’s host homes program is centered around housing young people, 18 - 25 years old. Their approach focuses on low-cost, community-driven intervention by matching a willing host with a guest or group of guests, providing a stable housing environment for youths who are experiencing homelessness and seeking stable housing.
 
 ## Home unite us links
+
 https://www.hackforla.org/projects/home-unite-us
 https://homeunite.us/
 
-## Coding style
-This code loosely adheres to the Airbnb style guide https://github.com/airbnb/javascript
+# How to run the project
 
-### Project context
+To run the project, enter `cd app` from the project directory and run `npm install`
 
-Civic projects often exist within a larger context that may include multiple stakeholders, historic relationships, associated research, or other details that are relevant but not *required* for direct contributions. Gathering these details in one place is useful, but the ReadMe isn't that place. Use this section to [link to a Google Doc](#) or other documentation repository where contributors can dig in if they so choose. This is also a good place to link to your Code of Conduct.
+### `npm start`
 
-### Technology used
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- Each platform or framework should get its own bullet.
-- Each platform should include an [active link](#) to the official documentation.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
+### Technologies used
 
+- This project is built in [React](https://reactjs.org/docs/getting-started.html)
+- It heavily relies on the [MaterialUI](https://material-ui.com/) library for components and themed styles
 
-# How to contribute
+### Material Theme guidelines
 
-Explain the different ways people can contribute. For example:
+- The following HTML elements should not be used
+  - `<h1>` - `<h6>`. Instead, use Material's `<Typography>`
+- The following styles should not be defined at a a component level because they are defined in `theme.js`
+  - Typography colors (the `<Typography>` accepts a `color=""` prop)
+  - Typography sizes (the `<Typography>` accepts a `variant={insert h1-6}` prop)
+  - Icon colors (Material icons accept a `color=""` prop)
 
-- Join the team {on Slack/at our weekly hack night/etc}.
-- To help with user research, {do ABC}.
-- To provide design support, {do XYZ}.
-- To contribute to the code, follow the instructions below.
+### Branching
 
-Remember to provide direct links to each channel.
-
-
-
-## Installation instructions
-
-1. Step-by-step instructions help new contributors get a development environment up and running quickly.
-2. You'll want to find the balance between being specific enough for novices to follow, without being so specific that you reinvent the wheel by providing overly-basic instructions that can be found elsewhere.
-3. Feel free to adapt this section and its sub-sections to your own processes.
-4. Alternatively, you can move everything from *Installation instructions* through *Testing* to a separate **Contributing.md** file to keep your **ReadMe.md** more succinct.
-
-
-### Working with issues
-
-- Explain how to submit a bug.
-- Explain how to submit a feature request.
-- Explain how to contribute to an existing issue.
-
-To create a new issue, please use the blank issue template (available when you click New Issue).  If you want to create an issue for other projects to use, please create the issue in your own repository and send a slack message to one of your hack night hosts with the link.
-
-
-### Working with forks and branches
-
-- Explain your guidelines here.
-
+- Create a branch off of main and name it according to the Jira ticket (run `git checkout -b CS-6`)
+- Push this branch to the remote
 
 ### Working with pull requests and reviews
 
-- Explain your process.
-
-
-### Testing
-
-- Provide instructions.
-
-
-
-# Contact info
-
-Include at least one way (or more, if possible) to reach your team with questions or comments.
-
+- When you are finished building the Jira ticket, submit a PR of your branch against `main`. 
+- I will look at it, and leave some comments
+- If any of them are confusing please let me know.
+- Once your PR is approved, I will merge it to `main`
 
 ### Licensing
 
 Include details about the project's open source status.
 
-*this readme file sourced from [Jessica Sand](http://jessicasand.com/other-stuff/just-enough-docs/)*
+_this readme file sourced from [Jessica Sand](http://jessicasand.com/other-stuff/just-enough-docs/)_

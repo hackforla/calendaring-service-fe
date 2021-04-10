@@ -8,7 +8,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 export {
   CheckCircleIcon,
   FiberManualRecordIcon,
@@ -20,4 +20,5 @@ export {
   KeyboardArrowDownIcon,
   AddCircleIcon,
   ArrowForwardIcon,
+  CheckCircleOutlineIcon,
 };
