@@ -1,16 +1,12 @@
 import React from 'react';
 import classes from './SuccessScreenTwo.module.scss';
 import { Button } from '../../store/index';
-import { WhiteCheckmarkIcon, Typography } from '../../store/index';
+import { CheckCircleOutlineIcon, Typography } from '../../store/index';
 
 export default function SuccessScreenTwo() {
   return (
     <div className={classes.main}>
-      {/* <img
-        src={WhiteCheckmarkIcon.default}
-        className='whiteCheckmarkIcon'
-        alt='whiteCheckMarkIcon'
-      /> */}
+      <CheckCircleOutlineIcon style={{ height: '5rem', width: '5rem' }} />
       <div className={classes.SuccessScreenTwoHeading}>
         <Typography variant='h5'>Success!</Typography>
       </div>
