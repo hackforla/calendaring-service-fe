@@ -7,8 +7,12 @@ import SuccessScreenTwo from './components/Success/SuccessScreenTwo';
 import MeetingTypes from './components/MeetingTypes/MeetingTypes';
 import Preferences from './components/Preferences/Preferences';
 import ReviewPreferences from './components/Preferences/ReviewPreferences';
+import CalendarView from './components/Scheduling/CalendarView';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
+
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 function App() {
   return (
@@ -22,6 +26,9 @@ function App() {
         <Route exact path='/meetingtypes' component={MeetingTypes} />
         <Route exact path='/preferences' component={Preferences} />
         <Route exact path='/review-preferences' component={ReviewPreferences} />
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <Route exact path='/calendarview' component={CalendarView} />
+        </MuiPickersUtilsProvider>
       </ThemeProvider>
     </>
   );
