@@ -8,6 +8,7 @@ import MeetingTypes from './components/MeetingTypes/MeetingTypes';
 import Preferences from './components/Preferences/Preferences';
 import ReviewPreferences from './components/Preferences/ReviewPreferences';
 import CalendarView from './components/Scheduling/CalendarView';
+import Prompt from './components/Scheduling/Prompt';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
 
@@ -26,6 +27,7 @@ function App() {
         <Route exact path='/meetingtypes' component={MeetingTypes} />
         <Route exact path='/preferences' component={Preferences} />
         <Route exact path='/review-preferences' component={ReviewPreferences} />
+        <Route exact path='/prompt' component={Prompt} />
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <Route exact path='/calendarview' component={CalendarView} />
         </MuiPickersUtilsProvider>

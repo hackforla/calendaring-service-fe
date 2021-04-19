@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import { Paper, Button } from '@material-ui/core';
 import { useStaticState, Calendar } from '@material-ui/pickers';
 
-function CalendarView() {
+export default function CalendarView() {
   const [value, handleDateChange] = useState(new Date());
 
   // you can past mostly all available props, like minDate, maxDate, autoOk and so on
@@ -19,5 +19,3 @@ function CalendarView() {
     </div>
   );
 }
-
-export default CalendarView;
