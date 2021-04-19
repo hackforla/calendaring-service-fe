@@ -6,8 +6,7 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '2rem 3rem',
-    gap: '2rem',
+    margin: '2rem 4rem',
   },
   img: {
     height: '7rem',
