@@ -1,16 +1,46 @@
 import { React, useState } from 'react';
-import { logo, Typography, Button, Paper } from '../../store/index';
-import { useStaticState, Calendar } from '@material-ui/pickers';
+import DayPicker, { DateUtils } from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
+import { logo, Typography, Button } from '../../store/index';
 import { useStyles } from './CalendarViewStyles';
 
 export default function CalendarView() {
   const classes = useStyles();
-  const [value, handleDateChange] = useState(new Date());
-  // you can past mostly all available props, like minDate, maxDate, autoOk and so on
-  const { pickerProps, wrapperProps } = useStaticState({
-    value,
-    onChange: handleDateChange,
-  });
+  const [selectedDays, handleDayChange] = useState([]);
+
+  // month is 0-indexed, ex. April is 3 instead of 4
+  const modifiers = {
+    preferred: [
+      new Date(2021, 3, 4),
+      new Date(2021, 3, 11),
+      new Date(2021, 3, 14),
+      new Date(2021, 3, 20),
+    ],
+    selected: selectedDays,
+  };
+  const modifiersStyles = {
+    selected: {
+      color: 'white',
+      backgroundColor: '#249BE5',
+    },
+    preferred: {
+      color: 'black',
+      backgroundColor: '#ACD9F5',
+    },
+  };
+
+  const handleDayClick = (day, { selected }) => {
+    const copySelectedDays = selectedDays.concat();
+    if (selected) {
+      const selectedIndex = copySelectedDays.findIndex((selectedDay) =>
+        DateUtils.isSameDay(selectedDay, day)
+      );
+      copySelectedDays.splice(selectedIndex, 1);
+    } else {
+      copySelectedDays.push(day);
+    }
+    handleDayChange(copySelectedDays);
+  };
 
   return (
     <div>
@@ -45,15 +75,16 @@ export default function CalendarView() {
           Choose a date
         </Typography>
       </div>
-      <Paper
-        style={{
-          overflow: 'hidden',
-          margin: '1rem',
-          border: '1px solid #E6E6E6',
-          boxShadow: '0px 2px 4px #E6E6E6',
-        }}>
-        <Calendar {...pickerProps} />
-      </Paper>
+
+      <div>
+        <DayPicker
+          modifiers={modifiers}
+          modifiersStyles={modifiersStyles}
+          onDayClick={handleDayClick}
+          selectedDays={selectedDays}
+        />
+      </div>
+
       <div className={classes.buttonContainer}>
         <Button size='large'>Go Back</Button>
         <Button size='large' color='primary' disabled={true}>

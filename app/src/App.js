@@ -12,9 +12,6 @@ import Prompt from './components/Scheduling/Prompt';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
 
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
-
 function App() {
   return (
     <>
@@ -28,9 +25,7 @@ function App() {
         <Route exact path='/preferences' component={Preferences} />
         <Route exact path='/review-preferences' component={ReviewPreferences} />
         <Route exact path='/prompt' component={Prompt} />
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <Route exact path='/calendarview' component={CalendarView} />
-        </MuiPickersUtilsProvider>
+        <Route exact path='/calendarview' component={CalendarView} />
       </ThemeProvider>
     </>
   );

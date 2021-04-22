@@ -15,7 +15,6 @@ import {
   CardContent,
   Checkbox,
   Typography,
-  Paper,
 } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
@@ -38,5 +37,4 @@ export {
   CardContent,
   Checkbox,
   Typography,
-  Paper,
 };
