@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
+// import 'react-day-picker/lib/style.css';
+import styles from './CalendarView.css';
 import { logo, Typography, Button } from '../../store/index';
 import { useStyles } from './CalendarViewStyles';
 
@@ -42,6 +43,8 @@ export default function CalendarView() {
     handleDayChange(copySelectedDays);
   };
 
+  const WEEKDAYS_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
   return (
     <div>
       <div className={classes.root}>
@@ -78,10 +81,12 @@ export default function CalendarView() {
 
       <div>
         <DayPicker
+          // className={styles}
           modifiers={modifiers}
           modifiersStyles={modifiersStyles}
           onDayClick={handleDayClick}
           selectedDays={selectedDays}
+          weekdaysShort={WEEKDAYS_SHORT}
         />
       </div>
 
