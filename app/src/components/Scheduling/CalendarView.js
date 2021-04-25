@@ -1,6 +1,5 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
-// import 'react-day-picker/lib/style.css';
 import styles from './CalendarView.css';
 import { logo, Typography, Button } from '../../store/index';
 import { useStyles } from './CalendarViewStyles';
@@ -8,8 +7,15 @@ import { useStyles } from './CalendarViewStyles';
 export default function CalendarView() {
   const classes = useStyles();
   const [selectedDays, handleDayChange] = useState([]);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
+  useEffect(() => {
+    handleButtonNext();
+  }, [selectedDays]);
 
   // month is 0-indexed, ex. April is 3 instead of 4
+
+  //Date selected styles:
   const modifiers = {
     preferred: [
       new Date(2021, 3, 4),
@@ -41,6 +47,14 @@ export default function CalendarView() {
       copySelectedDays.push(day);
     }
     handleDayChange(copySelectedDays);
+  };
+
+  const handleButtonNext = () => {
+    if (selectedDays.length > 0) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
   };
 
   const WEEKDAYS_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -81,7 +95,7 @@ export default function CalendarView() {
 
       <div>
         <DayPicker
-          // className={styles}
+          className={styles}
           modifiers={modifiers}
           modifiersStyles={modifiersStyles}
           onDayClick={handleDayClick}
@@ -92,7 +106,7 @@ export default function CalendarView() {
 
       <div className={classes.buttonContainer}>
         <Button size='large'>Go Back</Button>
-        <Button size='large' color='primary' disabled={true}>
+        <Button size='large' color='primary' disabled={buttonDisabled}>
           Next
         </Button>
       </div>
