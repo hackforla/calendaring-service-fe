@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import styles from './CalendarView.css';
-import { logo, Typography, Button } from '../../store/index';
+import Header from './Header';
+import { Button } from '../../store/index';
 import { useStyles } from './CalendarViewStyles';
 
 export default function CalendarView() {
@@ -10,6 +11,13 @@ export default function CalendarView() {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   useEffect(() => {
+    const handleButtonNext = () => {
+      if (selectedDays.length > 0) {
+        setButtonDisabled(false);
+      } else {
+        setButtonDisabled(true);
+      }
+    };
     handleButtonNext();
   }, [selectedDays]);
 
@@ -31,7 +39,7 @@ export default function CalendarView() {
       backgroundColor: '#249BE5',
     },
     preferred: {
-      color: 'black',
+      color: '#2F2F2F',
       backgroundColor: '#ACD9F5',
     },
   };
@@ -49,53 +57,15 @@ export default function CalendarView() {
     handleDayChange(copySelectedDays);
   };
 
-  const handleButtonNext = () => {
-    if (selectedDays.length > 0) {
-      setButtonDisabled(false);
-    } else {
-      setButtonDisabled(true);
-    }
-  };
-
   const WEEKDAYS_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
     <div>
-      <div className={classes.root}>
-        <div className={classes.header}>
-          <img src={logo.default} className='logo' alt='logo' />
-          <Typography variant='h4'>Schedule with Tracy</Typography>
-        </div>
-        <Typography
-          variant='body2'
-          style={{
-            fontSize: '14px',
-            marginBottom: '1rem',
-          }}>
-          Select from Tracy’s availability for
-        </Typography>
-        <Typography
-          variant='body1'
-          style={{
-            fontWeight: '500',
-            marginBottom: '0.5rem',
-          }}
-          color='primary'>
-          Training
-        </Typography>
-        <Typography
-          variant='body2'
-          style={{
-            fontSize: '14px',
-            marginBottom: '1rem',
-          }}>
-          Choose a date
-        </Typography>
-      </div>
-
+      <Header buttonDisabled={buttonDisabled} />
       <div>
         <DayPicker
           className={styles}
+          showOutsideDays
           modifiers={modifiers}
           modifiersStyles={modifiersStyles}
           onDayClick={handleDayClick}
