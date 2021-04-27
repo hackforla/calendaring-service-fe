@@ -6,6 +6,7 @@ import ScheduleAvailableTimes from './components/ScheduleAvailability/ScheduleAv
 import SuccessScreenTwo from './components/Success/SuccessScreenTwo';
 import MeetingTypes from './components/MeetingTypes/MeetingTypes';
 import Preferences from './components/Preferences/Preferences';
+import Prompt from './components/Scheduling/Prompt';
 import ReviewPreferences from './components/Preferences/ReviewPreferences';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/scheduletimes' component={ScheduleAvailableTimes} />
         <Route exact path='/meetingtypes' component={MeetingTypes} />
         <Route exact path='/preferences' component={Preferences} />
+        <Route exact path='/prompt' component={Prompt} />
         <Route exact path='/review-preferences' component={ReviewPreferences} />
       </ThemeProvider>
     </>
