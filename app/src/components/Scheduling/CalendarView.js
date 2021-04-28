@@ -7,7 +7,7 @@ import { useStyles } from './CalendarViewStyles';
 
 export default function CalendarView() {
   const classes = useStyles();
-  const [selectedDays, handleDayChange] = useState([]);
+  const [selectedDays, setSelectedDays] = useState([]);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   useEffect(() => {
@@ -54,13 +54,13 @@ export default function CalendarView() {
     } else {
       copySelectedDays.push(day);
     }
-    handleDayChange(copySelectedDays);
+    setSelectedDays(copySelectedDays);
   };
 
   const WEEKDAYS_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
-    <div>
+    <>
       <Header textOptions={buttonDisabled} />
       <div>
         <DayPicker
@@ -80,6 +80,6 @@ export default function CalendarView() {
           Next
         </Button>
       </div>
-    </div>
+    </>
   );
 }

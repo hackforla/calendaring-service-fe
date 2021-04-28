@@ -24,9 +24,8 @@ export default function Header({ textOptions }) {
         <Typography variant='h4'>Schedule with Tracy</Typography>
       </div>
       <Typography
-        variant='body2'
+        variant='subtitle1'
         style={{
-          fontSize: '14px',
           marginBottom: '1rem',
           width: '200px',
           textAlign: 'center',
@@ -36,9 +35,9 @@ export default function Header({ textOptions }) {
           : 'Select from Tracy’s availability for'}
       </Typography>
       <Typography
-        variant='body1'
+        variant='h6'
         style={{
-          fontWeight: '500',
+          // fontWeight: '500',
           marginBottom: '0.5rem',
         }}
         color='primary'>
