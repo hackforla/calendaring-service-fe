@@ -7,6 +7,7 @@ import SuccessScreenTwo from './components/Success/SuccessScreenTwo';
 import MeetingTypes from './components/MeetingTypes/MeetingTypes';
 import Preferences from './components/Preferences/Preferences';
 import ReviewPreferences from './components/Preferences/ReviewPreferences';
+import CalendarView from './components/Scheduling/CalendarView';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/meetingtypes' component={MeetingTypes} />
         <Route exact path='/preferences' component={Preferences} />
         <Route exact path='/review-preferences' component={ReviewPreferences} />
+        <Route exact path='/calendarview' component={CalendarView} />
       </ThemeProvider>
     </>
   );
