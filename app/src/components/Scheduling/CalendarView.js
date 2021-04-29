@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, useCallback } from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import styles from './CalendarView.css';
 import Header from './Header';
@@ -10,20 +10,20 @@ export default function CalendarView() {
   const [selectedDays, setSelectedDays] = useState([]);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
+  const handleButtonNext = useCallback(() => {
+    if (selectedDays.length > 0) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [selectedDays.length]);
+
   useEffect(() => {
-    const handleButtonNext = () => {
-      if (selectedDays.length > 0) {
-        setButtonDisabled(false);
-      } else {
-        setButtonDisabled(true);
-      }
-    };
-    handleButtonNext();
-  }, [selectedDays]);
+    handleButtonNext()
+  }, [handleButtonNext, selectedDays]);
 
-  // month is 0-indexed, ex. April is 3 instead of 4
-
-  //Date selected styles:
+  // Month is 0-indexed, ex. April is 3 instead of 4
+  // Date selected styles:
   const modifiers = {
     preferred: [
       new Date(2021, 3, 4),

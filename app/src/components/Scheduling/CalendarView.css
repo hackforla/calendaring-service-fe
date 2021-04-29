@@ -1,3 +1,6 @@
+/* This css file is the only way to style the individual
+   components of the Calendar Day Picker.
+*/
 abbr[title] {
   text-decoration: none;
   font-size: 12px;
