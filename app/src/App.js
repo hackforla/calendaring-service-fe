@@ -11,6 +11,7 @@ import ReviewPreferences from './components/Preferences/ReviewPreferences';
 import CalendarView from './components/Scheduling/CalendarView';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
+import ContactReview from './components/Scheduling/ContactReview';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route exact path='/prompt' component={Prompt} />
         <Route exact path='/review-preferences' component={ReviewPreferences} />
         <Route exact path='/calendarview' component={CalendarView} />
+        <Route exact path='/contactreview' component={ContactReview} />
       </ThemeProvider>
     </>
   );
