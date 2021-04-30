@@ -2,6 +2,7 @@ import React from 'react';
 import { logo, Typography, Button } from '../../store/index';
 import { useStyles } from './PromptStyles';
 
+// TODO : Make Line 18, 26, 36 dynamic
 export default function Prompt() {
   const classes = useStyles();
   return (
@@ -11,7 +12,6 @@ export default function Prompt() {
         variant='h4'
         color='primary'
         style={{
-          fontSize: '32px',
           marginTop: '1rem',
           marginBottom: '0.5rem',
         }}>
