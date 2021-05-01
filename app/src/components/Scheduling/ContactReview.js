@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import {
-  FormGroup,
   TextField,
   FormControl,
   Button,
@@ -13,7 +12,7 @@ const HARD_CODED_DATA = {
   firstName: 'Nina',
   lastName: 'Mosley',
   email: 'nina99@gmail.com',
-  phoneNumber: '12135555555'
+  phoneNumber: '+1 (213) 555-5555'
 }
 
 export default function ContactReview() {
@@ -48,34 +47,49 @@ export default function ContactReview() {
       />
 
       <FormControl>
-        <label>First Name <span className={classes.required}>*</span></label>
-        <TextField
-          variant="outlined"
-          fullWidth name="firstName"
-          value={inputs.firstName}
-          inputProps={{
+        <>
+          <label className={classes.letterSpacing}>First Name<span className={classes.required}>*</span>
+          </label>
+          <TextField
+            className={classes.formSpace}
+            variant="outlined"
+            fullWidth
+            name="firstName"
+            value={inputs.firstName}
+            inputProps={{
+                readOnly: true,
+                "aria-readonly": true,
+              }}
+            required
+          />
+        </>
+        <>
+          <label className={classes.letterSpacing}>
+            Last Name<span className={classes.required}>*</span>
+          </label>
+          <TextField
+            className={classes.formSpace}
+            variant="outlined"
+            fullWidth
+            name="lastName"
+            value={inputs.lastName}
+            inputProps={{
               readOnly: true,
               "aria-readonly": true,
             }}
             required
-        />
-        <label>Last Name <span className={classes.required}>*</span></label>
-        <TextField
-          variant="outlined"
-          fullWidth name="lastName"
-          value={inputs.lastName}
-          inputProps={{
-            readOnly: true,
-            "aria-readonly": true,
-          }}
-          required
           />
+        </>
         <>
-          <label>Email Address <span className={classes.required}>*</span></label>
+          <label className={classes.letterSpacing}>Email Address<span className={classes.required}>*</span>
+          </label>
+          <div className={classes.input}>
           <TextField
+            className={classes.formSpace}
             type="email"
             variant="outlined"
-            fullWidth name="email"
+            fullWidth
+            name="email"
             value={inputs.email}
             onChange={onChange}
             disabled={!editMode.email}
@@ -88,36 +102,43 @@ export default function ContactReview() {
             required
           />
           <Button
+            style={{bottom: '9rem'}}
             color="primary"
             className={classes.editButton}
             onClick={() => toggleEdit({ ...editMode, email: !editMode.email})}
           >
             {editMode.email ? 'confirm' : 'edit' }
           </Button>
+          </div>
         </>
         <>
-        <label>Phone Number (Optional)</label>
-        <TextField
-          type="text"
-          variant="outlined"
-          fullWidth name="phoneNumber"
-          value={inputs.phoneNumber}
-          onChange={onChange}
-          disabled={!editMode.phoneNumber}
-          InputProps={{
-            classes: {
-              disabled: classes.disabled,
-              input: classes.inputWidth
-            },
-          }}
-        />
-        <Button
-          color="primary"
-          className={classes.editButton}
-          onClick={() => toggleEdit({ ...editMode, phoneNumber: !editMode.phoneNumber})}
-        >
-          {editMode.phoneNumber ? 'confirm' : 'edit' }
-        </Button>
+          <label className={classes.letterSpacing}>Phone Number (Optional)</label>
+          <div className={classes.input}>
+          <TextField
+            className={classes.formSpace}
+            type="text"
+            variant="outlined"
+            fullWidth
+            name="phoneNumber"
+            value={inputs.phoneNumber}
+            onChange={onChange}
+            disabled={!editMode.phoneNumber}
+            InputProps={{
+              classes: {
+                disabled: classes.disabled,
+                input: classes.inputWidth
+              },
+            }}
+          />
+          <Button
+            style={{bottom: '2.7rem'}}
+            color="primary"
+            className={classes.editButton}
+            onClick={() => toggleEdit({ ...editMode, phoneNumber: !editMode.phoneNumber})}
+          >
+            {editMode.phoneNumber ? 'confirm' : 'edit' }
+          </Button>
+          </div>
         </>
       </FormControl>
       <div className={classes.buttonContainer}>

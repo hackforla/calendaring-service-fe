@@ -7,16 +7,26 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     margin: '1rem',
   },
+  input: {
+    display: 'inline-flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  formSpace: {
+    marginBottom: '1.5rem',
+  },
+  letterSpacing: {
+    letterSpacing: '1px',
+  },
   editButton: {
     width: '37px',
     height: '22px',
-    position: 'relative',
-    marginLeft: 'auto',
-    marginRight: '0',
-    bottom: '40px',
-    right: '20px',
+    position: 'absolute',
+    right: '0',
+    left: '16rem',
     textTransform: 'capitalize',
     letterSpacing: '1px',
+
   },
   buttonContainer: {
     position: 'absolute',
