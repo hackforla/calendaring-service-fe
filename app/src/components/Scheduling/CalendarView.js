@@ -61,7 +61,16 @@ export default function CalendarView() {
 
   return (
     <>
-      <Header textOptions={buttonDisabled} />
+      <Header
+        title="Schedule with Tracy"
+        description="Select from Tracy's availability for"
+        activity="Training"
+      >
+        {buttonDisabled
+          ? 'Choose a date'
+          : 'Date selected'
+        }
+      </Header>
       <div>
         <DayPicker
           className={styles}

@@ -2,26 +2,14 @@ import React from 'react';
 import { logo, Typography } from '../../store/index';
 import { useStyles } from './CalendarViewStyles';
 
-export default function Header({ textOptions }) {
+export default function Header({ title, description, activity, children }) {
   const classes = useStyles();
-
-  const getActionText = () => {
-    if (textOptions === 'CalendarSelectedTimes') {
-      return 'Choose time range';
-    }
-    if (textOptions) {
-      return 'Choose a date';
-    }
-    if (!textOptions) {
-      return 'Date selected';
-    }
-  };
 
   return (
     <div className={classes.root}>
       <div className={classes.header}>
         <img src={logo.default} className='logo' alt='logo' />
-        <Typography variant='h4'>Schedule with Tracy</Typography>
+        <Typography variant='h4'>{title}</Typography>
       </div>
       <Typography
         variant='subtitle1'
@@ -30,9 +18,7 @@ export default function Header({ textOptions }) {
           width: '200px',
           textAlign: 'center',
         }}>
-        {textOptions === 'CalendarSelectedTimes'
-          ? 'Choose your time availability for the selected days'
-          : 'Select from Tracy’s availability for'}
+          {description}
       </Typography>
       <Typography
         variant='h6'
@@ -41,15 +27,14 @@ export default function Header({ textOptions }) {
           marginBottom: '0.5rem',
         }}
         color='primary'>
-        Training
+        {activity}
       </Typography>
       <Typography
-        variant='body2'
+        variant='subtitle1'
         style={{
-          fontSize: '14px',
           marginBottom: '1rem',
         }}>
-        {getActionText()}
+        {children}
       </Typography>
     </div>
   );
