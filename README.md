@@ -1,10 +1,10 @@
-# Project title and description
-
-Include a project description that explains **what** your project is and **why** it exists. Aim for no more than 3-5 concise sentences. For example, you might say:
-
-## Introduction
+# Home Unite Us project
 
 Welcome to Hack for LA's host homes project! Hack for LA is a brigade of Code for America, and we're working with our partners at Safe Place for Youth (SPY) to enhance their host homes program. Together, we're developing a workflow management tool, digitizing key moments within SPY’s host homes initiative to make the process scaleable, reduce institutional bias, and effectively capture data.
+
+We're working with community non-profits who have a Host Home initiative to develop a workflow management tool to make the process scaleable (across all providers), reduce institutional bias, and effectively capture data.
+
+Host Home programs are centered around housing young people, 18 - 25 years old. Their approach focuses on low-cost, community-driven intervention by matching a willing host with a guest or group of guests, providing a stable housing environment for youths who are experiencing homelessness and seeking stable housing.
 
 ## Overview
 
@@ -43,13 +43,15 @@ You will also see any lint errors in the console.
 
 ### Branching
 
-- Create a branch off of main and name it according to the Jira ticket (run `git checkout -b CS-6`)
+- Create a branch off of main and name it according to the Jira ticket 
+  - (For example if you want to create a new branch for Jira ticket CS-6, run `git checkout -b CS-6`)
 - Push this branch to the remote
+- Ensure that you create only one branch per Jira ticket
 
 ### Working with pull requests and reviews
 
-- When you are finished building the Jira ticket, submit a PR of your branch against `main`. 
-- I will look at it, and leave some comments
+- When you are finished building the Jira ticket, submit a PR of your branch against `main`, but do not merge it.
+- I will look at it, and leave some comments.
 - If any of them are confusing please let me know.
 - Once your PR is approved, I will merge it to `main`
 
