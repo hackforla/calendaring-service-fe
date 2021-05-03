@@ -34,7 +34,7 @@ export default function ContactReview() {
     setInputs(HARD_CODED_DATA);
   }, [])
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     setInputs({...inputs, [e.target.name]: e.target.value})
   };
 
@@ -91,7 +91,7 @@ export default function ContactReview() {
             fullWidth
             name="email"
             value={inputs.email}
-            onChange={onChange}
+            onChange={handleChange}
             disabled={!editMode.email}
             InputProps={{
               classes: {
@@ -121,7 +121,7 @@ export default function ContactReview() {
             fullWidth
             name="phoneNumber"
             value={inputs.phoneNumber}
-            onChange={onChange}
+            onChange={handleChange}
             disabled={!editMode.phoneNumber}
             InputProps={{
               classes: {
