@@ -23,7 +23,6 @@ export default function Header({ title, description, activity, children }) {
       <Typography
         variant='h6'
         style={{
-          // fontWeight: '500',
           marginBottom: '0.5rem',
         }}
         color='primary'>
