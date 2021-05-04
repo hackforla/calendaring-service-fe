@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     margin: '1rem',
   },
   input: {
+    position: 'relative',
     display: 'inline-flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -19,14 +20,12 @@ const useStyles = makeStyles({
     letterSpacing: '1px',
   },
   editButton: {
-    width: '37px',
-    height: '22px',
     position: 'absolute',
-    right: '0',
-    left: '16rem',
+    right: 0,
+    top: 13,
+    // left: '16rem',
     textTransform: 'capitalize',
     letterSpacing: '1px',
-
   },
   buttonContainer: {
     position: 'absolute',

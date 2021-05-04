@@ -99,7 +99,6 @@ export default function ContactReview() {
           required
         />
         <Button
-          style={{bottom: '9rem'}}
           color="primary"
           className={classes.editButton}
           onClick={() => toggleEdit({ ...editMode, email: !editMode.email})}
@@ -127,7 +126,6 @@ export default function ContactReview() {
           }}
         />
         <Button
-          style={{bottom: '2.7rem'}}
           color="primary"
           className={classes.editButton}
           onClick={() => toggleEdit({ ...editMode, phoneNumber: !editMode.phoneNumber})}
