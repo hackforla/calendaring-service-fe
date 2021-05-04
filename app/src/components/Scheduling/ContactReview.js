@@ -55,10 +55,13 @@ export default function ContactReview() {
           fullWidth
           name="firstName"
           value={inputs.firstName}
-          inputProps={{
-              readOnly: true,
+          InputProps={{
+            readOnly: true,
               "aria-readonly": true,
-            }}
+            classes: {
+              input: classes.staticInput,
+            }
+          }}
           required
         />
 
@@ -71,16 +74,19 @@ export default function ContactReview() {
           fullWidth
           name="lastName"
           value={inputs.lastName}
-          inputProps={{
+          InputProps={{
             readOnly: true,
-            "aria-readonly": true,
+              "aria-readonly": true,
+            classes: {
+              input: classes.staticInput
+            }
           }}
           required
         />
 
         <label className={classes.letterSpacing}>Email Address<span className={classes.required}>*</span>
         </label>
-        <div className={classes.input}>
+        <div className={classes.inputRow}>
         <TextField
           className={classes.formSpace}
           type="email"
@@ -93,7 +99,7 @@ export default function ContactReview() {
           InputProps={{
             classes: {
               disabled: classes.disabled,
-              input: classes.inputWidth
+              input: classes.EditableInput
             },
           }}
           required
@@ -108,7 +114,7 @@ export default function ContactReview() {
         </div>
 
         <label className={classes.letterSpacing}>Phone Number (Optional)</label>
-        <div className={classes.input}>
+        <div className={classes.inputRow}>
         <TextField
           className={classes.formSpace}
           type="text"
@@ -121,7 +127,7 @@ export default function ContactReview() {
           InputProps={{
             classes: {
               disabled: classes.disabled,
-              input: classes.inputWidth
+              input: classes.EditableInput
             },
           }}
         />

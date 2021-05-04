@@ -7,23 +7,36 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     margin: '1rem',
   },
-  input: {
+  inputRow: {
     position: 'relative',
     display: 'inline-flex',
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  staticInput: {
+    padding: '12px 4rem 12px 2rem',
+    boxSizing: 'border-box',
+    borderRadius: '5px',
+    height: '48px',
+  },
+  EditableInput: {
+    padding: '12px 0 12px 2rem',
+    boxSizing: 'border-box',
+    borderRadius: '5px',
+    height: '48px',
+    width: '75%',
   },
   formSpace: {
     marginBottom: '1.5rem',
   },
   letterSpacing: {
     letterSpacing: '1px',
+    lineHeight: '32px',
   },
   editButton: {
     position: 'absolute',
     right: 0,
-    top: 13,
-    // left: '16rem',
+    top: 6,
     textTransform: 'capitalize',
     letterSpacing: '1px',
   },
@@ -32,9 +45,6 @@ const useStyles = makeStyles({
     bottom: 0,
     right: 0,
     margin: '1rem',
-  },
-  inputWidth: {
-    width: '65%',
   },
   required: {
     color: 'red',
