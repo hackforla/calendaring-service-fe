@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  header: {
+  subtitle: {
     display: 'flex',
     alignItems: 'center',
     margin: '0.7rem',

@@ -28,13 +28,6 @@ export default function Header({ title, description, activity, children }) {
         color='primary'>
         {activity}
       </Typography>
-      <Typography
-        variant='subtitle1'
-        style={{
-          marginBottom: '1rem',
-        }}>
-        {children}
-      </Typography>
     </div>
   );
 }
