@@ -64,5 +64,15 @@ export const theme = createMuiTheme({
         background: 'acd9f5',
       },
     },
+    MuiOutlinedInput: {
+      root: {
+        "& $notchedOutline": {
+          borderColor: "#D9D9D9",
+        },
+        "&$disabled $notchedOutline": {
+          borderColor: '#D9D9D9'
+        }
+      }
+    }
   },
 });

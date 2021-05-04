@@ -7,10 +7,11 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  header: {
+  subtitle: {
     display: 'flex',
     alignItems: 'center',
-    margin: '1rem',
+    margin: '0.7rem',
+    justifyContent: 'center',
   },
   buttonContainer: {
     position: 'absolute',

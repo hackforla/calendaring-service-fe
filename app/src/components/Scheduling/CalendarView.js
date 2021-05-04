@@ -2,7 +2,7 @@ import { React, useState, useEffect, useCallback } from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import styles from './CalendarView.css';
 import Header from './Header';
-import { Button } from '../../store/index';
+import { Button, Typography } from '../../store/index';
 import { useStyles } from './CalendarViewStyles';
 
 export default function CalendarView() {
@@ -61,7 +61,20 @@ export default function CalendarView() {
 
   return (
     <>
-      <Header textOptions={buttonDisabled} />
+      <Header
+        title="Schedule with Tracy"
+        description="Select from Tracy's availability for"
+        activity="Training"
+      />
+      <Typography
+        variant='subtitle1'
+        className={classes.subtitle}
+      >
+        {buttonDisabled
+          ? 'Choose a date'
+          : 'Date selected'
+        }
+      </Typography>
       <div>
         <DayPicker
           className={styles}
