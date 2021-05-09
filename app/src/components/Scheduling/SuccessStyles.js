@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   success: {
     letterSpacing: '1px',
     fontWeight: 700,
-    margin: '1rem 0'
+    margin: '1rem 0',
   },
   paragraph: {
     letterSpacing: '1px',
