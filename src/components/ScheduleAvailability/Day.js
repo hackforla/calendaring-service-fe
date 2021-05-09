@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Day.module.scss';
-import { Checkbox } from '../../store/index'
+import { Checkbox } from '../../utils/index'
 
 export default function Day({ day, selected, dispatch, idx }) {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { logo, Typography } from '../../store/index';
+import { logo, Typography } from '../../utils/index';
 
 export default function Header({ title, subtitle }) {
   return (

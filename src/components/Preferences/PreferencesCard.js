@@ -4,7 +4,7 @@ import {
   CardContent,
   Typography,
   LocationOnIcon,
-} from '../../store/index';
+} from '../../utils/index';
 import { useStyles } from './PreferencesCardStyles';
 
 export default function PreferencesCard() {

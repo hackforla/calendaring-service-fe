@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import { daysOfTheWeek, Button } from '../../store/index';
+import { daysOfTheWeek, Button } from '../../utils/index';
 import Header from './Header';
 import { reducer } from './helpers/reducer';
 import classes from './ScheduleAvailability.module.scss';

@@ -4,7 +4,7 @@ import {
   TextField,
   FormControl,
   Button,
-} from '../../store/index';
+} from '../../utils/index';
 import { useStyles } from './ContactReviewStyles';
 
 const HARD_CODED_DATA = {

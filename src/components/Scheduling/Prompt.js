@@ -1,5 +1,5 @@
 import React from 'react';
-import { logo, Typography, Button } from '../../store/index';
+import { logo, Typography, Button } from '../../utils/index';
 import { useStyles } from './PromptStyles';
 
 // TODO : Make Line 18, 26, 36 dynamic

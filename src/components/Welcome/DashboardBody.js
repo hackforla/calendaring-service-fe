@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './DashboardBody.module.scss';
-import { welcome, Button, Typography } from '../../store/index';
+import { welcome, Button, Typography } from '../../utils/index';
 
 export default function DashboardBody() {
   return (

@@ -1,8 +1,8 @@
-import { React, useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import styles from './CalendarView.css';
 import Header from './Header';
-import { Button, Typography } from '../../store/index';
+import { Button, Typography } from '../../utils/index';
 import { useStyles } from './CalendarViewStyles';
 
 export default function CalendarView() {

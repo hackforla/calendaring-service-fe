@@ -110,7 +110,7 @@ abbr[title] {
   background-repeat: no-repeat;
   color: #8b9898;
   cursor: pointer;
-  background-image: url('../../store/images/baseline_arrow_back_ios_black_24dp.png');
+  background-image: url('../../utils/images/BackArrow.png');
 }
 
 .DayPicker-NavButton--next {
@@ -127,5 +127,5 @@ abbr[title] {
   background-repeat: no-repeat;
   color: #8b9898;
   cursor: pointer;
-  background-image: url('../../store/images/baseline_arrow_forward_ios_black_24dp.png');
+  background-image: url('../../utils/images/ForwardArrow.png');
 }

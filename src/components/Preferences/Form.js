@@ -15,7 +15,7 @@ import {
   TextareaAutosize,
   HelpIcon,
   KeyboardArrowDownIcon,
-} from '../../store/index';
+} from '../../utils/index';
 import { useStyles, BootstrapInput } from './FormStyles';
 
 let initialValues = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Header.module.scss';
-import { logo, Typography } from '../../store/index';
+import { logo, Typography } from '../../utils/index';
 
 export default function Header() {
   return (

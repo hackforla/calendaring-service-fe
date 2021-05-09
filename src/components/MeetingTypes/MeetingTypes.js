@@ -1,6 +1,6 @@
 import React from 'react';
 import Stepper from '../Success/Stepper';
-import { meetingTypes, HelpIcon, Typography } from '../../store/index';
+import { meetingTypes, HelpIcon, Typography } from '../../utils/index';
 import Header from '../Welcome/Header';
 import MeetingType from './MeetingType';
 

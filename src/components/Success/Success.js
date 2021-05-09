@@ -1,7 +1,7 @@
 import React from 'react';
 import Stepper from './Stepper';
 import classes from './Success.module.scss';
-import { CheckCircleIcon, Button, Typography } from '../../store/index';
+import { CheckCircleIcon, Button, Typography } from '../../utils/index';
 
 export default function Success() {
   return (

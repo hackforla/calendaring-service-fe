@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { logo } from '../../store/index';
+import { logo } from '../../utils/index';
 import classes from './Header.module.scss';
-import { Typography } from '../../store/index';
+import { Typography } from '../../utils/index';
 
 export default function Header() {
   const [selected, setSelected] = useState('Meeting Types');

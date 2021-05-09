@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiberManualRecordIcon, Typography } from '../../store/index';
+import { FiberManualRecordIcon, Typography } from '../../utils/index';
 import ForDevsEyesOnly from './ForDevsEyesOnly';
 import classes from './Stepper.module.scss';
 

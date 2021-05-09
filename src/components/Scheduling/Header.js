@@ -1,5 +1,5 @@
 import React from 'react';
-import { logo, Typography } from '../../store/index';
+import { logo, Typography } from '../../utils/index';
 import { useStyles } from './CalendarViewStyles';
 
 export default function Header({ title, description, activity, children }) {

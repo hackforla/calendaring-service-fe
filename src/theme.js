@@ -1,6 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 const blue = '#249be5';
 const grey = '#fff';
+const brown = '#fff';
 
 export const theme = createMuiTheme({
   palette: {
@@ -66,13 +67,13 @@ export const theme = createMuiTheme({
     },
     MuiOutlinedInput: {
       root: {
-        "& $notchedOutline": {
-          borderColor: "#D9D9D9",
+        '& $notchedOutline': {
+          borderColor: '#D9D9D9',
         },
-        "&$disabled $notchedOutline": {
-          borderColor: '#D9D9D9'
-        }
-      }
-    }
+        '&$disabled $notchedOutline': {
+          borderColor: '#D9D9D9',
+        },
+      },
+    },
   },
 });
