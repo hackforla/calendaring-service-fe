@@ -1,7 +1,8 @@
+import React from 'react';
 import { logo, Typography } from '../../utils/index';
 import { useStyles } from './CalendarViewStyles';
 
-export default function Header({ title, description, activity, children }) {
+export default function Header({ title, description, activity }) {
   const classes = useStyles();
 
   return (
@@ -16,15 +17,17 @@ export default function Header({ title, description, activity, children }) {
           marginBottom: '1rem',
           width: '200px',
           textAlign: 'center',
-        }}>
-          {description}
+        }}
+      >
+        {description}
       </Typography>
       <Typography
         variant='h6'
         style={{
           marginBottom: '0.5rem',
         }}
-        color='primary'>
+        color='primary'
+      >
         {activity}
       </Typography>
     </div>

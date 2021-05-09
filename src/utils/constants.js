@@ -1,3 +1,4 @@
+import React from 'react';
 import { LocationOnIcon, VideocamIcon, PhoneIcon } from './index';
 
 const daysOfTheWeek = [

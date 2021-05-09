@@ -1,7 +1,6 @@
 import React from 'react';
 import WeekDays from './WeekDays';
 import { Button } from '../../utils/index';
-import classes from './ScheduleAvailableDays.module.scss';
 
 export default function ScheduleAvailableDays({
   dispatch,
@@ -9,7 +8,7 @@ export default function ScheduleAvailableDays({
   state,
 }) {
   return (
-    <div className={classes.main}>
+    <div style={{ textAlign: 'center' }}>
       <Button
         onClick={() =>
           dispatch({ type: 'TOGGLE_ALL', payload: isEverySelected })
