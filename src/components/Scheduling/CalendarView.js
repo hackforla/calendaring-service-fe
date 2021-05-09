@@ -19,7 +19,7 @@ export default function CalendarView() {
   }, [selectedDays.length]);
 
   useEffect(() => {
-    handleButtonNext()
+    handleButtonNext();
   }, [handleButtonNext, selectedDays]);
 
   // Month is 0-indexed, ex. April is 3 instead of 4
@@ -62,18 +62,12 @@ export default function CalendarView() {
   return (
     <>
       <Header
-        title="Schedule with Tracy"
+        title='Schedule with Tracy'
         description="Select from Tracy's availability for"
-        activity="Training"
+        activity='Training'
       />
-      <Typography
-        variant='subtitle1'
-        className={classes.subtitle}
-      >
-        {buttonDisabled
-          ? 'Choose a date'
-          : 'Date selected'
-        }
+      <Typography variant='subtitle1' className={classes.subtitle}>
+        {buttonDisabled ? 'Choose a date' : 'Date selected'}
       </Typography>
       <div>
         <DayPicker

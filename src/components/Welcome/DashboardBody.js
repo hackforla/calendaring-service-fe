@@ -19,7 +19,7 @@ export default function DashboardBody() {
       </Typography>
       <div className={classes.buttonContainer}>
         <Button variant='contained' color='primary'>
-          let's get started
+          let&apos;s get started
         </Button>
       </div>
     </>
