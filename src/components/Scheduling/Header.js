@@ -1,4 +1,3 @@
-import React from 'react';
 import { logo, Typography } from '../../utils/index';
 import { useStyles } from './CalendarViewStyles';
 

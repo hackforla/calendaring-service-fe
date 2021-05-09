@@ -7,6 +7,10 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   subtitle: {
     display: 'flex',
     alignItems: 'center',

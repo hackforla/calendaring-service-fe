@@ -14,7 +14,7 @@ export default function DashboardBody() {
         style={{ width: '90%', margin: '1rem auto' }}
       />
       <Typography variant='body1' className='body-text'>
-        This onbarding guide will show you how to add your avalibility, and
+        This onboarding guide will show you how to add your availability, and
         customize your meeting types.
       </Typography>
       <div className={classes.buttonContainer}>

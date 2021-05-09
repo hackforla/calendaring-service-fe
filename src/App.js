@@ -1,4 +1,7 @@
+import React from 'react';
 import { Route } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { theme } from './theme';
 import Dashboard from './components/Welcome/Dashboard';
 import Success from './components/Success/Success';
 import ScheduleAvailableDays from './components/ScheduleAvailability/ScheduleAvailability';
@@ -9,8 +12,6 @@ import Preferences from './components/Preferences/Preferences';
 import Prompt from './components/Scheduling/Prompt';
 import ReviewPreferences from './components/Preferences/ReviewPreferences';
 import CalendarView from './components/Scheduling/CalendarView';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { theme } from './theme';
 import ContactReview from './components/Scheduling/ContactReview';
 
 function App() {

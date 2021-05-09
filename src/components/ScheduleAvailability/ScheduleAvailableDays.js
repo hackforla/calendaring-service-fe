@@ -5,14 +5,14 @@ import classes from './ScheduleAvailableDays.module.scss';
 
 export default function ScheduleAvailableDays({
   dispatch,
-  isEverySlected,
+  isEverySelected,
   state,
 }) {
   return (
     <div className={classes.main}>
       <Button
         onClick={() =>
-          dispatch({ type: 'TOGGLE_ALL', payload: isEverySlected })
+          dispatch({ type: 'TOGGLE_ALL', payload: isEverySelected })
         }
       >
         {' '}
