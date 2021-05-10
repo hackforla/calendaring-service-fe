@@ -9,6 +9,7 @@ import Preferences from './components/Preferences/Preferences';
 import Prompt from './components/Scheduling/Prompt';
 import ReviewPreferences from './components/Preferences/ReviewPreferences';
 import CalendarView from './components/Scheduling/CalendarView';
+import HostSuccess from './components/Scheduling/HostSuccess';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
 import ContactReview from './components/Scheduling/ContactReview';
@@ -28,6 +29,8 @@ function App() {
         <Route exact path='/review-preferences' component={ReviewPreferences} />
         <Route exact path='/calendarview' component={CalendarView} />
         <Route exact path='/contactreview' component={ContactReview} />
+        <Route exact path='/hostsuccess' component={HostSuccess} />
+
       </ThemeProvider>
     </>
   );
