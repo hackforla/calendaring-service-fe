@@ -15,32 +15,40 @@ const MOCK_DATA_SELECTED_DATES = [
     availableTimes: ['2pm-3pm', '3pm-4pm', '5pm-6pm'],
   },
   {
-    day: 'Wednesday',
-    date: 'May 6, 2021',
+    day: 'Monday',
+    date: 'May 10, 2021',
     availableTimes: ['12pm-1pm', '1pm-2pm', '2pm-3pm', '4pm-5pm'],
   },
 ];
 
 export default function CalendarSelectedTimes() {
   const [slots, setSlots] = useState(MOCK_DATA_SELECTED_DATES.length);
+  const [disabled, setDisabled] = useState(true);
   const [allSelectedTimes, setAllSelectedTimes] = useState({
-    Monday: {
-      date: 'May 3, 2021',
+    'May 3, 2021': {
       selectedTimes: [],
     },
-    Tuesday: {
-      date: 'May 4, 2021',
+    'May 4, 2021': {
       selectedTimes: [],
     },
-    Wednesday: {
-      date: 'May 5, 2021',
+    'May 10, 2021': {
       selectedTimes: [],
     },
   });
 
   useEffect(() => {
-    console.log(allSelectedTimes);
+    checkSelectedTimeSlots(allSelectedTimes);
   }, [allSelectedTimes]);
+
+  const checkSelectedTimeSlots = (selectedTimes) => {
+    for (let times in selectedTimes) {
+      const currentSelectedDayTimes = selectedTimes[times].selectedTimes;
+      if (currentSelectedDayTimes.length === 0) {
+        return setDisabled(true);
+      }
+    }
+    return setDisabled(false);
+  };
 
   return (
     <div>
@@ -65,7 +73,11 @@ export default function CalendarSelectedTimes() {
         );
       })}
 
-      <ProgressButtons firstBtnText='Go Back' secondBtnText='Next' />
+      <ProgressButtons
+        firstBtnText='Go Back'
+        secondBtnText='Next'
+        disabled={disabled}
+      />
     </div>
   );
 }

@@ -20,13 +20,11 @@ export default function SelectTimeRange({
   const [times, setTimes] = useState([]);
 
   const handleChange = (event) => {
-    let changeDay = allSelectedTimes[day];
-
     if (event.target.value.length <= 2) {
       setTimes(event.target.value);
       setAllSelectedTimes({
         ...allSelectedTimes,
-        [day]: { ...changeDay, selectedTimes: event.target.value },
+        [date]: { selectedTimes: event.target.value },
       });
     }
   };

@@ -1,7 +1,11 @@
 import React from 'react';
 import { Button } from '../../store/index';
 
-export default function ProgressButtons({ firstBtnText, secondBtnText }) {
+export default function ProgressButtons({
+  firstBtnText,
+  secondBtnText,
+  disabled,
+}) {
   return (
     <div
       style={{
@@ -24,7 +28,8 @@ export default function ProgressButtons({ firstBtnText, secondBtnText }) {
           fontSize: '16px',
         }}
         size='large'
-        color='primary'>
+        color='primary'
+        disabled={disabled}>
         {secondBtnText}
       </Button>
     </div>
