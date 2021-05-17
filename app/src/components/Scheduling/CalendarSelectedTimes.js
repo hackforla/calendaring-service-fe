@@ -22,7 +22,8 @@ const MOCK_DATA_SELECTED_DATES = [
 ];
 
 export default function CalendarSelectedTimes() {
-  const [slots, setSlots] = useState(MOCK_DATA_SELECTED_DATES.length);
+  const [maxSlots, setMaxSlots] = useState(MOCK_DATA_SELECTED_DATES.length * 2);
+  const [slots, setSlots] = useState();
   const [disabled, setDisabled] = useState(true);
   const [allSelectedTimes, setAllSelectedTimes] = useState({
     'May 3, 2021': {
@@ -37,8 +38,18 @@ export default function CalendarSelectedTimes() {
   });
 
   useEffect(() => {
+    countSelectedTimeSlots(allSelectedTimes);
     checkSelectedTimeSlots(allSelectedTimes);
   }, [allSelectedTimes]);
+
+  const countSelectedTimeSlots = (selectedTimes) => {
+    let totalSlots = 0;
+    for (let times in selectedTimes) {
+      const currentSelectedDayTimes = selectedTimes[times].selectedTimes;
+      totalSlots += currentSelectedDayTimes.length;
+    }
+    setSlots(totalSlots);
+  };
 
   const checkSelectedTimeSlots = (selectedTimes) => {
     for (let times in selectedTimes) {
@@ -58,6 +69,7 @@ export default function CalendarSelectedTimes() {
         activity='Home Inspection'
         action='Choose up to 2 times per day'
         slots={slots}
+        maxSlots={maxSlots}
       />
 
       {MOCK_DATA_SELECTED_DATES.map((selected, index) => {

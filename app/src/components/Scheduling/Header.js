@@ -8,12 +8,12 @@ export default function Header({
   activity,
   action,
   slots,
+  maxSlots,
 }) {
   const classes = useStyles();
-  const slotsDoubled = slots * 2;
 
   const actionText = () => {
-    if (action && slots) {
+    if (slots > 0) {
       return (
         <Typography
           variant='body2'
@@ -21,7 +21,7 @@ export default function Header({
             fontSize: '14px',
             marginBottom: '1rem',
           }}>
-          {`${action} (${slotsDoubled} total)`}
+          You have chosen {`${slots}`} of {`${maxSlots}`} time slots
         </Typography>
       );
     } else {
@@ -32,7 +32,7 @@ export default function Header({
             fontSize: '14px',
             marginBottom: '1rem',
           }}>
-          {action}
+          {`${action} (${maxSlots} total)`}
         </Typography>
       );
     }
