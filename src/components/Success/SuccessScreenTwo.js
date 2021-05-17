@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './SuccessScreenTwo.module.scss';
-import { Button } from '../../store/index';
-import { CheckCircleOutlineIcon, Typography } from '../../store/index';
+import { Button } from '../../utils/index';
+import { CheckCircleOutlineIcon, Typography } from '../../utils/index';
 
 export default function SuccessScreenTwo() {
   return (

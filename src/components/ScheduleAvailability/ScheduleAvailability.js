@@ -1,15 +1,14 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import { daysOfTheWeek, Button } from '../../store/index';
+import { daysOfTheWeek, Button } from '../../utils/index';
 import Header from './Header';
-import { reducer } from './helpers/reducer';
-import classes from './ScheduleAvailability.module.scss';
+import { reducer } from './store/reducer';
 import ScheduleAvailableDays from './ScheduleAvailableDays';
 const initialState = { daysOfTheWeek };
 
 export default function ScheduleAvailability() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [isEverySlected, setIsEverySelected] = useState(false);
+  const [isEverySelected, setIsEverySelected] = useState(false);
 
   useEffect(() => {
     setButtonDisabled(!state.daysOfTheWeek.some((day) => day.selected));
@@ -22,9 +21,14 @@ export default function ScheduleAvailability() {
       <ScheduleAvailableDays
         state={state}
         dispatch={dispatch}
-        isEverySlected={isEverySlected}
+        isEverySelected={isEverySelected}
       />
-      <div className={classes.buttonContainer}>
+      <div
+        style={{
+          float: 'right',
+          padding: '1rem 3rem',
+        }}
+      >
         <Button size='large'>cancel</Button>
         <Button size='large' color='primary' disabled={buttonDisabled}>
           save & next

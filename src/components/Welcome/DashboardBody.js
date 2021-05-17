@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './DashboardBody.module.scss';
-import { welcome, Button, Typography } from '../../store/index';
+import { welcome, Button, Typography } from '../../utils/index';
 
 export default function DashboardBody() {
   return (
@@ -14,12 +14,12 @@ export default function DashboardBody() {
         style={{ width: '90%', margin: '1rem auto' }}
       />
       <Typography variant='body1' className='body-text'>
-        This onbarding guide will show you how to add your avalibility, and
+        This onboarding guide will show you how to add your availability, and
         customize your meeting types.
       </Typography>
       <div className={classes.buttonContainer}>
         <Button variant='contained' color='primary'>
-          let's get started
+          let&apos;s get started
         </Button>
       </div>
     </>

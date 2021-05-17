@@ -1,8 +1,8 @@
-import { React, useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import styles from './CalendarView.css';
 import Header from './Header';
-import { Button, Typography } from '../../store/index';
+import { Button, Typography } from '../../utils/index';
 import { useStyles } from './CalendarViewStyles';
 
 export default function CalendarView() {
@@ -19,7 +19,7 @@ export default function CalendarView() {
   }, [selectedDays.length]);
 
   useEffect(() => {
-    handleButtonNext()
+    handleButtonNext();
   }, [handleButtonNext, selectedDays]);
 
   // Month is 0-indexed, ex. April is 3 instead of 4
@@ -66,14 +66,8 @@ export default function CalendarView() {
         description="Select from Tracy's availability for"
         activity="Training"
       />
-      <Typography
-        variant='subtitle1'
-        className={classes.subtitle}
-      >
-        {buttonDisabled
-          ? 'Choose a date'
-          : 'Date selected'
-        }
+      <Typography variant="subtitle1" className={classes.subtitle}>
+        {buttonDisabled ? 'Choose a date' : 'Date selected'}
       </Typography>
       <div>
         <DayPicker
@@ -88,8 +82,8 @@ export default function CalendarView() {
       </div>
 
       <div className={classes.buttonContainer}>
-        <Button size='large'>Go Back</Button>
-        <Button size='large' color='primary' disabled={buttonDisabled}>
+        <Button size="large">Go Back</Button>
+        <Button size="large" color="primary" disabled={buttonDisabled}>
           Next
         </Button>
       </div>

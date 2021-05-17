@@ -5,7 +5,7 @@ import {
   CardContent,
   AddCircleIcon,
   Typography,
-} from '../../store/index';
+} from '../../utils/index';
 import { useStyles } from './MeetingTypeStyles';
 
 export default function MeetingType({ type, updateNeeded }) {

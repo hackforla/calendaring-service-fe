@@ -13,7 +13,7 @@ import {
   Typography,
   ArrowForwardIcon,
   Card,
-} from '../../store/index';
+} from '../../utils/index';
 import { useStyles, BootstrapInput } from './ScheduleAvailableTimesStyles';
 
 let initialValues = {

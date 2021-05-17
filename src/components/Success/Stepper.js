@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiberManualRecordIcon, Typography } from '../../store/index';
+import { FiberManualRecordIcon, Typography } from '../../utils/index';
 import ForDevsEyesOnly from './ForDevsEyesOnly';
 import classes from './Stepper.module.scss';
 
@@ -38,7 +38,7 @@ export default function Stepper() {
         Step {step + 1} of {dots.length} complete.
       </Typography>
       {/* Uncomment the component below to test the progress bar */}
-      {/* <ForDevsEyesOnly stepChanger={stepChanger} /> */}
+      <ForDevsEyesOnly stepChanger={stepChanger} />
     </div>
   );
 }

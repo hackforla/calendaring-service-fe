@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../shared/Header';
 import PreferencesCard from './PreferencesCard';
-import { Button } from '../../store/index';
+import { Button } from '../../utils/index';
 
 export default function ReviewPreferences() {
   return (

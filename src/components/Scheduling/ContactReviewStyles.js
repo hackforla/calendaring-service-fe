@@ -52,6 +52,6 @@ const useStyles = makeStyles({
   disabled: {
     color: '#2F2F2F',
   },
-})
+});
 
 export { useStyles };
