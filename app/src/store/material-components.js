@@ -16,9 +16,9 @@ import {
   Checkbox,
   Typography,
   TextField,
+  InputLabel,
 } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-
 
 export {
   Button,
@@ -40,4 +40,5 @@ export {
   Checkbox,
   Typography,
   TextField,
+  InputLabel,
 };
