@@ -10,6 +10,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import CheckRoundedIcon from '@material-ui/icons/CheckRounded';
 export {
   CheckCircleIcon,
   FiberManualRecordIcon,
@@ -23,4 +24,5 @@ export {
   ArrowForwardIcon,
   ArrowDropDownIcon,
   CheckCircleOutlineIcon,
+  CheckRoundedIcon,
 };

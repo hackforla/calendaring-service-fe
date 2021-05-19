@@ -4,8 +4,10 @@ import {
   FormControl,
   Select,
   MenuItem,
+  ListItemIcon,
   InputLabel,
   KeyboardArrowDownIcon,
+  CheckRoundedIcon,
 } from '../../store/index';
 import { useStyles } from './SelectTimeRangeStyles';
 
@@ -18,6 +20,7 @@ export default function SelectTimeRange({
 }) {
   const classes = useStyles();
   const [times, setTimes] = useState([]);
+  const [showIcon, setShowIcon] = useState(false);
 
   const handleChange = (event) => {
     if (event.target.value.length <= 2) {
@@ -29,7 +32,27 @@ export default function SelectTimeRange({
     }
   };
 
+  const handleCheckmarkIcon = () => {
+    if (showIcon) {
+      return (
+        <ListItemIcon
+          classes={{
+            root: classes.listItemIconRoot,
+          }}>
+          <CheckRoundedIcon
+            classes={{
+              root: classes.checkmarkRoot,
+              fontSizeInherit: classes.checkmarkIcon,
+            }}
+            fontSize='inherit'
+          />
+        </ListItemIcon>
+      );
+    }
+  };
+
   // TODO: also when selected add a checkmark on the right
+  //create a seperate component for the menu item so it can have its own state to toggle the icon
 
   return (
     <div className={classes.timeRange}>
@@ -86,16 +109,18 @@ export default function SelectTimeRange({
           IconComponent={KeyboardArrowDownIcon}
           multiple={true}
           value={times}
-          onChange={handleChange}>
+          onChange={handleChange}
+          renderValue={(selected) => selected.join(', ')}>
           {availableTimes.map((time, index) => {
             return (
               <MenuItem
                 classes={{
-                  root: classes.menuItem,
+                  root: classes.menuItemRoot,
                 }}
                 key={index}
                 value={time}>
                 {time}
+                {handleCheckmarkIcon()}
               </MenuItem>
             );
           })}

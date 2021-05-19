@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translate(14px, 16px) scale(1)',
   },
   selectRoot: {
-    fontSize: '14px',
+    fontSize: '16px',
   },
   selectIcon: {
     color: '#2F2F2F',
@@ -31,11 +31,22 @@ const useStyles = makeStyles((theme) => ({
   selectIconOutlined: {
     right: '20px',
   },
-  menuItem: {
+  menuItemRoot: {
     fontSize: '14px',
   },
   menuList: {
     padding: '0',
+  },
+  listItemIconRoot: {
+    minWidth: '40px',
+    position: 'absolute',
+    right: '0',
+  },
+  checkmarkRoot: {
+    color: '#55B1EB',
+  },
+  checkmarkIcon: {
+    fontSize: '17px',
   },
 }));
 
