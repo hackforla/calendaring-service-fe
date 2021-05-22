@@ -3,13 +3,12 @@ import {
   Typography,
   FormControl,
   Select,
-  MenuItem,
-  ListItemIcon,
   InputLabel,
+  // MenuItem,
   KeyboardArrowDownIcon,
-  CheckRoundedIcon,
-} from '../../store/index';
+} from '../../utils/index';
 import { useStyles } from './SelectTimeRangeStyles';
+import MuiMenuItem from './MuiMenuItem';
 
 export default function SelectTimeRange({
   day,
@@ -20,7 +19,6 @@ export default function SelectTimeRange({
 }) {
   const classes = useStyles();
   const [times, setTimes] = useState([]);
-  const [showIcon, setShowIcon] = useState(false);
 
   const handleChange = (event) => {
     if (event.target.value.length <= 2) {
@@ -31,29 +29,6 @@ export default function SelectTimeRange({
       });
     }
   };
-
-  const handleCheckmarkIcon = () => {
-    if (showIcon) {
-      return (
-        <ListItemIcon
-          classes={{
-            root: classes.listItemIconRoot,
-          }}
-        >
-          <CheckRoundedIcon
-            classes={{
-              root: classes.checkmarkRoot,
-              fontSizeInherit: classes.checkmarkIcon,
-            }}
-            fontSize="inherit"
-          />
-        </ListItemIcon>
-      );
-    }
-  };
-
-  // TODO: also when selected add a checkmark on the right
-  //create a seperate component for the menu item so it can have its own state to toggle the icon
 
   return (
     <div className={classes.timeRange}>
@@ -118,16 +93,20 @@ export default function SelectTimeRange({
         >
           {availableTimes.map((time, index) => {
             return (
-              <MenuItem
-                classes={{
-                  root: classes.menuItemRoot,
-                }}
+              <MuiMenuItem
                 key={index}
-                value={time}
-              >
-                {time}
-                {handleCheckmarkIcon()}
-              </MenuItem>
+                time={time}
+                handleChange={handleChange}
+              />
+              // <MenuItem
+              //   classes={{
+              //     root: classes.menuItemRoot,
+              //   }}
+              //   key={index}
+              //   value={time}
+              // >
+              //   {time}
+              // </MenuItem>
             );
           })}
         </Select>

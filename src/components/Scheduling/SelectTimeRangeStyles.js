@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   timeRange: {
     display: 'flex',
     flexDirection: 'column',
@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '40px',
     position: 'absolute',
     right: '0',
+  },
+  listItemHide: {
+    display: 'none',
   },
   checkmarkRoot: {
     color: '#55B1EB',

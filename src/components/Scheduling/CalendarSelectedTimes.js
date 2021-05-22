@@ -22,7 +22,7 @@ const MOCK_DATA_SELECTED_DATES = [
 ];
 
 export default function CalendarSelectedTimes() {
-  const [maxSlots, setMaxSlots] = useState(MOCK_DATA_SELECTED_DATES.length * 2);
+  const [maxSlots, setMaxSlots] = useState();
   const [slots, setSlots] = useState();
   const [disabled, setDisabled] = useState(true);
   const [allSelectedTimes, setAllSelectedTimes] = useState({
@@ -38,6 +38,7 @@ export default function CalendarSelectedTimes() {
   });
 
   useEffect(() => {
+    setMaxSlots(MOCK_DATA_SELECTED_DATES.length * 2);
     countSelectedTimeSlots(allSelectedTimes);
     checkSelectedTimeSlots(allSelectedTimes);
   }, [allSelectedTimes]);

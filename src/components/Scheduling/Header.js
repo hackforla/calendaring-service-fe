@@ -1,5 +1,5 @@
 import React from 'react';
-import { logo, Typography, ArrowDropDownIcon } from '../../store/index';
+import { logo, Typography, ArrowDropDownIcon } from '../../utils/index';
 import { useStyles } from './CalendarViewStyles';
 
 export default function Header({
@@ -16,22 +16,24 @@ export default function Header({
     if (slots > 0) {
       return (
         <Typography
-          variant='body2'
+          variant="body2"
           style={{
             fontSize: '14px',
             marginBottom: '1rem',
-          }}>
+          }}
+        >
           You have chosen {`${slots}`} of {`${maxSlots}`} time slots
         </Typography>
       );
     } else {
       return (
         <Typography
-          variant='body2'
+          variant="body2"
           style={{
             fontSize: '14px',
             marginBottom: '1rem',
-          }}>
+          }}
+        >
           {`${action} (${maxSlots} total)`}
         </Typography>
       );
@@ -41,35 +43,32 @@ export default function Header({
   return (
     <div className={classes.root}>
       <div className={classes.header}>
-        <img src={logo.default} className='logo' alt='logo' />
+        <img src={logo.default} className="logo" alt="logo" />
         <Typography
-          variant='h4'
+          variant="h4"
           style={{
             fontSize: '24px',
-          }}>
+          }}
+        >
           {title}
         </Typography>
       </div>
       <Typography
-        variant='subtitle1'
+        variant="subtitle1"
         style={{
           marginBottom: '1rem',
           width: '200px',
           textAlign: 'center',
-<<<<<<< HEAD:app/src/components/Scheduling/Header.js
-        }}>
-=======
         }}
       >
->>>>>>> main:src/components/Scheduling/Header.js
         {description}
       </Typography>
       <Typography
-        variant='h6'
+        variant="h6"
         style={{
           marginBottom: '0.5rem',
         }}
-        color='primary'
+        color="primary"
       >
         {activity}
       </Typography>
@@ -78,10 +77,11 @@ export default function Header({
 
       <div className={classes.headerTimeZone}>
         <Typography
-          variant='body2'
+          variant="body2"
           style={{
             fontWeight: '200',
-          }}>
+          }}
+        >
           Pacific Standard Time (US and Canada)
         </Typography>
         <ArrowDropDownIcon />

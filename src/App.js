@@ -33,6 +33,7 @@ function App() {
         <Route exact path="/calendarview" component={CalendarView} />
         <Route exact path="/contactreview" component={ContactReview} />
         <Route exact path="/hostsuccess" component={HostSuccess} />
+        <Route exact path="/guestsuccess" component={GuestSuccess} />
         <Route
           exact
           path="/calendarselectedtimes"
