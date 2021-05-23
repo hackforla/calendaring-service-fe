@@ -6,9 +6,10 @@ import {
   InputLabel,
   MenuItem,
   KeyboardArrowDownIcon,
+  ListItemIcon,
+  CheckRoundedIcon,
 } from '../../utils/index';
 import { useStyles } from './SelectTimeRangeStyles';
-// import MuiMenuItem from './MuiMenuItem';
 
 export default function SelectTimeRange({
   day,
@@ -20,7 +21,6 @@ export default function SelectTimeRange({
   const classes = useStyles();
   const [times, setTimes] = useState([]);
 
-  //Validation check to handle if user selects more than 2 times.
   const handleChange = (event) => {
     if (event.target.value.length <= 2) {
       setTimes(event.target.value);
@@ -94,21 +94,6 @@ export default function SelectTimeRange({
         >
           {availableTimes.map((time, index) => {
             return (
-              // The MuiMenuItem allows me to have its own state which gives me the ability to show the Checkmark.
-
-              // But for some reason by doing this approach, the onChange on the Select Material UI won't trigger and therefore, I would not get my times date stored.
-
-              //I then tried to pass the handleChange to the my MuiMenuItem component but it seems that the event.target.value is not the same at when the select's event.target.value come out to be. Select's event.target.value is an ['1pm-2pm', '2pm-3pm'], while the MuiMenuItem's event.target.value comes out to be a numeric value.
-
-              //You can uncomment MuiMenuItem and the following lines needed and comment out MenuItem to see the checkmark functionality in action.
-
-              // <MuiMenuItem
-              //   key={index}
-              //   time={time}
-              //   handleChange={handleChange}
-              // />
-
-              //This MenuItem allows me to select times and get the times stored into the times state.
               <MenuItem
                 classes={{
                   root: classes.menuItemRoot,
@@ -117,6 +102,21 @@ export default function SelectTimeRange({
                 value={time}
               >
                 {time}
+                {times.includes(time) && (
+                  <ListItemIcon
+                    classes={{
+                      root: classes.listItemIconRoot,
+                    }}
+                  >
+                    <CheckRoundedIcon
+                      classes={{
+                        root: classes.checkmarkRoot,
+                        fontSizeInherit: classes.checkmarkIcon,
+                      }}
+                      fontSize="inherit"
+                    />
+                  </ListItemIcon>
+                )}
               </MenuItem>
             );
           })}
