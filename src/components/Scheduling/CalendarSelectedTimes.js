@@ -73,13 +73,13 @@ export default function CalendarSelectedTimes() {
         maxSlots={maxSlots}
       />
 
-      {MOCK_DATA_SELECTED_DATES.map((selected, index) => {
+      {MOCK_DATA_SELECTED_DATES.map(({ day, date, availableTimes }, index) => {
         return (
           <SelectTimeRange
             key={index}
-            day={selected.day}
-            date={selected.date}
-            availableTimes={selected.availableTimes}
+            day={day}
+            date={date}
+            availableTimes={availableTimes}
             setAllSelectedTimes={setAllSelectedTimes}
             allSelectedTimes={allSelectedTimes}
           />

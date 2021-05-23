@@ -92,34 +92,32 @@ export default function SelectTimeRange({
           onChange={handleChange}
           renderValue={(selected) => selected.join(', ')}
         >
-          {availableTimes.map((time, index) => {
-            return (
-              <MenuItem
-                classes={{
-                  root: classes.menuItemRoot,
-                }}
-                key={index}
-                value={time}
-              >
-                {time}
-                {times.includes(time) && (
-                  <ListItemIcon
+          {availableTimes.map((time, index) => (
+            <MenuItem
+              classes={{
+                root: classes.menuItemRoot,
+              }}
+              key={index}
+              value={time}
+            >
+              {time}
+              {times.includes(time) && (
+                <ListItemIcon
+                  classes={{
+                    root: classes.listItemIconRoot,
+                  }}
+                >
+                  <CheckRoundedIcon
                     classes={{
-                      root: classes.listItemIconRoot,
+                      root: classes.checkmarkRoot,
+                      fontSizeInherit: classes.checkmarkIcon,
                     }}
-                  >
-                    <CheckRoundedIcon
-                      classes={{
-                        root: classes.checkmarkRoot,
-                        fontSizeInherit: classes.checkmarkIcon,
-                      }}
-                      fontSize="inherit"
-                    />
-                  </ListItemIcon>
-                )}
-              </MenuItem>
-            );
-          })}
+                    fontSize="inherit"
+                  />
+                </ListItemIcon>
+              )}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </div>
