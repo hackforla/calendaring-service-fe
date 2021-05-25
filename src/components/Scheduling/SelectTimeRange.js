@@ -31,6 +31,12 @@ export default function SelectTimeRange({
     }
   };
 
+  const keyDownHandler = (e) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      handleChange();
+    }
+  };
+
   return (
     <div className={classes.timeRange}>
       <div>
@@ -90,6 +96,7 @@ export default function SelectTimeRange({
           multiple={true}
           value={times}
           onChange={handleChange}
+          onKeyDown={keyDownHandler}
           renderValue={(selected) => selected.join(', ')}
         >
           {availableTimes.map((time, index) => (

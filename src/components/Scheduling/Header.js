@@ -22,7 +22,7 @@ export default function Header({
             marginBottom: '1rem',
           }}
         >
-          You have chosen {`${slots}`} of {`${maxSlots}`} time slots
+          You have chosen {slots} of {maxSlots}
         </Typography>
       );
     } else {
@@ -34,7 +34,7 @@ export default function Header({
             marginBottom: '1rem',
           }}
         >
-          {`${action} (${maxSlots} total)`}
+          {action} ({maxSlots} total)
         </Typography>
       );
     }

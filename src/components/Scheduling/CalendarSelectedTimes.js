@@ -25,17 +25,7 @@ export default function CalendarSelectedTimes() {
   const [maxSlots, setMaxSlots] = useState();
   const [slots, setSlots] = useState();
   const [disabled, setDisabled] = useState(true);
-  const [allSelectedTimes, setAllSelectedTimes] = useState({
-    'May 3, 2021': {
-      selectedTimes: [],
-    },
-    'May 4, 2021': {
-      selectedTimes: [],
-    },
-    'May 10, 2021': {
-      selectedTimes: [],
-    },
-  });
+  const [allSelectedTimes, setAllSelectedTimes] = useState();
 
   useEffect(() => {
     setMaxSlots(MOCK_DATA_SELECTED_DATES.length * 2);
@@ -53,6 +43,10 @@ export default function CalendarSelectedTimes() {
   };
 
   const checkSelectedTimeSlots = (selectedTimes) => {
+    if (!selectedTimes) {
+      return setDisabled(true);
+    }
+
     for (let times in selectedTimes) {
       const currentSelectedDayTimes = selectedTimes[times].selectedTimes;
       if (currentSelectedDayTimes.length === 0) {
@@ -63,7 +57,7 @@ export default function CalendarSelectedTimes() {
   };
 
   return (
-    <div>
+    <>
       <Header
         title="Schedule with Tracy"
         description="Choose your time availability for the selected days"
@@ -91,6 +85,6 @@ export default function CalendarSelectedTimes() {
         secondBtnText="Next"
         disabled={disabled}
       />
-    </div>
+    </>
   );
 }
