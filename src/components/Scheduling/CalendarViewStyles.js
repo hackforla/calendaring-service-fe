@@ -10,6 +10,11 @@ const useStyles = makeStyles({
   header: {
     display: 'flex',
     alignItems: 'center',
+    margin: '1rem',
+  },
+  headerTimeZone: {
+    display: 'flex',
+    alignItems: 'center',
   },
   subtitle: {
     display: 'flex',
