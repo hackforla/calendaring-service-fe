@@ -1,5 +1,8 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route,
+  BrowserRouter as Router,
+  Switch 
+} from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
 import Dashboard from './components/Welcome/Dashboard';
@@ -18,8 +21,10 @@ import ContactReview from './components/Scheduling/ContactReview';
 
 function App() {
   return (
+    <Router>
     <>
       <ThemeProvider theme={theme}>
+        <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/success" component={Success} />
         <Route exact path="/success-screen-two" component={SuccessScreenTwo} />
@@ -33,8 +38,10 @@ function App() {
         <Route exact path="/contactreview" component={ContactReview} />
         <Route exact path="/hostsuccess" component={HostSuccess} />
         <Route exact path="/guestsuccess" component={GuestSuccess} />
+        </Switch>
       </ThemeProvider>
     </>
+    </Router>
   );
 }
 

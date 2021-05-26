@@ -1,6 +1,12 @@
 import React from 'react';
+import {
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 import classes from './DashboardBody.module.scss';
 import { welcome, Button, Typography } from '../../utils/index';
+import ScheduleAvailability from '../ScheduleAvailability/ScheduleAvailability';
 
 export default function DashboardBody() {
   return (
@@ -19,9 +25,14 @@ export default function DashboardBody() {
       </Typography>
       <div className={classes.buttonContainer}>
         <Button variant='contained' color='primary'>
-          let&apos;s get started
+        <Link to="/scheduledays">let&apos;s get started</Link>
         </Button>
       </div>
+      <Switch>
+          <Route path="/scheduledays">
+            <ScheduleAvailability />
+          </Route>
+      </Switch>
     </>
   );
 }
