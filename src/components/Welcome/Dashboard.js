@@ -2,18 +2,12 @@ import React from 'react';
 import Header from './Header';
 import DashboardBody from './DashboardBody';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  increment,
-  decrement,
-  incrementByAmount,
-  setName,
-} from '../../counterSlice';
+import { setName, setPreference } from '../../userSlice';
 
 export default function Dashboard() {
   const dispatch = useDispatch();
-  const name = useSelector((state) =>  state.data.formData.name);
-  
-  console.log(name);
+  const { meetingPreference, user } = useSelector((state) => state.thing);
+
   return (
     <div
       style={{
@@ -22,11 +16,12 @@ export default function Dashboard() {
         justifyContent: 'center',
       }}
     >
-      <button onClick={() => dispatch(increment())}>+</button>
-      <button onClick={() => dispatch(incrementByAmount(5))}>+5</button>
-      <button onClick={() => dispatch(setName('Jonathan'))}>setName</button>
-      <button onClick={() => dispatch(decrement())}>-</button>
-      <p>{name}</p>
+      <button onClick={() => dispatch(setName('Jonathan'))}>set name</button>
+      <button onClick={() => dispatch(setPreference('Remote'))}>
+        set preference
+      </button>
+      <p>{user.name}</p>
+      <p>{meetingPreference || ''}</p>
       <Header />
       <DashboardBody />
     </div>

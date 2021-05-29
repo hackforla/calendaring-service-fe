@@ -1,15 +1,18 @@
 import React from 'react';
 import Stepper from './Stepper';
 import classes from './Success.module.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setName } from '../../userSlice';
 import { CheckCircleIcon, Button, Typography } from '../../utils/index';
 
 export default function Success() {
-  const count = useSelector((state) => state.counter.value);
+  const { user } = useSelector((state) => state.data);
+  const dispatch = useDispatch();
   return (
     <div className={classes.main}>
-      {count}
+      {user.name}
+      <button onClick={() => dispatch(setName('george'))}>change name</button>
       <CheckCircleIcon
         className={classes.checkCircle}
         style={{ height: '5rem', width: '5rem' }}
