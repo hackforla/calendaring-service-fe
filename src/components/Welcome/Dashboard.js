@@ -2,12 +2,18 @@ import React from 'react';
 import Header from './Header';
 import DashboardBody from './DashboardBody';
 import { useDispatch, useSelector } from 'react-redux';
-import { increment, decrement } from '../../counterSlice';
+import {
+  increment,
+  decrement,
+  incrementByAmount,
+  setName,
+} from '../../counterSlice';
 
 export default function Dashboard() {
   const dispatch = useDispatch();
-  console.log(useSelector(state => state.counterReducer.value))
-  const count = useSelector((state) => state.counter.value);
+  const name = useSelector((state) =>  state.data.formData.name);
+  
+  console.log(name);
   return (
     <div
       style={{
@@ -17,8 +23,10 @@ export default function Dashboard() {
       }}
     >
       <button onClick={() => dispatch(increment())}>+</button>
-      {count}
+      <button onClick={() => dispatch(incrementByAmount(5))}>+5</button>
+      <button onClick={() => dispatch(setName('Jonathan'))}>setName</button>
       <button onClick={() => dispatch(decrement())}>-</button>
+      <p>{name}</p>
       <Header />
       <DashboardBody />
     </div>
