@@ -15,6 +15,7 @@ import {
   Card,
 } from '../../utils/index';
 import { useStyles, BootstrapInput } from './ScheduleAvailableTimesStyles';
+import { Link } from 'react-router-dom';
 
 let initialValues = {
   start: '',
@@ -29,7 +30,7 @@ export default function ScheduleAvailableTimes() {
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
-  
+
   return (
     <>
       <Header />
@@ -91,9 +92,11 @@ export default function ScheduleAvailableTimes() {
         </FormControl>
       </FormGroup>
       <div className={classes.buttonContainer}>
-        <Button size='large'>cancel</Button>
+        <Link to="/scheduledays">
+          <Button size='large'>cancel</Button>
+        </Link>
         <Button size='large' color='primary' disabled={!isFormComplete}>
-          save & next
+          <Link to="/success">save & next</Link>
         </Button>
       </div>
     </>

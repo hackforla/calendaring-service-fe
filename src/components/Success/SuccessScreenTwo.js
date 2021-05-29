@@ -1,10 +1,17 @@
 import React from 'react';
 import classes from './SuccessScreenTwo.module.scss';
+import MeetingTypes from '../MeetingTypes/MeetingTypes';
 import { Button } from '../../utils/index';
 import { CheckCircleOutlineIcon, Typography } from '../../utils/index';
+import {
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 
 export default function SuccessScreenTwo() {
   return (
+    <>
     <div className={classes.main}>
       <CheckCircleOutlineIcon style={{ height: '5rem', width: '5rem' }} />
       <div className={classes.SuccessScreenTwoHeading}>
@@ -17,10 +24,18 @@ export default function SuccessScreenTwo() {
         </Typography>
       </div>
       <div className={classes.SuccessScreenTwoButton}>
+      <Link to="/meetingtypes">
         <Button variant='contained' color='primary'>
           Complete Setup
         </Button>
+      </Link>
       </div>
     </div>
+    <Switch>
+          <Route path="/meetingtypes">
+            <MeetingTypes />
+          </Route>
+    </Switch>
+    </>
   );
 }

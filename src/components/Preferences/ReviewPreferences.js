@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../shared/Header';
 import PreferencesCard from './PreferencesCard';
 import { Button } from '../../utils/index';
+import { Link } from 'react-router-dom';
 
 export default function ReviewPreferences() {
   return (
@@ -18,10 +19,14 @@ export default function ReviewPreferences() {
           right: 0,
           margin: '10px',
         }}>
+        <Link>
         <Button size='large'>cancel</Button>
-        <Button size='large' color='primary'>
-          save & next
-        </Button>
+        </Link>
+        <Link to="/success-screen-two">
+          <Button size='large' color='primary'>
+            save & next
+          </Button>
+        </Link>
       </div>
     </>
   );

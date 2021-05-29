@@ -18,6 +18,8 @@ import {
 } from '../../utils/index';
 import { useStyles, BootstrapInput } from './FormStyles';
 
+import { Link } from 'react-router-dom';
+
 let initialValues = {
   meetingName: '',
   location: '',
@@ -40,7 +42,7 @@ export default function Form() {
     e.preventDefault();
     console.log(state);
   }
-  
+
   return (
     <form action='submit' style={{ padding: '1rem' }} onSubmit={handleSubmit}>
       {/* MEETING NAME BEGIN */}
@@ -223,7 +225,10 @@ export default function Form() {
 
       {/* SUBMIT BEGIN */}
       <div>
+      <Link to="/meetingtypes">
         <Button size='large'>cancel</Button>
+      </Link>
+      <Link>
         <Button
           size='large'
           type='submit'
@@ -232,6 +237,7 @@ export default function Form() {
         >
           save & next
         </Button>
+      </Link>
       </div>
       {/* SUBMIT END */}
     </form>

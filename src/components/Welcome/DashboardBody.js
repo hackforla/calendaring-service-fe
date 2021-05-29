@@ -24,9 +24,11 @@ export default function DashboardBody() {
         customize your meeting types.
       </Typography>
       <div className={classes.buttonContainer}>
-        <Button variant='contained' color='primary'>
-        <Link to="/scheduledays">let&apos;s get started</Link>
-        </Button>
+        <Link to="/scheduledays">
+          <Button variant='contained' color='primary'>
+            let&apos;s get started
+          </Button>
+        </Link>
       </div>
       <Switch>
           <Route path="/scheduledays">
@@ -34,5 +36,6 @@ export default function DashboardBody() {
           </Route>
       </Switch>
     </>
+
   );
 }
