@@ -15,6 +15,7 @@ import Preferences from './components/Preferences/Preferences';
 import Prompt from './components/Scheduling/Prompt';
 import ReviewPreferences from './components/Preferences/ReviewPreferences';
 import CalendarView from './components/Scheduling/CalendarView';
+import CalendarSelectedTimes from './components/Scheduling/CalendarSelectedTimes';
 import HostSuccess from './components/Scheduling/HostSuccess';
 import GuestSuccess from './components/Scheduling/GuestSuccess';
 import ContactReview from './components/Scheduling/ContactReview';
