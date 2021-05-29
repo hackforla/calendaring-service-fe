@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route,
   BrowserRouter as Router,
-  Switch 
+  Switch
 } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
@@ -38,6 +38,11 @@ function App() {
         <Route exact path="/contactreview" component={ContactReview} />
         <Route exact path="/hostsuccess" component={HostSuccess} />
         <Route exact path="/guestsuccess" component={GuestSuccess} />
+        <Route
+          exact
+          path="/calendarselectedtimes"
+          component={CalendarSelectedTimes}
+        />
         </Switch>
       </ThemeProvider>
     </>
