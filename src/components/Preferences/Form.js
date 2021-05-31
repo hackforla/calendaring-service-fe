@@ -16,7 +16,9 @@ import {
   HelpIcon,
   KeyboardArrowDownIcon,
 } from '../../utils/index';
+import { useDispatch, useSelector } from 'react-redux';
 import { useStyles, BootstrapInput } from './FormStyles';
+import { setPreferences } from '../../userSlice';
 
 let initialValues = {
   meetingName: '',
@@ -30,30 +32,31 @@ let initialValues = {
 export default function Form() {
   const [state, setState] = useState(initialValues);
   const classes = useStyles();
+  const { meetingPreferences } = useSelector((state) => state.thing);
   let isFormComplete = Object.values(state).every((item) => item !== '');
-
+  const dispatch = useDispatch();
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
-
+  console.log(meetingPreferences);
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(state);
+    dispatch(setPreferences(state));
   }
-  
+
   return (
-    <form action='submit' style={{ padding: '1rem' }} onSubmit={handleSubmit}>
+    <form action="submit" style={{ padding: '1rem' }} onSubmit={handleSubmit}>
       {/* MEETING NAME BEGIN */}
       <FormControl fullWidth={true}>
-        <FormHelperText margin='dense'>Meeting name</FormHelperText>
+        <FormHelperText margin="dense">Meeting name</FormHelperText>
         <Select
-          labelId=''
-          id='demo-simple-select'
+          labelId=""
+          id="demo-simple-select"
           onChange={(e) => handleChange(e)}
-          defaultValue=''
+          defaultValue=""
           value={state.meetingName}
           input={<BootstrapInput />}
-          name='meetingName'
+          name="meetingName"
           IconComponent={KeyboardArrowDownIcon}
           required
         >
@@ -68,15 +71,15 @@ export default function Form() {
 
       {/* LOCATION BEGIN */}
       <FormControl fullWidth={true}>
-        <FormHelperText margin='dense'>Location</FormHelperText>
+        <FormHelperText margin="dense">Location</FormHelperText>
         <Select
-          labelId=''
-          id='demo-simple-select'
-          defaultValue=''
+          labelId=""
+          id="demo-simple-select"
+          defaultValue=""
           onChange={(e) => handleChange(e)}
           value={state.location}
           input={<BootstrapInput />}
-          name='location'
+          name="location"
           IconComponent={KeyboardArrowDownIcon}
           required
         >
@@ -91,17 +94,17 @@ export default function Form() {
       {/* LOCATION END */}
 
       {/* ONSITE RADIO BEGIN */}
-      <div className='row space-between mt1'>
-        <FormHelperText margin='dense'>
+      <div className="row space-between mt1">
+        <FormHelperText margin="dense">
           Is this meeting location on-site?
         </FormHelperText>
-        <HelpIcon color='primary' />
+        <HelpIcon color="primary" />
       </div>
       <FormGroup row>
-        <FormControl component='fieldset'>
+        <FormControl component="fieldset">
           <RadioGroup
-            aria-label='on-site'
-            name='onSite'
+            aria-label="on-site"
+            name="onSite"
             onChange={(e) => handleChange(e)}
             row
             required
@@ -110,22 +113,19 @@ export default function Form() {
               value={true}
               control={
                 <Radio
-                  color='primary'
+                  color="primary"
                   value={true}
                   checked={state.onSite === 'true'}
                 />
               }
-              label='Yes'
+              label="Yes"
             />
             <FormControlLabel
               value={false}
               control={
-                <Radio
-                  color='primary'
-                  checked={state.onSite === 'false'}
-                />
+                <Radio color="primary" checked={state.onSite === 'false'} />
               }
-              label='No'
+              label="No"
             />
           </RadioGroup>
         </FormControl>
@@ -135,18 +135,18 @@ export default function Form() {
       {/* ONSITE LOCATION BEGIN */}
       {state.onSite === 'true' && (
         <FormControl fullWidth={true}>
-          <FormHelperText margin='dense'>On-site Location</FormHelperText>
+          <FormHelperText margin="dense">On-site Location</FormHelperText>
           <Select
-            labelId=''
-            id='demo-simple-select'
+            labelId=""
+            id="demo-simple-select"
             onChange={(e) => handleChange(e)}
-            defaultValue=''
+            defaultValue=""
             value={state.place}
             input={<BootstrapInput />}
-            name='place'
+            name="place"
             IconComponent={KeyboardArrowDownIcon}
           >
-            <MenuItem value='PSY Main Office'>PSY Main Office</MenuItem>
+            <MenuItem value="PSY Main Office">PSY Main Office</MenuItem>
           </Select>
         </FormControl>
       )}
@@ -157,15 +157,15 @@ export default function Form() {
         <FormControl className={classes.select}>
           <FormHelperText>Duration</FormHelperText>
           <Select
-            labelId=''
-            id='demo-simple-select'
+            labelId=""
+            id="demo-simple-select"
             onChange={(e) => handleChange(e)}
             value={state.duration}
             className={classes.dropdown}
-            defaultValue=''
+            defaultValue=""
             input={<BootstrapInput />}
             required
-            name='duration'
+            name="duration"
             IconComponent={KeyboardArrowDownIcon}
           >
             {formFields[3].inputs.map((input) => (
@@ -178,15 +178,15 @@ export default function Form() {
         <FormControl className={classes.select}>
           <FormHelperText>Meeting Color</FormHelperText>
           <Select
-            labelId=''
-            id='demo-simple-select'
+            labelId=""
+            id="demo-simple-select"
             onChange={(e) => handleChange(e)}
-            defaultValue=''
+            defaultValue=""
             value={state.color}
             className={classes.dropdown}
             input={<BootstrapInput />}
             required
-            name='color'
+            name="color"
             IconComponent={KeyboardArrowDownIcon}
           >
             {formFields[4].inputs.map(({ name, hex }) => (
@@ -207,12 +207,12 @@ export default function Form() {
         <FormHelperText>Description</FormHelperText>
         <TextareaAutosize
           input={<BootstrapInput />}
-          autoComplete='off'
-          id='outlined-basic'
+          autoComplete="off"
+          id="outlined-basic"
           rows={7}
-          defaultValue=''
-          variant='outlined'
-          name='description'
+          defaultValue=""
+          variant="outlined"
+          name="description"
           onChange={(e) => handleChange(e)}
           className={classes.root}
           style={{ border: '1px solid black', padding: '10px' }}
@@ -223,11 +223,11 @@ export default function Form() {
 
       {/* SUBMIT BEGIN */}
       <div>
-        <Button size='large'>cancel</Button>
+        <Button size="large">cancel</Button>
         <Button
-          size='large'
-          type='submit'
-          color='primary'
+          size="large"
+          type="submit"
+          color="primary"
           disabled={!isFormComplete}
         >
           save & next

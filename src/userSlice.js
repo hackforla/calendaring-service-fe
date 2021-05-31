@@ -5,20 +5,20 @@ export const userSlice = createSlice({
   initialState: {
     user: {
       name: '',
-      meeting: false,
+      verified: false,
     },
-    meetingPreference: '',
+    meetingPreferences: {},
   },
   reducers: {
-    setPreference: (state, action) => {
-      state.meetingPreference = action.payload;
-    },
     setName: (state, action) => {
       state.user.name = action.payload;
+    },
+    setPreferences: (state, action) => {
+      state.meetingPreferences = action.payload;
     },
   },
 });
 
-export const { setName, setPreference } = userSlice.actions;
+export const { setName, setPreference, setPreferences } = userSlice.actions;
 
 export default userSlice.reducer;
