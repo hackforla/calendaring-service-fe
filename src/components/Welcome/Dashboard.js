@@ -1,8 +1,12 @@
 import React from 'react';
 import Header from './Header';
 import DashboardBody from './DashboardBody';
+import { useDispatch, useSelector } from 'react-redux';
+import { setName } from '../../utils/redux/userSlice';
 
 export default function Dashboard() {
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.userData);
   return (
     <div
       style={{
@@ -11,6 +15,8 @@ export default function Dashboard() {
         justifyContent: 'center',
       }}
     >
+      <button onClick={() => dispatch(setName('Jonathan'))}>set name</button>
+      <p>{user.name}</p>
       <Header />
       <DashboardBody />
     </div>
