@@ -48,6 +48,7 @@ function App() {
           <Route exact path="/contactreview" component={ContactReview} />
           <Route exact path="/hostsuccess" component={HostSuccess} />
           <Route exact path="/guestsuccess" component={GuestSuccess} />
+          <Route exact path="/confirmation" component={ConfirmationScreen} />
           <Route
             exact
             path="/calendarselectedtimes"
