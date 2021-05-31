@@ -19,6 +19,6 @@ export const userSlice = createSlice({
   },
 });
 
-export const { setName, setPreference, setPreferences } = userSlice.actions;
+export const { setName, setPreferences } = userSlice.actions;
 
 export default userSlice.reducer;
