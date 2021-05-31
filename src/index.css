@@ -126,3 +126,7 @@ button:hover {
   padding: 1rem;
   margin: 1rem;
 }
+
+a {
+  color: white;
+}

@@ -55,7 +55,7 @@ GENERAL NOTE: Please commit daily to your local branch
 - When you are finished working on your Jira ticket, commit your local changes, then push your local changes to your branch in the sky.
 - Submit a PR of your branch.  
 - We have rules in place that require at least one reviewer before we merge any branch.
-- One of the reviewers (either @javaprincess or @jonathanbutler) will look at it, and leave some comments.
+- One of the reviewers (either @javaprincess or @jonathanbutler7) will look at it, and leave some comments.
 - If any of them are confusing please let us know.
 - Once your PR is approved, one of the reviewers will merge it to `main`
 
