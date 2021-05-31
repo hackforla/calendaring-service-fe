@@ -18,7 +18,7 @@ import {
 } from '../../utils/index';
 import { useDispatch, useSelector } from 'react-redux';
 import { useStyles, BootstrapInput } from './FormStyles';
-import { setPreferences } from '../../userSlice';
+import { setPreferences } from '../../utils/redux/userSlice';
 
 let initialValues = {
   meetingName: '',
@@ -32,17 +32,19 @@ let initialValues = {
 export default function Form() {
   const [state, setState] = useState(initialValues);
   const classes = useStyles();
-  const { meetingPreferences } = useSelector((state) => state.thing);
   let isFormComplete = Object.values(state).every((item) => item !== '');
+  const { meetingPreferences } = useSelector((state) => state.userData);
+
   const dispatch = useDispatch();
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
-  console.log(meetingPreferences);
+
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(setPreferences(state));
   }
+  console.log(meetingPreferences);
 
   return (
     <form action="submit" style={{ padding: '1rem' }} onSubmit={handleSubmit}>
