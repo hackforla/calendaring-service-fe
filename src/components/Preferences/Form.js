@@ -225,10 +225,9 @@ export default function Form() {
 
       {/* SUBMIT BEGIN */}
       <div>
-      <Link to="/meetingtypes">
-        <Button size='large'>cancel</Button>
-      </Link>
-      <Link>
+        <Button size='large' component={Link} to="/meetingtypes">
+          cancel
+        </Button>
         <Button
           size='large'
           type='submit'
@@ -237,7 +236,6 @@ export default function Form() {
         >
           save & next
         </Button>
-      </Link>
       </div>
       {/* SUBMIT END */}
     </form>

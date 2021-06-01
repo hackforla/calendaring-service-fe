@@ -92,11 +92,13 @@ export default function ScheduleAvailableTimes() {
         </FormControl>
       </FormGroup>
       <div className={classes.buttonContainer}>
-        <Link to="/scheduledays">
-          <Button size='large'>cancel</Button>
-        </Link>
-        <Button size='large' color='primary' disabled={!isFormComplete}>
-          <Link to="/success">save & next</Link>
+          <Button size='large' component={Link} to="/scheduledays">cancel</Button>
+        <Button size='large'
+        color='primary'
+        disabled={!isFormComplete}
+        component={Link}
+        to="/success">
+          save & next
         </Button>
       </div>
     </>

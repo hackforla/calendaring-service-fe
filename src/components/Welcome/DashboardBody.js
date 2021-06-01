@@ -1,12 +1,7 @@
 import React from 'react';
-import {
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
 import classes from './DashboardBody.module.scss';
 import { welcome, Button, Typography } from '../../utils/index';
-import ScheduleAvailability from '../ScheduleAvailability/ScheduleAvailability';
+import { Link } from 'react-router-dom';
 
 export default function DashboardBody() {
   return (
@@ -24,18 +19,13 @@ export default function DashboardBody() {
         customize your meeting types.
       </Typography>
       <div className={classes.buttonContainer}>
-        <Link to="/scheduledays">
-          <Button variant='contained' color='primary'>
+          <Button variant='contained'
+          color='primary'
+          component={Link}
+          to="/scheduledays">
             let&apos;s get started
           </Button>
-        </Link>
       </div>
-      <Switch>
-          <Route path="/scheduledays">
-            <ScheduleAvailability />
-          </Route>
-      </Switch>
     </>
-
   );
 }

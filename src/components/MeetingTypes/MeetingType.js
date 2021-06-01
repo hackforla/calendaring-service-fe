@@ -27,7 +27,7 @@ export default function MeetingType({ type, updateNeeded }) {
           </Typography>
           <div style={{ position: 'relative' }}>
             <Link to="/preferences">
-              <AddCircleIcon className={classes.icon} color='primary' />
+              <AddCircleIcon className={classes.icon} color='primary' to="/preferences" component={Link}/>
               {updateNeeded && (
                   <RadioButtonCheckedIcon
                     color='primary'

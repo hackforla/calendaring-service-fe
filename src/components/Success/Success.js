@@ -1,13 +1,11 @@
 import React from 'react';
 import Stepper from './Stepper';
 import classes from './Success.module.scss';
-
 import { CheckCircleIcon, Button, Typography } from '../../utils/index';
 import { Link } from 'react-router-dom';
 
 export default function Success() {
   return (
-    <>
     <div className={classes.main}>
       <CheckCircleIcon
         className={classes.checkCircle}
@@ -20,12 +18,14 @@ export default function Success() {
         when you customize your meeting types. Visit your Dashboard and
         personalize your meeting types to complete calendar set up.
       </Typography>
-      <Link to="/meetingtypes">
-        <Button variant='contained' color='primary'>
+        <Button
+        variant='contained'
+        color='primary'
+        component={Link}
+        to="/meetingtypes"
+        >
           complete setup
         </Button>
-      </Link>
     </div>
-    </>
   );
 }

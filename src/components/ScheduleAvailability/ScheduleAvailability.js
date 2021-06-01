@@ -31,14 +31,17 @@ export default function ScheduleAvailability() {
           padding: '1rem 3rem',
         }}
       >
-        <Link to="/">
-        <Button size='large'>cancel</Button>
-        </Link>
-        <Link to="/scheduletimes">
-        <Button size='large' color='primary' disabled={buttonDisabled}>
+        <Button size='large' component={Link} to="/">
+          cancel
+        </Button>
+        <Button
+        size='large'
+        color='primary'
+        component={Link}
+        to="/scheduletimes"
+        disabled={buttonDisabled}>
           save & next
         </Button>
-        </Link>
       </div>
     </>
   );

@@ -23,7 +23,6 @@ import ContactReview from './components/Scheduling/ContactReview';
 function App() {
   return (
     <Router>
-    <>
       <ThemeProvider theme={theme}>
         <Switch>
         <Route exact path="/" component={Dashboard} />
@@ -46,7 +45,6 @@ function App() {
         />
         </Switch>
       </ThemeProvider>
-    </>
     </Router>
   );
 }

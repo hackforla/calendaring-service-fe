@@ -19,14 +19,14 @@ export default function ReviewPreferences() {
           right: 0,
           margin: '10px',
         }}>
-        <Link>
         <Button size='large'>cancel</Button>
-        </Link>
-        <Link to="/success-screen-two">
-          <Button size='large' color='primary'>
-            save & next
-          </Button>
-        </Link>
+        <Button size='large'
+        color='primary'
+        component={Link}
+        to="/success-screen-two"
+        >
+          save & next
+        </Button>
       </div>
     </>
   );
