@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './SuccessScreenTwo.module.scss';
 import { Button } from '../../utils/index';
 import { CheckCircleOutlineIcon, Typography } from '../../utils/index';
+import { Link } from 'react-router-dom';
 
 export default function SuccessScreenTwo() {
   return (
@@ -17,7 +18,12 @@ export default function SuccessScreenTwo() {
         </Typography>
       </div>
       <div className={classes.SuccessScreenTwoButton}>
-        <Button variant='contained' color='primary'>
+        <Button
+          variant='contained'
+          color='primary'
+          component={Link}
+          to="/meetingtypes"
+        >
           Complete Setup
         </Button>
       </div>
