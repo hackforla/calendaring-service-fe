@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './DashboardBody.module.scss';
 import { Link } from 'react-router-dom';
 import { welcome, Button, Typography } from '../../utils/index';
-import { Link } from 'react-router-dom';
 
 export default function DashboardBody() {
   return (
