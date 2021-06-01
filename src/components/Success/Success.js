@@ -3,7 +3,6 @@ import Stepper from './Stepper';
 import classes from './Success.module.scss';
 import { Link } from 'react-router-dom';
 import { CheckCircleIcon, Button, Typography } from '../../utils/index';
-import { Link } from 'react-router-dom';
 
 export default function Success() {
   return (
