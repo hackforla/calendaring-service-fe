@@ -24,26 +24,40 @@ function App() {
   return (
     <Router>
       <ThemeProvider theme={theme}>
+        <main style={{ maxWidth: 812, margin: '0 auto' }}>
         <Switch>
-        <Route exact path="/" component={Dashboard} />
-        <Route exact path="/success" component={Success} />
-        <Route exact path="/success-screen-two" component={SuccessScreenTwo} />
-        <Route exact path="/scheduledays" component={ScheduleAvailableDays} />
-        <Route exact path="/scheduletimes" component={ScheduleAvailableTimes} />
-        <Route exact path="/meetingtypes" component={MeetingTypes} />
-        <Route exact path="/preferences" component={Preferences} />
-        <Route exact path="/prompt" component={Prompt} />
-        <Route exact path="/review-preferences" component={ReviewPreferences} />
-        <Route exact path="/calendarview" component={CalendarView} />
-        <Route exact path="/contactreview" component={ContactReview} />
-        <Route exact path="/hostsuccess" component={HostSuccess} />
-        <Route exact path="/guestsuccess" component={GuestSuccess} />
-        <Route
-          exact
-          path="/calendarselectedtimes"
-          component={CalendarSelectedTimes}
-        />
-        </Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/success" component={Success} />
+          <Route
+            exact
+            path="/success-screen-two"
+            component={SuccessScreenTwo}
+            />
+          <Route exact path="/scheduledays" component={ScheduleAvailableDays} />
+          <Route
+            exact
+            path="/scheduletimes"
+            component={ScheduleAvailableTimes}
+            />
+          <Route exact path="/meetingtypes" component={MeetingTypes} />
+          <Route exact path="/preferences" component={Preferences} />
+          <Route exact path="/prompt" component={Prompt} />
+          <Route
+            exact
+            path="/review-preferences"
+            component={ReviewPreferences}
+            />
+          <Route exact path="/calendarview" component={CalendarView} />
+          <Route exact path="/contactreview" component={ContactReview} />
+          <Route exact path="/hostsuccess" component={HostSuccess} />
+          <Route exact path="/guestsuccess" component={GuestSuccess} />
+          <Route
+            exact
+            path="/calendarselectedtimes"
+            component={CalendarSelectedTimes}
+            />
+          </Switch>
+        </main>
       </ThemeProvider>
     </Router>
   );
