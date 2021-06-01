@@ -7,6 +7,7 @@ import {
   Typography,
 } from '../../utils/index';
 import { useStyles } from './MeetingTypeStyles';
+import { Link } from 'react-router-dom';
 
 export default function MeetingType({ type, updateNeeded }) {
   const classes = useStyles();
@@ -25,13 +26,15 @@ export default function MeetingType({ type, updateNeeded }) {
             Set your preferences
           </Typography>
           <div style={{ position: 'relative' }}>
-            <AddCircleIcon className={classes.icon} color='primary' />
-            {updateNeeded && (
-              <RadioButtonCheckedIcon
-                color='primary'
-                style={{ position: 'absolute', right: '-15px', top: '-5px' }}
-              />
-            )}
+            <Link to="/preferences">
+              <AddCircleIcon className={classes.icon} color='primary' to="/preferences" component={Link}/>
+              {updateNeeded && (
+                  <RadioButtonCheckedIcon
+                    color='primary'
+                    style={{ position: 'absolute', right: '-15px', top: '-5px' }}
+                    />
+              )}
+            </Link>
           </div>
         </div>
       </CardContent>

@@ -20,6 +20,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useStyles, BootstrapInput } from './FormStyles';
 import { setPreferences } from '../../utils/redux/userSlice';
 
+import { Link } from 'react-router-dom';
+
 let initialValues = {
   meetingName: '',
   location: '',
@@ -225,7 +227,9 @@ export default function Form() {
 
       {/* SUBMIT BEGIN */}
       <div>
-        <Button size="large">cancel</Button>
+        <Button size='large' component={Link} to="/meetingtypes">
+          cancel
+        </Button>
         <Button
           size="large"
           type="submit"

@@ -3,6 +3,7 @@ import Stepper from './Stepper';
 import classes from './Success.module.scss';
 import { Link } from 'react-router-dom';
 import { CheckCircleIcon, Button, Typography } from '../../utils/index';
+import { Link } from 'react-router-dom';
 
 export default function Success() {
   return (
@@ -18,9 +19,14 @@ export default function Success() {
         when you customize your meeting types. Visit your Dashboard and
         personalize your meeting types to complete calendar set up.
       </Typography>
-      <Button variant="contained" color="primary">
-        <Link to="/">complete setup</Link>
-      </Button>
+        <Button
+        variant='contained'
+        color='primary'
+        component={Link}
+        to="/meetingtypes"
+        >
+          complete setup
+        </Button>
     </div>
   );
 }
