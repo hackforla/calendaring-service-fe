@@ -66,6 +66,10 @@ const useStyles = makeStyles({
     right: 0,
     margin: '1rem',
   },
+  navButtons: {
+    letterSpacing: '1px',
+    textTransform: 'capitalize',
+  },
 });
 
 export { useStyles };

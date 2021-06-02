@@ -101,9 +101,11 @@ export default function ConfirmationScreen() {
       </div>
 
       <div className={classes.buttonContainer}>
-        <Button size="large">Go Back</Button>
+        <Button size="large">
+          <span className={classes.navButtons}>Go Back</span>
+        </Button>
         <Button size="large" color="primary">
-          Next
+          <span className={classes.navButtons}>Submit</span>
         </Button>
       </div>
     </div>
