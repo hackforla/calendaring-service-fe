@@ -19,9 +19,12 @@ export default function DashboardBody() {
         customize your meeting types.
       </Typography>
       <div className={classes.buttonContainer}>
-        <Button variant="contained" color="primary">
-          <Link to="/success">let&apos;s get started</Link>
-        </Button>
+          <Button variant='contained'
+          color='primary'
+          component={Link}
+          to="/scheduledays">
+            let&apos;s get started
+          </Button>
       </div>
     </>
   );
