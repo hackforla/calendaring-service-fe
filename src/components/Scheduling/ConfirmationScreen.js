@@ -5,6 +5,11 @@ import { useStyles } from './ConfirmationStyles';
 import Header from './Header';
 import ListSelectedDateAndTimes from './ListSelectedDateAndTimes';
 
+/**
+ * TODO: clicking 'Edit' button will allow user to edit personal information
+ *       or dates and times inline.
+ */
+
 const HARD_CODED_DATA = {
   caseWorker: 'Tracy',
   firstName: 'Nina',
@@ -58,22 +63,28 @@ export default function ConfirmationScreen() {
       {/* Personal Information */}
       <div className={classes.container}>
         <div className={classes.subheadingContainer}>
-          <Typography variant="body1" className={classes.subheading}>
+          <Typography
+            variant="body1"
+            className={[classes.subheading, classes.letterSpacing]}
+          >
             Personal Information
           </Typography>
-          <Button color="primary" className={classes.editButton}>
+          <Button
+            color="primary"
+            className={[classes.editButton, classes.letterSpacing]}
+          >
             Edit
           </Button>
         </div>
 
-        <Typography className={classes.text}>
+        <Typography className={[classes.text, classes.letterSpacing]}>
           <span className={classes.bold}>Name:</span> {data.firstName}{' '}
           {data.lastName}
         </Typography>
-        <Typography className={classes.text}>
+        <Typography className={[classes.text, classes.letterSpacing]}>
           <span className={classes.bold}>Email:</span> {data.email}
         </Typography>
-        <Typography className={classes.text}>
+        <Typography className={[classes.text, classes.letterSpacing]}>
           <span className={classes.bold}>Phone:</span> {data.phoneNumber}
         </Typography>
       </div>
@@ -81,10 +92,16 @@ export default function ConfirmationScreen() {
       {/* Dates and Times */}
       <div className={classes.container}>
         <div className={classes.subheadingContainer}>
-          <Typography variant="body1" className={classes.subheading}>
+          <Typography
+            variant="body1"
+            className={[classes.subheading, classes.letterSpacing]}
+          >
             Dates and Times
           </Typography>
-          <Button color="primary" className={classes.editButton}>
+          <Button
+            color="primary"
+            className={[classes.editButton, classes.letterSpacing]}
+          >
             Edit
           </Button>
         </div>
@@ -102,10 +119,10 @@ export default function ConfirmationScreen() {
 
       <div className={classes.buttonContainer}>
         <Button size="large">
-          <span className={classes.navButtons}>Go Back</span>
+          <span className={classes.letterSpacing}>Go Back</span>
         </Button>
         <Button size="large" color="primary">
-          <span className={classes.navButtons}>Submit</span>
+          <span className={classes.letterSpacing}>Submit</span>
         </Button>
       </div>
     </div>

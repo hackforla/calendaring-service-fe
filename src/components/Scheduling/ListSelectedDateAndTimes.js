@@ -10,13 +10,19 @@ export default function ListSelectedDateAndTimes({ day, date, times }) {
   if (times.length === 2) {
     renderTimes = (
       <>
-        <Typography className={classes.timeRange}>{times[0]},</Typography>
-        <Typography className={classes.timeRange}>{times[1]}</Typography>
+        <Typography className={[classes.timeRange, classes.letterSpacing]}>
+          {times[0]},
+        </Typography>
+        <Typography className={[classes.timeRange, classes.letterSpacing]}>
+          {times[1]}
+        </Typography>
       </>
     );
   } else if (times.length === 1) {
     renderTimes = (
-      <Typography className={classes.timeRange}>{times[0]}</Typography>
+      <Typography className={[classes.timeRange, classes.letterSpacing]}>
+        {times[0]}
+      </Typography>
     );
   } else {
     renderTimes = null;
@@ -25,10 +31,15 @@ export default function ListSelectedDateAndTimes({ day, date, times }) {
   return (
     <div className={classes.dateContainer}>
       <div className={classes.dateRow}>
-        <Typography variant="body1" className={classes.day}>
+        <Typography
+          variant="body1"
+          className={[classes.day, classes.letterSpacing]}
+        >
           {day}
         </Typography>
-        <Typography className={classes.date}>{date}</Typography>
+        <Typography className={[classes.date, classes.letterSpacing]}>
+          {date}
+        </Typography>
       </div>
       {renderTimes}
     </div>

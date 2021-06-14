@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -11,6 +11,9 @@ const useStyles = makeStyles({
   container: {
     margin: '0.7rem 0',
   },
+  letterSpacing: {
+    letterSpacing: '1px',
+  },
   subheadingContainer: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -19,19 +22,16 @@ const useStyles = makeStyles({
   subheading: {
     fontweight: 500,
     color: '#595959',
-    letterSpacing: '1px',
   },
   editButton: {
     fontSize: '18px',
-    color: '#249BE5',
-    letterSpacing: '1px',
+    color: theme.palette.primary.main,
     textTransform: 'capitalize',
     lineHeight: '56px',
   },
   text: {
     fontSize: '16px',
     color: '#2F2F2F',
-    letterSpacing: '1px',
     lineHeight: '32px',
   },
   bold: {
@@ -47,15 +47,12 @@ const useStyles = makeStyles({
     marginRight: '1rem',
   },
   day: {
-    letterSpacing: '1px',
     fontWeight: 500,
   },
   date: {
-    letterSpacing: '1px',
     fontSize: '16px',
   },
   timeRange: {
-    letterSpacing: '1px',
     width: '140px',
     fontSize: '16px',
     lineHeight: '32px',
@@ -68,8 +65,7 @@ const useStyles = makeStyles({
   },
   navButtons: {
     letterSpacing: '1px',
-    textTransform: 'capitalize',
   },
-});
+}));
 
 export { useStyles };
