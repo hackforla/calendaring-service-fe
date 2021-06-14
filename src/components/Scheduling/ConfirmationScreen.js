@@ -4,10 +4,13 @@ import moment from 'moment';
 import { useStyles } from './ConfirmationStyles';
 import Header from './Header';
 import ListSelectedDateAndTimes from './ListSelectedDateAndTimes';
+import { Link } from 'react-router-dom';
 
 /**
- * TODO: clicking 'Edit' button will allow user to edit personal information
- *       or dates and times inline.
+ * TODO:
+ * 1. clicking 'Edit' button will allow user to edit personal information or dates and times inline.
+ * 2. Need to know if user is host or guest to let next button
+ *    send user to correct success screen
  */
 
 const HARD_CODED_DATA = {
@@ -118,7 +121,7 @@ export default function ConfirmationScreen() {
       </div>
 
       <div className={classes.buttonContainer}>
-        <Button size="large">
+        <Button size="large" component={Link} to="/contactreview">
           <span className={classes.letterSpacing}>Go Back</span>
         </Button>
         <Button size="large" color="primary">
