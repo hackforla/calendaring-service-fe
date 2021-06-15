@@ -19,6 +19,7 @@ import CalendarSelectedTimes from './components/Scheduling/CalendarSelectedTimes
 import HostSuccess from './components/Scheduling/HostSuccess';
 import GuestSuccess from './components/Scheduling/GuestSuccess';
 import ContactReview from './components/Scheduling/ContactReview';
+import ConfirmationScreen from './components/Scheduling/ConfirmationScreen';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route exact path="/contactreview" component={ContactReview} />
           <Route exact path="/hostsuccess" component={HostSuccess} />
           <Route exact path="/guestsuccess" component={GuestSuccess} />
+          <Route exact path="/confirmation" component={ConfirmationScreen} />
           <Route
             exact
             path="/calendarselectedtimes"

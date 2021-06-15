@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import { TextField, FormControl, Button } from '../../utils/index';
 import { useStyles } from './ContactReviewStyles';
+import { Link } from 'react-router-dom';
 
 const HARD_CODED_DATA = {
   caseWorker: 'Tracy',
@@ -37,8 +38,8 @@ export default function ContactReview() {
   return (
     <div className={classes.root}>
       <Header
-        title='Contact Information'
-        description='Review your profile information below'
+        title="Contact Information"
+        description="Review your profile information below"
         activity={`Training with ${HARD_CODED_DATA.caseWorker}`}
       />
 
@@ -48,9 +49,9 @@ export default function ContactReview() {
         </label>
         <TextField
           className={classes.formSpace}
-          variant='outlined'
+          variant="outlined"
           fullWidth
-          name='firstName'
+          name="firstName"
           value={inputs.firstName}
           InputProps={{
             readOnly: true,
@@ -67,9 +68,9 @@ export default function ContactReview() {
         </label>
         <TextField
           className={classes.formSpace}
-          variant='outlined'
+          variant="outlined"
           fullWidth
-          name='lastName'
+          name="lastName"
           value={inputs.lastName}
           InputProps={{
             readOnly: true,
@@ -87,10 +88,10 @@ export default function ContactReview() {
         <div className={classes.inputRow}>
           <TextField
             className={classes.formSpace}
-            type='email'
-            variant='outlined'
+            type="email"
+            variant="outlined"
             fullWidth
-            name='email'
+            name="email"
             value={inputs.email}
             onChange={handleChange}
             disabled={!editMode.email}
@@ -103,7 +104,7 @@ export default function ContactReview() {
             required
           />
           <Button
-            color='primary'
+            color="primary"
             className={classes.editButton}
             onClick={() => toggleEdit({ ...editMode, email: !editMode.email })}
           >
@@ -115,10 +116,10 @@ export default function ContactReview() {
         <div className={classes.inputRow}>
           <TextField
             className={classes.formSpace}
-            type='text'
-            variant='outlined'
+            type="text"
+            variant="outlined"
             fullWidth
-            name='phoneNumber'
+            name="phoneNumber"
             value={inputs.phoneNumber}
             onChange={handleChange}
             disabled={!editMode.phoneNumber}
@@ -130,7 +131,7 @@ export default function ContactReview() {
             }}
           />
           <Button
-            color='primary'
+            color="primary"
             className={classes.editButton}
             onClick={() =>
               toggleEdit({ ...editMode, phoneNumber: !editMode.phoneNumber })
@@ -142,8 +143,15 @@ export default function ContactReview() {
       </FormControl>
 
       <div className={classes.buttonContainer}>
-        <Button size='large'>Go Back</Button>
-        <Button size='large' color='primary'>
+        <Button component={Link} to="/calendarselectedtimes" size="large">
+          Go Back
+        </Button>
+        <Button
+          size="large"
+          color="primary"
+          component={Link}
+          to="/confirmation"
+        >
           Next
         </Button>
       </div>

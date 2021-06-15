@@ -13,30 +13,34 @@ export default function Header({
   const classes = useStyles();
 
   const actionText = () => {
-    if (slots > 0) {
-      return (
-        <Typography
-          variant="body2"
-          style={{
-            fontSize: '14px',
-            marginBottom: '1rem',
-          }}
-        >
-          You have chosen {slots} of {maxSlots}
-        </Typography>
-      );
+    if (maxSlots) {
+      if (slots > 0) {
+        return (
+          <Typography
+            variant="body2"
+            style={{
+              fontSize: '14px',
+              marginBottom: '1rem',
+            }}
+          >
+            You have chosen {slots} of {maxSlots}
+          </Typography>
+        );
+      } else {
+        return (
+          <Typography
+            variant="body2"
+            style={{
+              fontSize: '14px',
+              marginBottom: '1rem',
+            }}
+          >
+            {action} ({maxSlots} total)
+          </Typography>
+        );
+      }
     } else {
-      return (
-        <Typography
-          variant="body2"
-          style={{
-            fontSize: '14px',
-            marginBottom: '1rem',
-          }}
-        >
-          {action} ({maxSlots} total)
-        </Typography>
-      );
+      return;
     }
   };
 
