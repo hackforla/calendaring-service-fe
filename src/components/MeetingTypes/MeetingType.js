@@ -5,16 +5,16 @@ import {
   CardContent,
   AddCircleIcon,
   Typography,
-} from '../../utils/index';
+} from '../../utils';
 import { useStyles } from './MeetingTypeStyles';
 import { Link } from 'react-router-dom';
 
 export default function MeetingType({ type, updateNeeded }) {
-  const classes = useStyles();
+  const { root, body, icon } = useStyles();
   return (
-    <Card className={classes.root}>
+    <Card className={root}>
       <CardContent>
-        <Typography variant='h4'>{type}</Typography>
+        <Typography variant="h4">{type}</Typography>
         <div
           style={{
             display: 'flex',
@@ -22,17 +22,22 @@ export default function MeetingType({ type, updateNeeded }) {
             justifyContent: 'space-between',
           }}
         >
-          <Typography variant='h6' className={classes.body}>
+          <Typography variant="h6" className={body}>
             Set your preferences
           </Typography>
           <div style={{ position: 'relative' }}>
             <Link to="/preferences">
-              <AddCircleIcon className={classes.icon} color='primary' to="/preferences" component={Link}/>
+              <AddCircleIcon
+                className={icon}
+                color="primary"
+                to="/preferences"
+                component={Link}
+              />
               {updateNeeded && (
-                  <RadioButtonCheckedIcon
-                    color='primary'
-                    style={{ position: 'absolute', right: '-15px', top: '-5px' }}
-                    />
+                <RadioButtonCheckedIcon
+                  color="primary"
+                  style={{ position: 'absolute', right: '-15px', top: '-5px' }}
+                />
               )}
             </Link>
           </div>

@@ -1,12 +1,14 @@
 import React from 'react';
-import classes from './DashboardBody.module.scss';
 import { Link } from 'react-router-dom';
-import { welcome, Button, Typography } from '../../utils/index';
+import { welcome, Button, Typography } from '../../utils';
 
 export default function DashboardBody() {
   return (
     <>
-      <Typography variant="h5" style={{ margin: '1rem' }}>
+      <Typography
+        variant="h4"
+        style={{ margin: '1rem auto', textAlign: 'center' }}
+      >
         Welcome
       </Typography>
       <img
@@ -18,13 +20,15 @@ export default function DashboardBody() {
         This onboarding guide will show you how to add your availability, and
         customize your meeting types.
       </Typography>
-      <div className={classes.buttonContainer}>
-          <Button variant='contained'
-          color='primary'
+      <div style={{ textAlign: 'center' }}>
+        <Button
+          variant="contained"
+          color="primary"
           component={Link}
-          to="/scheduledays">
-            let&apos;s get started
-          </Button>
+          to="/scheduledays"
+        >
+          let&apos;s get started
+        </Button>
       </div>
     </>
   );

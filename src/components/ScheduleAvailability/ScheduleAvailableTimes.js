@@ -24,7 +24,8 @@ let initialValues = {
 
 export default function ScheduleAvailableTimes() {
   const [state, setState] = useState(initialValues);
-  const classes = useStyles();
+  const { card, h6, selectRow, svg, select, dropdown, buttonContainer } =
+    useStyles();
   let isFormComplete = Object.values(state).every((item) => item !== '');
 
   function handleChange(e) {
@@ -34,29 +35,29 @@ export default function ScheduleAvailableTimes() {
   return (
     <>
       <Header />
-      <Card className={classes.card}>
-        <Typography variant='subtitle1' align='center'>
+      <Card className={card}>
+        <Typography variant="subtitle1" align="center">
           You can further customize your availability by day and time when
           customizing your meeting types later.
         </Typography>
       </Card>
-      <Typography variant='h6' className={classes.h6}>
+      <Typography variant="h6" className={h6}>
         Daily Availability
       </Typography>
-      <FormGroup row className={classes.selectRow}>
-        <ArrowForwardIcon className={classes.svg} />
-        <FormControl className={classes.select}>
+      <FormGroup row className={selectRow}>
+        <ArrowForwardIcon className={svg} />
+        <FormControl className={select}>
           <FormHelperText>From</FormHelperText>
           <Select
-            labelId=''
-            id='demo-simple-select'
+            labelId=""
+            id="demo-simple-select"
             onChange={(e) => handleChange(e)}
             value={state.start}
-            className={classes.dropdown}
-            defaultValue=''
+            className={dropdown}
+            defaultValue=""
             input={<BootstrapInput />}
             required
-            name='start'
+            name="start"
             IconComponent={KeyboardArrowDownIcon}
           >
             {getTimesArray().map((input) => (
@@ -67,18 +68,18 @@ export default function ScheduleAvailableTimes() {
           </Select>
         </FormControl>
 
-        <FormControl className={classes.select}>
+        <FormControl className={select}>
           <FormHelperText>To</FormHelperText>
           <Select
-            labelId=''
-            id='demo-simple-select'
+            labelId=""
+            id="demo-simple-select"
             onChange={(e) => handleChange(e)}
             value={state.end}
-            className={classes.dropdown}
-            defaultValue=''
+            className={dropdown}
+            defaultValue=""
             input={<BootstrapInput />}
             required
-            name='end'
+            name="end"
             IconComponent={KeyboardArrowDownIcon}
           >
             {getTimesArray(get24HrTime(state.start || '9:00 AM')).map(
@@ -91,13 +92,17 @@ export default function ScheduleAvailableTimes() {
           </Select>
         </FormControl>
       </FormGroup>
-      <div className={classes.buttonContainer}>
-          <Button size='large' component={Link} to="/scheduledays">cancel</Button>
-        <Button size='large'
-        color='primary'
-        disabled={!isFormComplete}
-        component={Link}
-        to="/success">
+      <div className={buttonContainer}>
+        <Button size="large" component={Link} to="/scheduledays">
+          cancel
+        </Button>
+        <Button
+          size="large"
+          color="primary"
+          disabled={!isFormComplete}
+          component={Link}
+          to="/success"
+        >
           save & next
         </Button>
       </div>

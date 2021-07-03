@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../utils/index';
+import { Button } from '../../utils';
 
 export default function ProgressButtons({
   firstBtnText,

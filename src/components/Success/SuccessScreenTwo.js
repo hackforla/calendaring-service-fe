@@ -14,7 +14,7 @@ export default function SuccessScreenTwo() {
       <div className={classes.SuccessScreenTwoText}>
         <Typography className='body-text'>
           Your meeting preferences for TRAINING have been set. Please continue
-          set up and manage your preferences by visisting your dashboard.
+          set up and manage your preferences by visiting your dashboard.
         </Typography>
       </div>
       <div className={classes.SuccessScreenTwoButton}>

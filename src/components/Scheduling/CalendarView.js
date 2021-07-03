@@ -6,7 +6,7 @@ import { Button, Typography } from '../../utils/index';
 import { useStyles } from './CalendarViewStyles';
 
 export default function CalendarView() {
-  const classes = useStyles();
+  const { buttonContainer, subtitle } = useStyles();
   const [selectedDays, setSelectedDays] = useState([]);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -66,7 +66,7 @@ export default function CalendarView() {
         description="Select from Tracy's availability for"
         activity="Training"
       />
-      <Typography variant="subtitle1" className={classes.subtitle}>
+      <Typography variant="subtitle1" className={subtitle}>
         {buttonDisabled ? 'Choose a date' : 'Date selected'}
       </Typography>
       <div>
@@ -81,7 +81,7 @@ export default function CalendarView() {
         />
       </div>
 
-      <div className={classes.buttonContainer}>
+      <div className={buttonContainer}>
         <Button size="large">Go Back</Button>
         <Button size="large" color="primary" disabled={buttonDisabled}>
           Next

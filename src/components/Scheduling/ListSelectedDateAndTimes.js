@@ -3,43 +3,36 @@ import { Typography } from '@material-ui/core';
 import { useStyles } from './ConfirmationStyles';
 
 export default function ListSelectedDateAndTimes({ day, date, times }) {
-  const classes = useStyles();
+  const { timeRange, letterSpacing, dateContainer, dateRow, dayStyle } = useStyles();
   let renderTimes;
 
   // times is an array with a maximum amount of 2 time range items.
   if (times.length === 2) {
     renderTimes = (
       <>
-        <Typography className={[classes.timeRange, classes.letterSpacing]}>
+        <Typography className={[timeRange, letterSpacing]}>
           {times[0]},
         </Typography>
-        <Typography className={[classes.timeRange, classes.letterSpacing]}>
+        <Typography className={[timeRange, letterSpacing]}>
           {times[1]}
         </Typography>
       </>
     );
   } else if (times.length === 1) {
     renderTimes = (
-      <Typography className={[classes.timeRange, classes.letterSpacing]}>
-        {times[0]}
-      </Typography>
+      <Typography className={[timeRange, letterSpacing]}>{times[0]}</Typography>
     );
   } else {
     renderTimes = null;
   }
 
   return (
-    <div className={classes.dateContainer}>
-      <div className={classes.dateRow}>
-        <Typography
-          variant="body1"
-          className={[classes.day, classes.letterSpacing]}
-        >
+    <div className={dateContainer}>
+      <div className={dateRow}>
+        <Typography variant="body1" className={[dayStyle, letterSpacing]}>
           {day}
         </Typography>
-        <Typography className={[classes.date, classes.letterSpacing]}>
-          {date}
-        </Typography>
+        <Typography className={[date, letterSpacing]}>{date}</Typography>
       </div>
       {renderTimes}
     </div>

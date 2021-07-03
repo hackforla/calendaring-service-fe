@@ -10,7 +10,7 @@ export default function Header({
   slots,
   maxSlots,
 }) {
-  const classes = useStyles();
+  const { root, header, headerTimeZone } = useStyles();
 
   const actionText = () => {
     if (maxSlots) {
@@ -45,8 +45,8 @@ export default function Header({
   };
 
   return (
-    <div className={classes.root}>
-      <div className={classes.header}>
+    <div className={root}>
+      <div className={header}>
         <img src={logo.default} className="logo" alt="logo" />
         <Typography
           variant="h4"
@@ -79,7 +79,7 @@ export default function Header({
 
       {actionText()}
 
-      <div className={classes.headerTimeZone}>
+      <div className={headerTimeZone}>
         <Typography
           variant="body2"
           style={{

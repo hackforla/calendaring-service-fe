@@ -110,11 +110,11 @@ export default function ConfirmationScreen() {
         </div>
 
         {data.selectedDays.length > 0 &&
-          data.selectedDays.map((item, index) => (
+          data.selectedDays.map(({ date, selectedTimes }, index) => (
             <ListSelectedDateAndTimes
-              day={moment(item.date).format('dddd')}
-              date={item.date}
-              times={item.selectedTimes}
+              day={moment(date).format('dddd')}
+              date={date}
+              times={selectedTimes}
               key={index}
             />
           ))}

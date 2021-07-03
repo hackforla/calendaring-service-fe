@@ -16,6 +16,7 @@
     "react/prop-types": 0,
     "linebreak-style": ["warn", "unix"],
     "quotes": ["warn", "single"],
-    "semi": ["warn", "always"]
+    "semi": ["warn", "always"],
+    "no-unused-vars": "warn"
   }
 }

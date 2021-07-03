@@ -13,7 +13,18 @@ const HARD_CODED_DATA = {
 };
 
 export default function ContactReview() {
-  const classes = useStyles();
+  const {
+    root,
+    letterSpacing,
+    required,
+    formSpace,
+    staticInput,
+    disabled,
+    editButton,
+    buttonContainer,
+    inputRow,
+    EditableInput,
+  } = useStyles();
   const [inputs, setInputs] = useState({
     caseWorker: '',
     firstName: '',
@@ -21,7 +32,6 @@ export default function ContactReview() {
     email: '',
     phoneNumber: '',
   });
-
   const [editMode, toggleEdit] = useState({
     email: false,
     phoneNumber: false,
@@ -36,7 +46,7 @@ export default function ContactReview() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={root}>
       <Header
         title="Contact Information"
         description="Review your profile information below"
@@ -44,11 +54,11 @@ export default function ContactReview() {
       />
 
       <FormControl>
-        <label className={classes.letterSpacing}>
-          First Name<span className={classes.required}>*</span>
+        <label className={letterSpacing}>
+          First Name<span className={required}>*</span>
         </label>
         <TextField
-          className={classes.formSpace}
+          className={formSpace}
           variant="outlined"
           fullWidth
           name="firstName"
@@ -57,17 +67,17 @@ export default function ContactReview() {
             readOnly: true,
             'aria-readonly': true,
             classes: {
-              input: classes.staticInput,
+              input: staticInput,
             },
           }}
           required
         />
 
-        <label className={classes.letterSpacing}>
-          Last Name<span className={classes.required}>*</span>
+        <label className={letterSpacing}>
+          Last Name<span className={required}>*</span>
         </label>
         <TextField
-          className={classes.formSpace}
+          className={formSpace}
           variant="outlined"
           fullWidth
           name="lastName"
@@ -76,18 +86,18 @@ export default function ContactReview() {
             readOnly: true,
             'aria-readonly': true,
             classes: {
-              input: classes.staticInput,
+              input: staticInput,
             },
           }}
           required
         />
 
-        <label className={classes.letterSpacing}>
-          Email Address<span className={classes.required}>*</span>
+        <label className={letterSpacing}>
+          Email Address<span className={required}>*</span>
         </label>
-        <div className={classes.inputRow}>
+        <div className={inputRow}>
           <TextField
-            className={classes.formSpace}
+            className={formSpace}
             type="email"
             variant="outlined"
             fullWidth
@@ -97,25 +107,25 @@ export default function ContactReview() {
             disabled={!editMode.email}
             InputProps={{
               classes: {
-                disabled: classes.disabled,
-                input: classes.EditableInput,
+                disabled: disabled,
+                input: EditableInput,
               },
             }}
             required
           />
           <Button
             color="primary"
-            className={classes.editButton}
+            className={editButton}
             onClick={() => toggleEdit({ ...editMode, email: !editMode.email })}
           >
             {editMode.email ? 'confirm' : 'edit'}
           </Button>
         </div>
 
-        <label className={classes.letterSpacing}>Phone Number (Optional)</label>
-        <div className={classes.inputRow}>
+        <label className={letterSpacing}>Phone Number (Optional)</label>
+        <div className={inputRow}>
           <TextField
-            className={classes.formSpace}
+            className={formSpace}
             type="text"
             variant="outlined"
             fullWidth
@@ -125,14 +135,14 @@ export default function ContactReview() {
             disabled={!editMode.phoneNumber}
             InputProps={{
               classes: {
-                disabled: classes.disabled,
-                input: classes.EditableInput,
+                disabled: disabled,
+                input: EditableInput,
               },
             }}
           />
           <Button
             color="primary"
-            className={classes.editButton}
+            className={editButton}
             onClick={() =>
               toggleEdit({ ...editMode, phoneNumber: !editMode.phoneNumber })
             }
@@ -142,7 +152,7 @@ export default function ContactReview() {
         </div>
       </FormControl>
 
-      <div className={classes.buttonContainer}>
+      <div className={buttonContainer}>
         <Button component={Link} to="/calendarselectedtimes" size="large">
           Go Back
         </Button>

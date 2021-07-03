@@ -8,7 +8,7 @@ import {
   KeyboardArrowDownIcon,
   ListItemIcon,
   CheckRoundedIcon,
-} from '../../utils/index';
+} from '../../utils';
 import { useStyles } from './SelectTimeRangeStyles';
 
 export default function SelectTimeRange({
@@ -18,7 +18,21 @@ export default function SelectTimeRange({
   setAllSelectedTimes,
   allSelectedTimes,
 }) {
-  const classes = useStyles();
+  const {
+    timeRange,
+    subHeader,
+    inputLabelRoot,
+    inputOutlined,
+    selectRoot,
+    selectIcon,
+    selectOutlined,
+    menuList,
+    menuItemRoot,
+    selectIconOutlined,
+    listItemIconRoot,
+    checkmarkIcon,
+    checkmarkRoot,
+  } = useStyles();
   const [times, setTimes] = useState([]);
 
   const handleChange = (event) => {
@@ -38,9 +52,9 @@ export default function SelectTimeRange({
   };
 
   return (
-    <div className={classes.timeRange}>
+    <div className={timeRange}>
       <div>
-        <div className={classes.subHeader}>
+        <div className={subHeader}>
           <Typography variant="h6">{day}</Typography>
           <Typography
             variant="subtitle2"
@@ -65,8 +79,8 @@ export default function SelectTimeRange({
       <FormControl variant="outlined">
         <InputLabel
           classes={{
-            root: classes.inputLabelRoot,
-            outlined: classes.inputOutlined,
+            root: inputLabelRoot,
+            outlined: inputOutlined,
           }}
           id="demo-simple-select-outlined-label"
           disableAnimation={true}
@@ -77,10 +91,10 @@ export default function SelectTimeRange({
 
         <Select
           classes={{
-            root: classes.selectRoot,
-            icon: classes.selectIcon,
-            outlined: classes.selectOutlined,
-            iconOutlined: classes.selectIconOutlined,
+            root: selectRoot,
+            icon: selectIcon,
+            outlined: selectOutlined,
+            iconOutlined: selectIconOutlined,
           }}
           inputProps={{
             name: 'times',
@@ -88,7 +102,7 @@ export default function SelectTimeRange({
           MenuProps={{
             MenuListProps: {
               classes: {
-                root: classes.menuList,
+                root: menuList,
               },
             },
           }}
@@ -102,7 +116,7 @@ export default function SelectTimeRange({
           {availableTimes.map((time, index) => (
             <MenuItem
               classes={{
-                root: classes.menuItemRoot,
+                root: menuItemRoot,
               }}
               key={index}
               value={time}
@@ -111,13 +125,13 @@ export default function SelectTimeRange({
               {times.includes(time) && (
                 <ListItemIcon
                   classes={{
-                    root: classes.listItemIconRoot,
+                    root: listItemIconRoot,
                   }}
                 >
                   <CheckRoundedIcon
                     classes={{
-                      root: classes.checkmarkRoot,
-                      fontSizeInherit: classes.checkmarkIcon,
+                      root: checkmarkRoot,
+                      fontSizeInherit: checkmarkIcon,
                     }}
                     fontSize="inherit"
                   />
