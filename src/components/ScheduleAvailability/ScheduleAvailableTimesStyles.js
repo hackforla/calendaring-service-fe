@@ -1,4 +1,4 @@
-import { makeStyles, InputBase, withStyles } from '../../utils/index';
+import { makeStyles, InputBase, withStyles } from '../../utils';
 
 const useStyles = makeStyles({
   selectRow: {

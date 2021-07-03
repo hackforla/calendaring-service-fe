@@ -1,26 +1,28 @@
 import React from 'react';
-import classes from './SuccessScreenTwo.module.scss';
-import { Button } from '../../utils/index';
-import { CheckCircleOutlineIcon, Typography } from '../../utils/index';
+import { useStyles } from './SuccessScreenTwoStyles';
+import { Button } from '../../utils';
+import { CheckCircleOutlineIcon, Typography } from '../../utils';
 import { Link } from 'react-router-dom';
 
 export default function SuccessScreenTwo() {
+  const { main } = useStyles();
   return (
-    <div className={classes.main}>
+    <div className={main}>
       <CheckCircleOutlineIcon style={{ height: '5rem', width: '5rem' }} />
-      <div className={classes.SuccessScreenTwoHeading}>
-        <Typography variant='h5'>Success!</Typography>
-      </div>
-      <div className={classes.SuccessScreenTwoText}>
-        <Typography className='body-text'>
-          Your meeting preferences for TRAINING have been set. Please continue
-          set up and manage your preferences by visiting your dashboard.
-        </Typography>
-      </div>
-      <div className={classes.SuccessScreenTwoButton}>
+      <Typography
+        variant="h5"
+        style={{ fontWeight: 'bold', marginBottom: '.5rem' }}
+      >
+        Success!
+      </Typography>
+      <Typography className="body-text">
+        Your meeting preferences for TRAINING have been set. Please continue set
+        up and manage your preferences by visiting your dashboard.
+      </Typography>
+      <div>
         <Button
-          variant='contained'
-          color='primary'
+          variant="contained"
+          color="primary"
           component={Link}
           to="/meetingtypes"
         >
