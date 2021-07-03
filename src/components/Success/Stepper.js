@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { FiberManualRecordIcon, Typography } from '../../utils';
 import ForDevsEyesOnly from './ForDevsEyesOnly';
-import classes from './Stepper.module.scss';
+import { useStyles } from './StepperStyles';
 
 export default function Stepper() {
   const [step, setStep] = useState(0);
   const dots = [0, 1, 2, 3, 4, 5];
-
+  const { stepBar, stepStyle, stepSelected } = useStyles();
   function stepChanger(str) {
     if (str === 'increment' && step < 5) {
       setStep(step + 1);
@@ -25,10 +25,10 @@ export default function Stepper() {
       <Typography variant="h6" style={{ margin: '1rem' }}>
         Your progress
       </Typography>
-      <div className={classes.stepBar}>
+      <div className={stepBar}>
         {dots.map((_, i) => (
           <div
-            className={i <= step ? classes.step : classes.stepSelected}
+            className={i <= step ? stepSelected : stepStyle}
             style={{ background: getStepColor(step, i) }}
             key={i}
           >
