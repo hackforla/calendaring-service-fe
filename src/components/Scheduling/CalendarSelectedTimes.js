@@ -66,7 +66,6 @@ export default function CalendarSelectedTimes() {
         slots={slots}
         maxSlots={maxSlots}
       />
-
       {MOCK_DATA_SELECTED_DATES.map(({ day, date, availableTimes }, index) => {
         return (
           <SelectTimeRange
@@ -79,7 +78,6 @@ export default function CalendarSelectedTimes() {
           />
         );
       })}
-
       <ProgressButtons
         firstBtnText="Go Back"
         secondBtnText="Next"

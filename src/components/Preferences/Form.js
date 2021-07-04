@@ -36,8 +36,8 @@ export default function Form() {
   const classes = useStyles();
   let isFormComplete = Object.values(state).every((item) => item !== '');
   const { meetingPreferences } = useSelector((state) => state.userData);
-
   const dispatch = useDispatch();
+  
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }

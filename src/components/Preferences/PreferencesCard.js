@@ -8,18 +8,19 @@ import {
 import { useStyles } from './PreferencesCardStyles';
 
 export default function PreferencesCard() {
-  const classes = useStyles();
+  const { root } = useStyles();
   return (
-    <Card className={classes.root}>
+    <Card className={root}>
       <CardContent>
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-          }}>
-          <Typography variant='h4'>Training</Typography>
-          <Typography variant='h6' color='primary'>
+          }}
+        >
+          <Typography variant="h4">Training</Typography>
+          <Typography variant="h6" color="primary">
             Edit
           </Typography>
         </div>
@@ -29,9 +30,10 @@ export default function PreferencesCard() {
             alignItems: 'center',
             paddingTop: '5px',
             gap: '5px',
-          }}>
-          <LocationOnIcon color='primary' />
-          <Typography variant='h6'>PSY Main Office</Typography>
+          }}
+        >
+          <LocationOnIcon color="primary" />
+          <Typography variant="h6">PSY Main Office</Typography>
         </div>
         <div
           style={{
@@ -39,9 +41,10 @@ export default function PreferencesCard() {
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingTop: '1rem',
-          }}>
-          <Typography variant='body1'>Mon, Tue, Thur, Fri, Sat</Typography>
-          <Typography variant='h6'>60 Min</Typography>
+          }}
+        >
+          <Typography variant="body1">Mon, Tue, Thur, Fri, Sat</Typography>
+          <Typography variant="h6">60 Min</Typography>
         </div>
       </CardContent>
     </Card>

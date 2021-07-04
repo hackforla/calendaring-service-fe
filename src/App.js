@@ -5,7 +5,7 @@ import { Route,
 } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { theme } from './theme';
-import Dashboard from './components/Welcome/Dashboard';
+import Dashboard from './components/Welcome/DashboardBody';
 import Success from './components/Success/Success';
 import ScheduleAvailableDays from './components/ScheduleAvailability/ScheduleAvailability';
 import ScheduleAvailableTimes from './components/ScheduleAvailability/ScheduleAvailableTimes';

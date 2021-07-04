@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     marginRight: '1rem',
   },
-  day: {
+  dayStyle: {
     fontWeight: 500,
   },
   date: {
