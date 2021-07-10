@@ -7,10 +7,10 @@ export default function Prompt() {
   const { root, img } = useStyles();
   return (
     <div className={root}>
-      <img src={logo.default} className={img} alt="logo" />
+      <img src={logo.default} className={img} alt='logo' />
       <Typography
-        variant="h4"
-        color="primary"
+        variant='h4'
+        color='primary'
         style={{
           marginTop: '1rem',
           marginBottom: '0.5rem',
@@ -19,7 +19,7 @@ export default function Prompt() {
         Training
       </Typography>
       <Typography
-        variant="body1"
+        variant='body1'
         style={{
           fontWeight: '500',
           marginBottom: '1rem',
@@ -28,7 +28,7 @@ export default function Prompt() {
         with Tracy
       </Typography>
       <Typography
-        variant="body1"
+        variant='body1'
         style={{
           fontSize: '16px',
           margin: '1rem 0',
@@ -40,8 +40,8 @@ export default function Prompt() {
       </Typography>
 
       <Typography
-        variant="h4"
-        color="primary"
+        variant='h4'
+        color='primary'
         style={{
           margin: '1rem',
         }}
@@ -50,9 +50,9 @@ export default function Prompt() {
       </Typography>
 
       <Button
-        size="large"
-        variant="contained"
-        color="primary"
+        size='large'
+        variant='contained'
+        color='primary'
         style={{
           textTransform: 'none',
           margin: '1rem',

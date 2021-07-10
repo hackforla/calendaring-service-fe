@@ -10,12 +10,12 @@ export default function Header() {
     <div className={classes.main}>
       <div className={classes.header}>
         <div className={classes.top}>
-          <img src={logo.default} className="logo" alt="logo" />
-          <Typography variant="h4">My Dashboard</Typography>
+          <img src={logo.default} className='logo' alt='logo' />
+          <Typography variant='h4'>My Dashboard</Typography>
         </div>
         <div className={classes.bottom}>
           <Typography
-            variant="body1"
+            variant='body1'
             className={
               selected === 'Meeting Types' ? classes.border : classes.noBorder
             }
@@ -24,7 +24,7 @@ export default function Header() {
             Meeting Types
           </Typography>
           <Typography
-            variant="body1"
+            variant='body1'
             className={
               selected === 'My Schedule' ? classes.border : classes.noBorder
             }

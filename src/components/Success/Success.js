@@ -14,23 +14,23 @@ export default function Success() {
       }}
     >
       <CheckCircleIcon
-        color="primary"
+        color='primary'
         style={{ height: '5rem', width: '5rem' }}
       />
-      <Typography style={{ margin: '1rem' }} variant="h5">
+      <Typography style={{ margin: '1rem' }} variant='h5'>
         Success!
       </Typography>
       <Stepper />
-      <Typography variant="body1" className="body-text">
+      <Typography variant='body1' className='body-text'>
         Thanks for setting up your availability! We will use this information
         when you customize your meeting types. Visit your Dashboard and
         personalize your meeting types to complete calendar set up.
       </Typography>
       <Button
-        variant="contained"
-        color="primary"
+        variant='contained'
+        color='primary'
         component={Link}
-        to="/meetingtypes"
+        to='/meetingtypes'
       >
         complete setup
       </Button>

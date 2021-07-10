@@ -17,7 +17,7 @@ export default function Day({ day, selected, dispatch, idx }) {
       <Checkbox
         readOnly
         checked={selected}
-        color="primary"
+        color='primary'
         inputProps={{ 'aria-label': 'secondary checkbox' }}
       />
       <p>{day}</p>

@@ -30,7 +30,7 @@ export default function ListSelectedDateAndTimes({ day, date, times }) {
   return (
     <div className={dateContainer}>
       <div className={dateRow}>
-        <Typography variant="body1" className={[dayStyle, letterSpacing]}>
+        <Typography variant='body1' className={[dayStyle, letterSpacing]}>
           {day}
         </Typography>
         <Typography className={[date, letterSpacing]}>{date}</Typography>

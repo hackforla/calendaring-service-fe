@@ -6,8 +6,8 @@ export default function Preferences() {
   return (
     <>
       <Header
-        title="Meeting Preferences"
-        subtitle="Set your preferences for this meeting type using the options below"
+        title='Meeting Preferences'
+        subtitle='Set your preferences for this meeting type using the options below'
       />
       <Form />
     </>

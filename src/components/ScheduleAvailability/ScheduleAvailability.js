@@ -30,14 +30,14 @@ export default function ScheduleAvailability() {
           padding: '1rem 3rem',
         }}
       >
-        <Button size="large" component={Link} to="/">
+        <Button size='large' component={Link} to='/'>
           cancel
         </Button>
         <Button
-          size="large"
-          color="primary"
+          size='large'
+          color='primary'
           component={Link}
-          to="/scheduletimes"
+          to='/scheduletimes'
           disabled={buttonDisabled}
         >
           save & next

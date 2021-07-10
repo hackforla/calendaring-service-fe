@@ -48,8 +48,8 @@ export default function ContactReview() {
   return (
     <div className={root}>
       <Header
-        title="Contact Information"
-        description="Review your profile information below"
+        title='Contact Information'
+        description='Review your profile information below'
         activity={`Training with ${HARD_CODED_DATA.caseWorker}`}
       />
 
@@ -59,9 +59,9 @@ export default function ContactReview() {
         </label>
         <TextField
           className={formSpace}
-          variant="outlined"
+          variant='outlined'
           fullWidth
-          name="firstName"
+          name='firstName'
           value={inputs.firstName}
           InputProps={{
             readOnly: true,
@@ -78,9 +78,9 @@ export default function ContactReview() {
         </label>
         <TextField
           className={formSpace}
-          variant="outlined"
+          variant='outlined'
           fullWidth
-          name="lastName"
+          name='lastName'
           value={inputs.lastName}
           InputProps={{
             readOnly: true,
@@ -98,10 +98,10 @@ export default function ContactReview() {
         <div className={inputRow}>
           <TextField
             className={formSpace}
-            type="email"
-            variant="outlined"
+            type='email'
+            variant='outlined'
             fullWidth
-            name="email"
+            name='email'
             value={inputs.email}
             onChange={handleChange}
             disabled={!editMode.email}
@@ -114,7 +114,7 @@ export default function ContactReview() {
             required
           />
           <Button
-            color="primary"
+            color='primary'
             className={editButton}
             onClick={() => toggleEdit({ ...editMode, email: !editMode.email })}
           >
@@ -126,10 +126,10 @@ export default function ContactReview() {
         <div className={inputRow}>
           <TextField
             className={formSpace}
-            type="text"
-            variant="outlined"
+            type='text'
+            variant='outlined'
             fullWidth
-            name="phoneNumber"
+            name='phoneNumber'
             value={inputs.phoneNumber}
             onChange={handleChange}
             disabled={!editMode.phoneNumber}
@@ -141,7 +141,7 @@ export default function ContactReview() {
             }}
           />
           <Button
-            color="primary"
+            color='primary'
             className={editButton}
             onClick={() =>
               toggleEdit({ ...editMode, phoneNumber: !editMode.phoneNumber })
@@ -153,14 +153,14 @@ export default function ContactReview() {
       </FormControl>
 
       <div className={buttonContainer}>
-        <Button component={Link} to="/calendarselectedtimes" size="large">
+        <Button component={Link} to='/calendarselectedtimes' size='large'>
           Go Back
         </Button>
         <Button
-          size="large"
-          color="primary"
+          size='large'
+          color='primary'
           component={Link}
-          to="/confirmation"
+          to='/confirmation'
         >
           Next
         </Button>

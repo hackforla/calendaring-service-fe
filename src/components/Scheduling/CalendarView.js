@@ -62,11 +62,11 @@ export default function CalendarView() {
   return (
     <>
       <Header
-        title="Schedule with Tracy"
+        title='Schedule with Tracy'
         description="Select from Tracy's availability for"
-        activity="Training"
+        activity='Training'
       />
-      <Typography variant="subtitle1" className={subtitle}>
+      <Typography variant='subtitle1' className={subtitle}>
         {buttonDisabled ? 'Choose a date' : 'Date selected'}
       </Typography>
       <div>
@@ -82,8 +82,8 @@ export default function CalendarView() {
       </div>
 
       <div className={buttonContainer}>
-        <Button size="large">Go Back</Button>
-        <Button size="large" color="primary" disabled={buttonDisabled}>
+        <Button size='large'>Go Back</Button>
+        <Button size='large' color='primary' disabled={buttonDisabled}>
           Next
         </Button>
       </div>

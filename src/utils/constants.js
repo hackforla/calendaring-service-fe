@@ -29,13 +29,13 @@ const formFields = [
     inputs: [
       {
         name: 'In person meeting',
-        icon: <LocationOnIcon size="large" color="primary" />,
+        icon: <LocationOnIcon size='large' color='primary' />,
       },
       {
         name: 'Web conference',
-        icon: <VideocamIcon size="large" color="primary" />,
+        icon: <VideocamIcon size='large' color='primary' />,
       },
-      { name: 'Phone call', icon: <PhoneIcon size="large" color="primary" /> },
+      { name: 'Phone call', icon: <PhoneIcon size='large' color='primary' /> },
     ],
   },
   {

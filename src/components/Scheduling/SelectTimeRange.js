@@ -55,9 +55,9 @@ export default function SelectTimeRange({
     <div className={timeRange}>
       <div>
         <div className={subHeader}>
-          <Typography variant="h6">{day}</Typography>
+          <Typography variant='h6'>{day}</Typography>
           <Typography
-            variant="subtitle2"
+            variant='subtitle2'
             style={{
               fontWeight: 400,
             }}
@@ -66,8 +66,8 @@ export default function SelectTimeRange({
           </Typography>
         </div>
         <Typography
-          variant="subtitle2"
-          color="secondary"
+          variant='subtitle2'
+          color='secondary'
           style={{
             fontWeight: 400,
             marginTop: '0.5rem',
@@ -76,13 +76,13 @@ export default function SelectTimeRange({
           Select Times
         </Typography>
       </div>
-      <FormControl variant="outlined">
+      <FormControl variant='outlined'>
         <InputLabel
           classes={{
             root: inputLabelRoot,
             outlined: inputOutlined,
           }}
-          id="demo-simple-select-outlined-label"
+          id='demo-simple-select-outlined-label'
           disableAnimation={true}
           shrink={false}
         >
@@ -133,7 +133,7 @@ export default function SelectTimeRange({
                       root: checkmarkRoot,
                       fontSizeInherit: checkmarkIcon,
                     }}
-                    fontSize="inherit"
+                    fontSize='inherit'
                   />
                 </ListItemIcon>
               )}

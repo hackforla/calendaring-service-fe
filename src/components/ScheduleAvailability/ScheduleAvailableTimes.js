@@ -36,12 +36,12 @@ export default function ScheduleAvailableTimes() {
     <>
       <Header />
       <Card className={card}>
-        <Typography variant="subtitle1" align="center">
+        <Typography variant='subtitle1' align='center'>
           You can further customize your availability by day and time when
           customizing your meeting types later.
         </Typography>
       </Card>
-      <Typography variant="h6" className={h6}>
+      <Typography variant='h6' className={h6}>
         Daily Availability
       </Typography>
       <FormGroup row className={selectRow}>
@@ -49,15 +49,15 @@ export default function ScheduleAvailableTimes() {
         <FormControl className={select}>
           <FormHelperText>From</FormHelperText>
           <Select
-            labelId=""
-            id="demo-simple-select"
+            labelId=''
+            id='demo-simple-select'
             onChange={(e) => handleChange(e)}
             value={state.start}
             className={dropdown}
-            defaultValue=""
+            defaultValue=''
             input={<BootstrapInput />}
             required
-            name="start"
+            name='start'
             IconComponent={KeyboardArrowDownIcon}
           >
             {getTimesArray().map((input) => (
@@ -71,15 +71,15 @@ export default function ScheduleAvailableTimes() {
         <FormControl className={select}>
           <FormHelperText>To</FormHelperText>
           <Select
-            labelId=""
-            id="demo-simple-select"
+            labelId=''
+            id='demo-simple-select'
             onChange={(e) => handleChange(e)}
             value={state.end}
             className={dropdown}
-            defaultValue=""
+            defaultValue=''
             input={<BootstrapInput />}
             required
-            name="end"
+            name='end'
             IconComponent={KeyboardArrowDownIcon}
           >
             {getTimesArray(get24HrTime(state.start || '9:00 AM')).map(
@@ -93,15 +93,15 @@ export default function ScheduleAvailableTimes() {
         </FormControl>
       </FormGroup>
       <div className={buttonContainer}>
-        <Button size="large" component={Link} to="/scheduledays">
+        <Button size='large' component={Link} to='/scheduledays'>
           cancel
         </Button>
         <Button
-          size="large"
-          color="primary"
+          size='large'
+          color='primary'
           disabled={!isFormComplete}
           component={Link}
-          to="/success"
+          to='/success'
         >
           save & next
         </Button>

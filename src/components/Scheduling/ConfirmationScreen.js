@@ -58,22 +58,22 @@ export default function ConfirmationScreen() {
   return (
     <div className={classes.root}>
       <Header
-        title="Confirmation"
-        description="Review the information below is correct before proceeding"
-        activity="Home Inspection with Tracy"
+        title='Confirmation'
+        description='Review the information below is correct before proceeding'
+        activity='Home Inspection with Tracy'
       />
 
       {/* Personal Information */}
       <div className={classes.container}>
         <div className={classes.subheadingContainer}>
           <Typography
-            variant="body1"
+            variant='body1'
             className={[classes.subheading, classes.letterSpacing]}
           >
             Personal Information
           </Typography>
           <Button
-            color="primary"
+            color='primary'
             className={[classes.editButton, classes.letterSpacing]}
           >
             Edit
@@ -96,13 +96,13 @@ export default function ConfirmationScreen() {
       <div className={classes.container}>
         <div className={classes.subheadingContainer}>
           <Typography
-            variant="body1"
+            variant='body1'
             className={[classes.subheading, classes.letterSpacing]}
           >
             Dates and Times
           </Typography>
           <Button
-            color="primary"
+            color='primary'
             className={[classes.editButton, classes.letterSpacing]}
           >
             Edit
@@ -121,10 +121,10 @@ export default function ConfirmationScreen() {
       </div>
 
       <div className={classes.buttonContainer}>
-        <Button size="large" component={Link} to="/contactreview">
+        <Button size='large' component={Link} to='/contactreview'>
           <span className={classes.letterSpacing}>Go Back</span>
         </Button>
-        <Button size="large" color="primary">
+        <Button size='large' color='primary'>
           <span className={classes.letterSpacing}>Submit</span>
         </Button>
       </div>

@@ -9,7 +9,7 @@ export default function MeetingTypes() {
     <>
       <Header />
       <Stepper />
-      <Typography variant="body2" className="p1">
+      <Typography variant='body2' className='p1'>
         To complete your setup, you must update your preferences for all the
         below meetings.
       </Typography>
@@ -17,7 +17,7 @@ export default function MeetingTypes() {
         <MeetingType type={type} updateNeeded={updateNeeded} key={i} />
       ))}
       <HelpIcon
-        color="primary"
+        color='primary'
         style={{ height: '4rem', width: '4rem', margin: '0 1rem' }}
       />
     </>
