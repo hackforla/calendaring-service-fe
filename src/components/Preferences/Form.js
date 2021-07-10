@@ -37,7 +37,7 @@ export default function Form() {
   let isFormComplete = Object.values(state).every((item) => item !== '');
   const { meetingPreferences } = useSelector((state) => state.userData);
   const dispatch = useDispatch();
-  
+
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value });
   }
@@ -227,7 +227,7 @@ export default function Form() {
 
       {/* SUBMIT BEGIN */}
       <div>
-        <Button size='large' component={Link} to="/meetingtypes">
+        <Button size="large" component={Link} to="/meetingtypes">
           cancel
         </Button>
         <Button

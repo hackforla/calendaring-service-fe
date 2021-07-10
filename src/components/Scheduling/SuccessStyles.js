@@ -30,7 +30,7 @@ const useStyles = makeStyles({
   dashboardButton: {
     letterSpacing: '1px',
     textTransform: 'capitalize',
-  }
+  },
 });
 
 export { useStyles };

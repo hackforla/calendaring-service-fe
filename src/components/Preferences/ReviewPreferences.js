@@ -8,8 +8,8 @@ export default function ReviewPreferences() {
   return (
     <>
       <Header
-        title='Review Preferences'
-        subtitle='Review the information is correct before creating'
+        title="Review Preferences"
+        subtitle="Review the information is correct before creating"
       />
       <PreferencesCard />
       <div
@@ -18,12 +18,14 @@ export default function ReviewPreferences() {
           bottom: 0,
           right: 0,
           margin: '10px',
-        }}>
-        <Button size='large'>cancel</Button>
-        <Button size='large'
-        color='primary'
-        component={Link}
-        to="/success-screen-two"
+        }}
+      >
+        <Button size="large">cancel</Button>
+        <Button
+          size="large"
+          color="primary"
+          component={Link}
+          to="/success-screen-two"
         >
           save & next
         </Button>

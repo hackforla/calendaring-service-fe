@@ -5,7 +5,14 @@ import { CheckCircleIcon, Button, Typography } from '../../utils';
 
 export default function Success() {
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '1rem'}}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop: '1rem',
+      }}
+    >
       <CheckCircleIcon
         color="primary"
         style={{ height: '5rem', width: '5rem' }}

@@ -6,7 +6,6 @@ import ScheduleAvailableDays from './ScheduleAvailableDays';
 import { Link } from 'react-router-dom';
 const initialState = { daysOfTheWeek };
 
-
 export default function ScheduleAvailability() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -31,15 +30,16 @@ export default function ScheduleAvailability() {
           padding: '1rem 3rem',
         }}
       >
-        <Button size='large' component={Link} to="/">
+        <Button size="large" component={Link} to="/">
           cancel
         </Button>
         <Button
-        size='large'
-        color='primary'
-        component={Link}
-        to="/scheduletimes"
-        disabled={buttonDisabled}>
+          size="large"
+          color="primary"
+          component={Link}
+          to="/scheduletimes"
+          disabled={buttonDisabled}
+        >
           save & next
         </Button>
       </div>
