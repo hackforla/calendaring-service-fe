@@ -14,7 +14,7 @@ export default function MeetingType({ type, updateNeeded }) {
   return (
     <Card className={root}>
       <CardContent>
-        <Typography variant="h4">{type}</Typography>
+        <Typography variant='h4'>{type}</Typography>
         <div
           style={{
             display: 'flex',
@@ -22,20 +22,20 @@ export default function MeetingType({ type, updateNeeded }) {
             justifyContent: 'space-between',
           }}
         >
-          <Typography variant="h6" className={body}>
+          <Typography variant='h6' className={body}>
             Set your preferences
           </Typography>
           <div style={{ position: 'relative' }}>
-            <Link to="/preferences">
+            <Link to='/preferences'>
               <AddCircleIcon
                 className={icon}
-                color="primary"
-                to="/preferences"
+                color='primary'
+                to='/preferences'
                 component={Link}
               />
               {updateNeeded && (
                 <RadioButtonCheckedIcon
-                  color="primary"
+                  color='primary'
                   style={{ position: 'absolute', right: '-15px', top: '-5px' }}
                 />
               )}

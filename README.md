@@ -44,7 +44,7 @@ You will also see any lint errors in the console.
 ### Branching
 
 - Make sure you CLONE this repo and DO. NOT. FORK. the repo.
-- Create a branch off of main and name it according to the Jira ticket 
+- Create a branch off of main and name it according to the Jira ticket
   - (For example if you want to create a new branch for Jira ticket CS-6, run `git checkout -b CS-6`)
 - Push this branch to the remote
 - Ensure that you create only one branch per Jira ticket
@@ -52,8 +52,9 @@ You will also see any lint errors in the console.
 ### Working with pull requests and reviews
 
 GENERAL NOTE: Please commit daily to your local branch
+
 - When you are finished working on your Jira ticket, commit your local changes, then push your local changes to your branch in the sky.
-- Submit a PR of your branch.  
+- Submit a PR of your branch.
 - We have rules in place that require at least one reviewer before we merge any branch.
 - One of the reviewers (either @javaprincess or @jonathanbutler7) will look at it, and leave some comments.
 - If any of them are confusing please let us know.

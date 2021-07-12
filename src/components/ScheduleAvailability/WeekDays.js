@@ -5,7 +5,13 @@ export default function WeekDays({ dispatch, state }) {
   return (
     <>
       {state.daysOfTheWeek.map(({ day, selected }, idx) => (
-        <Day day={day} selected={selected} idx={idx} key={idx} dispatch={dispatch} />
+        <Day
+          day={day}
+          selected={selected}
+          idx={idx}
+          key={idx}
+          dispatch={dispatch}
+        />
       ))}
     </>
   );

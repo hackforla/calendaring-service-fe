@@ -19,8 +19,8 @@ export default function PreferencesCard() {
             justifyContent: 'space-between',
           }}
         >
-          <Typography variant="h4">Training</Typography>
-          <Typography variant="h6" color="primary">
+          <Typography variant='h4'>Training</Typography>
+          <Typography variant='h6' color='primary'>
             Edit
           </Typography>
         </div>
@@ -32,8 +32,8 @@ export default function PreferencesCard() {
             gap: '5px',
           }}
         >
-          <LocationOnIcon color="primary" />
-          <Typography variant="h6">PSY Main Office</Typography>
+          <LocationOnIcon color='primary' />
+          <Typography variant='h6'>PSY Main Office</Typography>
         </div>
         <div
           style={{
@@ -43,8 +43,8 @@ export default function PreferencesCard() {
             paddingTop: '1rem',
           }}
         >
-          <Typography variant="body1">Mon, Tue, Thur, Fri, Sat</Typography>
-          <Typography variant="h6">60 Min</Typography>
+          <Typography variant='body1'>Mon, Tue, Thur, Fri, Sat</Typography>
+          <Typography variant='h6'>60 Min</Typography>
         </div>
       </CardContent>
     </Card>

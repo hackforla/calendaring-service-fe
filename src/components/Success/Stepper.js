@@ -22,7 +22,7 @@ export default function Stepper() {
 
   return (
     <div style={{ width: '99%' }}>
-      <Typography variant="h6" style={{ margin: '1rem' }}>
+      <Typography variant='h6' style={{ margin: '1rem' }}>
         Your progress
       </Typography>
       <div className={stepBar}>
@@ -36,7 +36,7 @@ export default function Stepper() {
           </div>
         ))}
       </div>
-      <Typography variant="body2" className="p1">
+      <Typography variant='body2' className='p1'>
         Step {step + 1} of {dots.length} complete.
       </Typography>
       {/* Uncomment the component below to test the progress bar */}

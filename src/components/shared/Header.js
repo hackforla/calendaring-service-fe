@@ -4,11 +4,11 @@ import { logo, Typography } from '../../utils/';
 export default function Header({ title, subtitle }) {
   return (
     <>
-      <div className="row align-center justify-center">
-        <img src={logo.default} className="logo" alt="logo" />
-        <Typography variant="h5">{title}</Typography>
+      <div className='row align-center justify-center'>
+        <img src={logo.default} className='logo' alt='logo' />
+        <Typography variant='h5'>{title}</Typography>
       </div>
-      <Typography variant="subtitle1" className="p1">
+      <Typography variant='subtitle1' className='p1'>
         {subtitle}
       </Typography>
     </>

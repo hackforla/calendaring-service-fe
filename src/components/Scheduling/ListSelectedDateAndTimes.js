@@ -3,7 +3,8 @@ import { Typography } from '@material-ui/core';
 import { useStyles } from './ConfirmationStyles';
 
 export default function ListSelectedDateAndTimes({ day, date, times }) {
-  const { timeRange, letterSpacing, dateContainer, dateRow, dayStyle } = useStyles();
+  const { timeRange, letterSpacing, dateContainer, dateRow, dayStyle } =
+    useStyles();
   let renderTimes;
 
   // times is an array with a maximum amount of 2 time range items.
@@ -29,7 +30,7 @@ export default function ListSelectedDateAndTimes({ day, date, times }) {
   return (
     <div className={dateContainer}>
       <div className={dateRow}>
-        <Typography variant="body1" className={[dayStyle, letterSpacing]}>
+        <Typography variant='body1' className={[dayStyle, letterSpacing]}>
           {day}
         </Typography>
         <Typography className={[date, letterSpacing]}>{date}</Typography>

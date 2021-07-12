@@ -20,7 +20,7 @@ export default function ProgressButtons({
           textTransform: 'none',
           fontSize: '16px',
         }}
-        size="large"
+        size='large'
       >
         {firstBtnText}
       </Button>
@@ -29,8 +29,8 @@ export default function ProgressButtons({
           textTransform: 'none',
           fontSize: '16px',
         }}
-        size="large"
-        color="primary"
+        size='large'
+        color='primary'
         disabled={disabled}
       >
         {secondBtnText}

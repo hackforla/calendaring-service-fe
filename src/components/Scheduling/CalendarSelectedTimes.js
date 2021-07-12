@@ -59,10 +59,10 @@ export default function CalendarSelectedTimes() {
   return (
     <>
       <Header
-        title="Schedule with Tracy"
-        description="Choose your time availability for the selected days"
-        activity="Home Inspection"
-        action="Choose up to 2 times per day"
+        title='Schedule with Tracy'
+        description='Choose your time availability for the selected days'
+        activity='Home Inspection'
+        action='Choose up to 2 times per day'
         slots={slots}
         maxSlots={maxSlots}
       />
@@ -79,8 +79,8 @@ export default function CalendarSelectedTimes() {
         );
       })}
       <ProgressButtons
-        firstBtnText="Go Back"
-        secondBtnText="Next"
+        firstBtnText='Go Back'
+        secondBtnText='Next'
         disabled={disabled}
       />
     </>

@@ -17,7 +17,7 @@ export default function Header({
       if (slots > 0) {
         return (
           <Typography
-            variant="body2"
+            variant='body2'
             style={{
               fontSize: '14px',
               marginBottom: '1rem',
@@ -29,7 +29,7 @@ export default function Header({
       } else {
         return (
           <Typography
-            variant="body2"
+            variant='body2'
             style={{
               fontSize: '14px',
               marginBottom: '1rem',
@@ -47,9 +47,9 @@ export default function Header({
   return (
     <div className={root}>
       <div className={header}>
-        <img src={logo.default} className="logo" alt="logo" />
+        <img src={logo.default} className='logo' alt='logo' />
         <Typography
-          variant="h4"
+          variant='h4'
           style={{
             fontSize: '24px',
           }}
@@ -58,7 +58,7 @@ export default function Header({
         </Typography>
       </div>
       <Typography
-        variant="subtitle1"
+        variant='subtitle1'
         style={{
           marginBottom: '1rem',
           width: '200px',
@@ -68,11 +68,11 @@ export default function Header({
         {description}
       </Typography>
       <Typography
-        variant="h6"
+        variant='h6'
         style={{
           marginBottom: '0.5rem',
         }}
-        color="primary"
+        color='primary'
       >
         {activity}
       </Typography>
@@ -81,7 +81,7 @@ export default function Header({
 
       <div className={headerTimeZone}>
         <Typography
-          variant="body2"
+          variant='body2'
           style={{
             fontWeight: '200',
           }}
