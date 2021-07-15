@@ -9,7 +9,7 @@ Other FE devs: If you have questions that this document doesn't cover, please
 ## Questions
 
 1. The payload shape that the service accepts seems to only relate to the `Meeting Preferences` page.
-   1. In the UI, these are the meeting types the user can currently select: "name":"Training" | "Interview" | "Home Inspection" | "Home Selection" | "Home Visit"
+   1. In the UI, these are the meeting types the user can currently select: ```"name":"Training" | "Interview" | "Home Inspection" | "Home Selection" | "Home Visit"```
    2. Is the data tied to a userId or some unique identifier?
    3. If so, where is that handled in the UI?
 2. Where should this [daily availability](https://www.figma.com/file/kwUcXHYpKMHhuktdElLmmw/Calendaring-Home-Unite-Us-Copy?node-id=646%3A1031) be sent to in your service or another API?
