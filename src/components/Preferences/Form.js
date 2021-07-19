@@ -64,8 +64,8 @@ export default function Form() {
           IconComponent={KeyboardArrowDownIcon}
           required
         >
-          {formFields[0].inputs.map(({ type }) => (
-            <MenuItem key={type} value={type}>
+          {formFields[0].inputs.map(({ type, updateNeeded }) => (
+            <MenuItem key={type} value={type} disabled={!updateNeeded}>
               {type}
             </MenuItem>
           ))}
