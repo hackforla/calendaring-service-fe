@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { welcome, Button, Typography } from '../../utils';
+import { Button, Typography } from '../../utils';
+import Welcome from '../../utils/images/Welcome.png';
 
 export default function DashboardBody() {
   return (
@@ -12,7 +13,7 @@ export default function DashboardBody() {
         Welcome
       </Typography>
       <img
-        src={welcome.default}
+        src={Welcome}
         alt='welcome'
         style={{ width: '90%', margin: '1rem auto' }}
       />

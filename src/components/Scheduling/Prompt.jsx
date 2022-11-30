@@ -1,13 +1,14 @@
 import React from 'react';
-import { logo, Typography, Button } from '../../utils/index';
+import { Typography, Button } from '../../utils/index';
 import { useStyles } from './PromptStyles';
+import logo from '../../utils/images/Logo.png';
 
 // TODO : Make Line 18, 26, 36 dynamic
 export default function Prompt() {
   const { root, img } = useStyles();
   return (
     <div className={root}>
-      <img src={logo.default} className={img} alt='logo' />
+      <img src={logo} className={img} alt='logo' />
       <Typography
         variant='h4'
         color='primary'

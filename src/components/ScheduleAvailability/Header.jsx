@@ -1,5 +1,6 @@
 import React from 'react';
-import { logo, Typography } from '../../utils/';
+import { Typography } from '../../utils/';
+import logo from '../../utils/images/Logo.png';
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
           flexDirection: 'row',
         }}
       >
-        <img src={logo.default} className='logo' alt='logo' />
+        <img src={logo} className='logo' alt='logo' />
         <Typography variant='h4' style={{ margin: '2rem 0' }}>
           Schedule Availability
         </Typography>
