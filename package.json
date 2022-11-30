@@ -46,6 +46,10 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^2.2.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -55,6 +59,7 @@
     "husky": "^7.0.1",
     "lint-staged": "^11.0.0",
     "prettier": "2.3.2",
+    "typescript": "^4.9.3",
     "vite": "^3.2.4"
   },
   "lint-staged": {
