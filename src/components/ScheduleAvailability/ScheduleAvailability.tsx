@@ -1,20 +1,15 @@
-import React, { useReducer, useEffect, useState } from 'react';
-import { daysOfTheWeek, Button } from '../../utils/index';
+import React, { useReducer } from 'react';
+import { Button } from '../../utils/index';
 import Header from './Header';
-import { reducer } from './store/reducer';
+import { reducer, initialState } from './store/reducer';
 import ScheduleAvailableDays from './ScheduleAvailableDays';
 import { Link } from 'react-router-dom';
-const initialState = { daysOfTheWeek };
 
 export default function ScheduleAvailability() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [isEverySelected, setIsEverySelected] = useState(false);
 
-  useEffect(() => {
-    setButtonDisabled(!state.daysOfTheWeek.some((day) => day.selected));
-    setIsEverySelected(!state.daysOfTheWeek.every((day) => day.selected));
-  }, [state.daysOfTheWeek]);
+  const buttonDisabled = !state.daysOfTheWeek.some((day) => day.selected);
+  const isEverySelected = !state.daysOfTheWeek.every((day) => day.selected);
 
   return (
     <>
