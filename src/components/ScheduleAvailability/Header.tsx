@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '../../utils';
-import * as logo from '../../utils/images/Logo.png';
+import logo from '../../utils/images/Logo.png';
 
 export default function Header() {
   return (
