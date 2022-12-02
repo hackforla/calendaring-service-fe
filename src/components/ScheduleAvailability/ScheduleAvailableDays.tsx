@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from '../../utils/index';
-import { initialState } from './store/reducer';
+import { ACTIONTYPE, initialState } from './store/reducer';
 import Day from './Day';
 
 interface ScheduleAvailableDaysProps {
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<ACTIONTYPE>;
   isEverySelected: boolean;
   state: typeof initialState;
 }

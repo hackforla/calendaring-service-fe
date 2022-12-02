@@ -12,7 +12,7 @@ export const initialState = {
   daysOfTheWeek,
 };
 
-type ACTIONTYPE =
+export type ACTIONTYPE =
   | { type: 'TOGGLE_SELECTED'; payload: number }
   | { type: 'TOGGLE_ALL'; payload: boolean };
 
