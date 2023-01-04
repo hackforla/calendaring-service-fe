@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { logo } from '../../utils/index';
+import logo from '../../utils/images/Logo.png';
 import classes from './Header.module.scss';
 import { Typography } from '../../utils/index';
 
@@ -10,7 +10,7 @@ export default function Header() {
     <div className={classes.main}>
       <div className={classes.header}>
         <div className={classes.top}>
-          <img src={logo.default} className='logo' alt='logo' />
+          <img src={logo} className='logo' alt='logo' />
           <Typography variant='h4'>My Dashboard</Typography>
         </div>
         <div className={classes.bottom}>

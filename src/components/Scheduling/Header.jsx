@@ -1,6 +1,7 @@
 import React from 'react';
-import { logo, Typography, ArrowDropDownIcon } from '../../utils/index';
+import { Typography, ArrowDropDownIcon } from '../../utils/index';
 import { useStyles } from './CalendarViewStyles';
+import logo from '../../utils/images/Logo.png';
 
 export default function Header({
   title,
@@ -47,7 +48,7 @@ export default function Header({
   return (
     <div className={root}>
       <div className={header}>
-        <img src={logo.default} className='logo' alt='logo' />
+        <img src={logo} className='logo' alt='logo' />
         <Typography
           variant='h4'
           style={{

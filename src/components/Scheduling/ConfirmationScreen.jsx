@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Typography } from '@mui/material';
 import moment from 'moment';
 import { useStyles } from './ConfirmationStyles';
 import Header from './Header';

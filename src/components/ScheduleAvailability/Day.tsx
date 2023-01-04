@@ -1,7 +1,15 @@
 import React from 'react';
 import { Checkbox } from '../../utils/index';
+import { ACTIONTYPE } from './store/reducer';
 
-export default function Day({ day, selected, dispatch, idx }) {
+interface DayProps {
+  day: string;
+  selected: boolean;
+  dispatch: React.Dispatch<ACTIONTYPE>;
+  idx: number;
+}
+
+export default function Day({ day, selected, dispatch, idx }: DayProps) {
   return (
     <div
       style={{
