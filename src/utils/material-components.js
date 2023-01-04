@@ -17,8 +17,8 @@ import {
   Typography,
   TextField,
   InputLabel,
-} from '@material-ui/core';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+} from '@mui/material';
+import { makeStyles, withStyles } from '@mui/styles';
 
 export {
   Button,
