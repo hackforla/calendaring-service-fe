@@ -1,8 +1,8 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material/styles';
 const blue = '#249be5';
 const grey = '#8492A6';
 
-export const theme = createMuiTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       main: blue,
@@ -46,33 +46,36 @@ export const theme = createMuiTheme({
       fontSize: 14,
     },
   },
-  overrides: {
-    // MuiFilledInput: {
-    //   root: {
-    //     backgroundColor: '#FFC0CB',
-    //   },
-    // },
+  components: {
     MuiIcon: {
-      root: {
-        height: '3rem',
-        width: '3rem',
-        color: blue,
+      styleOverrides: {
+        root: {
+          height: '3rem',
+          width: '3rem',
+          color: blue,
+        },
       },
     },
     MuiCard: {
-      root: {
-        background: 'acd9f5',
+      styleOverrides: {
+        root: {
+          background: 'acd9f5',
+        },
       },
     },
     MuiOutlinedInput: {
-      root: {
-        '& $notchedOutline': {
-          borderColor: '#D9D9D9',
-        },
-        '&$disabled $notchedOutline': {
-          borderColor: '#D9D9D9',
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#D9D9D9',
+          },
+          '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#D9D9D9',
+          },
         },
       },
     },
   },
 });
+
+console.log(theme);

@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
-import { Button } from '../../utils/index';
+import { Button } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import Header from './Header';
 import { reducer, initialState } from './store/reducer';
 import ScheduleAvailableDays from './ScheduleAvailableDays';
@@ -25,12 +26,11 @@ export default function ScheduleAvailability() {
           padding: '1rem 3rem',
         }}
       >
-        <Button size='large' component={Link} to='/'>
+        <Button variant='text' size='large' component={Link} to='/'>
           cancel
         </Button>
         <Button
           size='large'
-          color='primary'
           component={Link}
           to='/scheduletimes'
           disabled={buttonDisabled}
